@@ -1,0 +1,19 @@
+Competency Test:
+
+Start Pos: -2115.8 29 149.5
+Start Button: -2119 30 149
+1. End Button: -2147 30 149
+2. End Button: -2161 30 149
+3. End Button: -2169 30 146
+4. End Button: -2132 30 140
+5. End Button: -2148 30 140
+6. End Button: -2169 30 140
+7. End Button: -2184 30 133
+8. End Button: -2123 30 120
+9. End Button: -2176 30 120
+10. End Button: -2141 30 100
+11. End Button: -2158 30 100
+12. End Button: -2179 30 100
+13. End Button: -2144 30 89
+14. End Button: -2196 30 77
+TP TO END TEST

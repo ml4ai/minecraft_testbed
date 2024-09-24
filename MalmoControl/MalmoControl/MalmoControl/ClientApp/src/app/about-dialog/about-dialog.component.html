@@ -1,0 +1,46 @@
+
+
+<mat-card *ngIf=load>
+
+  <mat-card-title style="text-align: center;">
+    ABOUT ASIST CONTROL CENTER
+  </mat-card-title>
+
+  <mat-card-content style="text-align: center;">
+    
+      <div>
+         <div class = text >System</div>
+         <div>{{aboutObject.system_name}}</div>   
+      </div>
+      <div>
+        <div class = text>Description</div>
+        <div>{{aboutObject.system_description}}</div>   
+      </div>
+      <div>
+        <div class = text>Sponsors</div>
+        <div>{{aboutObject.darpa_acknolwedgement}}</div>   
+      </div>
+      <div>
+        <div class = text>Version</div>
+        <div>Version {{aboutObject.system_version}}</div>   
+      </div>
+      <div>
+        <div class = text>Build Date</div>
+        <div>{{aboutObject.system_build_date}}</div>   
+      </div>
+      <div>
+        <div class = text>Copyright</div>
+        <div>{{aboutObject.aptima_legal_notice}}</div>   
+      </div>
+      <div>
+        <div class = text>Other Notices</div>
+        <div>{{aboutObject.other_notices}}</div>   
+      </div> 
+    
+  </mat-card-content>
+
+  <mat-card-footer>    
+    <button mat-button style="float:right" (click)=close()> Close </button>
+  </mat-card-footer>
+
+</mat-card>

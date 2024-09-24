@@ -1,0 +1,34 @@
+@startuml
+
+
+package MinecraftBridge <<Frame>>
+{
+	class BaseAgent
+	{
+		{field} String +agent_name
+		{field} String +name
+		{field} HeartbeatThread +heartbeat
+		{field} Bridge +bridge
+
+		{method} +register_callback(message_class, callback)
+		{method} +receive(message)
+		{method} +publish(message)
+		{method} +run(Namespace args)
+		{method} +stop()
+
+	}
+
+	class HeartbeatThread
+	{
+		{field} +agent
+		{field} +heartbeat_rate
+		{method} +send_heartbeats(boolean send)
+	}
+
+	class Bridge
+
+	BaseAgent *-right- "1" Bridge
+	BaseAgent "1" *-left- "1" HeartbeatThread
+}
+
+@enduml

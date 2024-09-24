@@ -1,0 +1,1 @@
+curl -XGET "localhost:9200/logstash*/_search?size=10000" -H "Content-Type:application/json" -d '{ "query": { "bool": { "must": [ { "match": { "topic.keyword": "status\/mqttvalidationservice\/messages" } }, { "match": { "msg.source": "tomcat_speech_analyzer " } }, { "range": { "@timestamp": { "gte": "2022-09-03T20:14:35.725306000Z" } } } ] } } }' 

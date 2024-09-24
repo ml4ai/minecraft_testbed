@@ -1,0 +1,10 @@
+# replayer 
+FROM python:3
+
+COPY config.ini /
+COPY replayer.py /
+
+RUN pip install elasticsearch
+RUN pip install paho-mqtt
+
+ENTRYPOINT [ "python", "replayer.py"]

@@ -1,0 +1,8 @@
+{
+	"testbed": {
+		"testbed_metadata_replay": {
+			"up": "cd ./local && echo 'Running testbed_up_metadata_replay.sh script' && testbed_up_metadata_replay.sh",
+			"down": "cd ./local && echo 'Running testbed_down_metadata_replay.sh script' && testbed_down_metadata_replay.sh"
+		}
+	}
+}

@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "ac_cmu_ta2_beard"
+version = "0.0.7"
+description = "CMU TA2 BEARD AC"
+authors = ["Pavan Kantharaju <pkantharaju@sift.net>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+asistagenthelper-pkg-rcarff-ihmc = { git = "https://gitlab.com/ihmc-asist/python-agent-helper.git", branch = "main" }
+python-dateutil = "^2.8.2"
+paho-mqtt = "^1.6.1"
+matplotlib = "^3.4.3"
+json5 = "^0.9.6"
+pandas = "^1.3.4"
+jupyterlab = "^3.3.0"
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.11.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "../node_modules/ag-grid-community/dist/styles/ag-grid.css";
+@import "../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+html,body{
+    width:100%;
+    height:100%;
+    justify-content: center;
+    padding:.5%;
+    box-sizing: border-box;
+}
+
+.text, p { 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+select, input, option {
+    height:2rem;
+    text-align: center;
+    font-size: 1rem;
+    border: 1px solid black;
+    font-weight: bold;
+    
+}
+
+option { font-style: italic;}
+
+.mat-radio-button .mat-accent .mat-radio-checked .mat-radio-outer-circle{
+    border-color:rgb(66, 134, 244); 
+  }
+  
+  .mat-radio-button.mat-accent .mat-radio-inner-circle{
+    color:rgb(66, 134, 244);
+    background-color:rgb(66, 134, 244) ;
+  }
+  
+  .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+      background-color:rgb(255, 37, 37,.26);
+  }
+
+  .mat-checkbox-checkmark-path {
+    stroke: #000000 !important;
+}
+  .mat-checkbox-checkmark{
+    background-color:rgb(255, 255, 255) ;
+  }
+
+  .mat-checkbox-background{
+    border:1px black solid;
+  }

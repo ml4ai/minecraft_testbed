@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Stats</h2>
+  <div fxLayout="row wrap" [fxLayout.lt-md]="'column wrap'" fxLayoutAlign="center top"> <!--fxLayoutGap="2em"-->
+
+    <div [fxFlex.gt-sm]="100 / 2 + '%'" fxLayoutAlign="stretch">
+      <mat-card ngClass="dashboard-card" [ngClass.lt-md]="'dashboard-card-narrow'">
+        <mat-card-header>
+          <div mat-card-avatar>
+            <mat-icon aria-label="First Look">done_all</mat-icon>
+          </div>
+          <mat-card-title>First Look</mat-card-title>
+          <mat-card-subtitle>Check Validity</mat-card-subtitle>
+          <mat-icon color="{{metadataAppOnline ? 'primary' : 'warn'}}" matTooltip="{{metadataAppOnline ? 'All systems online' : '1 or more systems offline'}}">lens</mat-icon>
+        </mat-card-header>
+        <mat-card-content>
+          <app-first-look></app-first-look>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+</div>
+

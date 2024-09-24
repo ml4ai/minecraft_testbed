@@ -1,0 +1,23 @@
+<div>
+
+  <!--Instance Number:
+  <input type='text' [(ngModel)]=instanceNumber>-->
+
+  <div style="display: flex">
+
+    <div class = 'text'>Agent Action :</div> 
+    
+    <div style="flex-grow: 1;"></div> 
+    
+    <div>
+      <button mat-button (click)=agentAction()>{{agentActionString}} Agent</button> 
+    </div>
+
+  </div>
+
+  <div style="background-color:black; color:white; min-height: 200px; "><pre style="margin:1%;">{{status | json}}</pre></div> 
+
+  
+  
+
+</div>

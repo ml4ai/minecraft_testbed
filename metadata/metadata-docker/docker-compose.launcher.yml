@@ -1,0 +1,47 @@
+version: '3.6'
+services:
+  postgres:
+    image: registry.gitlab.com/artificialsocialintelligence/study3/postgres:${LAUNCHER_TAG}
+    container_name: postgres
+    env_file:
+      - postgres.env
+    volumes:
+      - 'postgres-asist:/var/lib/postgresql/data/'
+    ports:
+      - '5432:5432'
+    networks:
+      - asist_net
+    restart: unless-stopped
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    env_file:
+      - pgadmin.env
+    volumes:
+      - 'pgadmin:/root/.pgadmin'
+    ports:
+      - '${PGADMIN_PORT:-5050}:80'
+    depends_on:
+      - postgres
+    restart: unless-stopped
+  metadata-app:
+    image: registry.gitlab.com/artificialsocialintelligence/study3/metadata-app:${LAUNCHER_TAG}
+    container_name: metadata-app
+    env_file:
+      - metadata-app.env
+    volumes:
+      - 'metadata-app:/var/lib/metadata-app/data/'
+    ports:
+      - '8080:8080'
+    networks:
+      - asist_net
+    depends_on:
+      - postgres
+    restart: unless-stopped
+networks:
+  asist_net:
+    external: true
+volumes:
+  postgres-asist: null
+  pgadmin: null
+  metadata-app: null

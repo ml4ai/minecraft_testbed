@@ -1,0 +1,27 @@
+.container {
+  margin: 2em;
+}
+
+:host ::ng-deep .mat-card-header-text {
+  flex: 1;
+}
+
+.mat-card-avatar mat-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+}
+
+.dashboard-card-narrow {
+  margin: 0.5em;
+  flex: 1;
+}
+
+.dashboard-card {
+  margin: 2em;
+  flex: 1;
+}
+
+.mat-icon {
+  cursor: default;
+}

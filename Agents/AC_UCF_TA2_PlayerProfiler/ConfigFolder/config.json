@@ -1,0 +1,29 @@
+{
+    "host": ["mosquitto", "localhost"],
+    "port": "1883",
+    "heartbeats_per_minute": 6,
+    "version_info": {
+        "owner": "UCF - TA2",
+        "version": "0.0.8",
+        "source": [
+            "https://github.com/rhyben94/UCF_TA2_AC"
+        ],
+        "publishes": [
+            {"topic": "agent/ac_ucf_ta2_playerprofiler/playerprofile", "message_type": "agent", "sub_type": "playerprofile"}
+        ],
+        "subscribes": [
+            {"topic": "trial", "message_type": "trial"},
+            {"topic": "status/asistdataingester/surveyresponse", "sub_type": "Status:SurveyResponse"},
+            {"topic": "observations/events/mission"},
+            {"topic": "observations/events/player/triage", "message_type": "event", "sub_type": "Event:Triage"},
+            {"topic": "observations/events/player/rubble_destroyed"},
+            {"topic": "observations/events/server/victim_evacuated"},
+            {"topic": "observations/events/player/victim_evacuated"},
+            {"topic": "observations/events/player/victim_picked_up"},
+            {"topic": "observations/events/player/victim_placed"},
+            {"topic": "observations/state", "sub_type":  "state"},
+            {"topic": "observations/events/mission/planning"},
+            {"topic": "observations/events/competency/task"}
+        ]
+    }
+}

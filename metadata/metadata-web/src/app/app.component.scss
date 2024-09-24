@@ -1,0 +1,92 @@
+.mat-toolbar {
+  span { margin-right: 2em; }
+  mat-icon {
+    cursor: pointer;
+    font-size: 1.6em;
+    transform: translateY(3px);
+  }
+  h1 { font-size: 1.2em; }
+}
+.metadata-filler-container {
+  padding: 1em;
+}
+.bottom-sheet-button-spacer {
+  flex: 1 1 auto;
+}
+
+@media (max-width: 599px) {
+  .mat-toolbar-row, .mat-toolbar-single-row {
+    height: 64px;
+  }
+}
+
+.metadata-container {
+position: absolute;
+top: 64px;
+bottom: 64px;
+left: 0;
+right: 0;
+}
+
+.metadata-sidenav {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 200px;
+}
+
+mat-list-item {
+outline: none;
+cursor: pointer;
+}
+.is-active {
+background-color: #797979;
+}
+
+.metadata-header {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+}
+
+.metadata-footer {
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+}
+
+.metadata-header-spacer {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+//.all-wrap {
+//  min-height: 100vh; // same height as browser window height
+//}
+//
+//.page-wrap {
+//  display: flex;
+//  flex-direction: column;
+//  min-height: 100vh; // same height as browser window height
+//}
+//
+//.content {
+//  flex: 1; // child will set to an equal size inside the container
+//}
+//
+//main {
+//
+//  display: flex;
+//  flex-direction: column;
+//
+//  // Select all direct descendants only of the <main> element
+//  // that are not <router-outlet> elements:
+//  > *:not(router-outlet) {
+//
+//    flex: 1; // child will set to an equal size inside the container
+//    display: block;
+//
+//  }
+//}

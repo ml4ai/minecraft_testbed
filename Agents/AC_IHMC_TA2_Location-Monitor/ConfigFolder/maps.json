@@ -1,0 +1,22 @@
+{
+  "DEFAULT": {"filename": "Saturn_2.6_3D_sm_v1.0.json"},
+  "Saturn_Training_1.5_3D": {"filename": "Saturn_Training_1.5_3D_sm_v1.0.json"},
+  "Saturn_Competency_Test_1.5_3D": {"filename": "Saturn_Competency_Test_1.5_3D_sm_v1.0.json"},
+  "Saturn_Training_1.6_3D": {"filename": "Saturn_Training_1.6_3D_sm_v1.0.json"},
+  "Saturn_Competency_Test_1.6_3D": {"filename": "Saturn_Competency_Test_1.6_3D_sm_v1.0.json"},
+  "Saturn_Training_1.7_3D": {"filename": "Saturn_Training_1.7_3D_sm_v1.0.json"},
+  "Saturn_Competency_Test_1.7_3D": {"filename": "Saturn_Competency_Test_1.7_3D_sm_v1.0.json"},
+  "Saturn_1.5_3D": {"filename": "Saturn_1.6_3D_sm_v1.1.json"},
+  "Saturn_1.6_3D": {"filename": "Saturn_1.6_3D_sm_v1.1.json"},
+  "Saturn_1.6_3D-Dev": {"filename": "Saturn_1.6_3D_sm_v1.1.json"},
+  "Saturn_2.0_3D": {"filename": "Saturn_2.0_3D_sm_v1.0.json"},
+  "Saturn_2.1_3D": {"filename": "Saturn_2.1_3D_sm_v1.0.json"},
+  "Saturn_2.0_3D-Dev": {"filename": "Saturn_2.0_3D_sm_v1.0.json"},
+  "Saturn_2.1_3D-Dev": {"filename": "Saturn_2.1_3D_sm_v1.0.json"},
+  "Saturn_2.5_3D": {"filename": "Saturn_2.1_3D_sm_v1.0.json"},
+  "Saturn_2.5Dev_3D": {"filename": "Saturn_2.1_3D_sm_v1.0.json"},
+  "Blank_1.0": {"filename": "Blank_1.0_sm_v1.0.json"},
+  "Saturn_2.6_3D": {"filename": "Saturn_2.6_3D_sm_v1.0.json"},
+  "Saturn_2.6DEV_3D": {"filename": "Saturn_2.6_3D_sm_v1.0.json"},
+  "Saturn_2.6_3D_Training": {"filename": "Saturn_2.6_3D_sm_v1.0.json"}
+}

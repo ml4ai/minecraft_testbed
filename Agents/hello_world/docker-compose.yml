@@ -1,0 +1,15 @@
+version: '3.7'
+
+networks:
+  asist_net:
+    external: true
+
+services:
+
+  hello-world:
+    image: hello-world:latest
+    container_name: hello-world
+
+    networks:
+      asist_net:
+          

@@ -1,0 +1,37 @@
+{
+    "host": ["mosquitto", "localhost"],
+    "port": "1883",
+    "heartbeats_per_minute": 6,
+    "version_info": {
+        "owner": "IHMC - TA2",
+        "agent_type": "AC",
+        "version": "0.0.2",
+        "source": [
+            "https://gitlab.com/artificialsocialintelligence/study3/-/tree/main/Agents/IHMCInterdependenceAC"
+        ],
+        "dependencies": [],
+        "publishes": [
+            {"topic": "observations/events/player/jag", "message_type": "event"}
+        ],
+        "subscribes": [
+            {"topic": "ground_truth/mission/victims_list", "message_type": "groundtruth", "sub_type": "Mission:VictimList", "qos": 2},
+            {"topic": "ground_truth/mission/blockages_list", "message_type": "groundtruth", "sub_type": "Mission:BlockageList", "qos": 2},
+            {"topic": "ground_truth/semantic_map/initialized", "message_type": "groundtruth", "sub_type": "SemanticMap:Initialized", "qos": 2},
+            {"topic": "observations/state", "message_type": "observation", "sub_type": "state"},
+            {"topic": "observations/events/player/role_selected", "message_type": "event", "sub_type": "Event:RoleSelected"},
+            {"topic": "observations/events/player/triage", "message_type": "event", "sub_type": "Event:Triage"},
+            {"topic": "observations/events/player/victim_picked_up", "message_type": "event", "sub_type": "Event:VictimPickedUp", "qos": 2},
+            {"topic": "observations/events/player/victim_placed", "message_type": "event", "sub_type": "Event:VictimPlaced", "qos": 2},
+            {"topic": "observations/events/server/victim_evacuated", "message_type": "event", "sub_type": "Event:VictimEvacuated"},
+            {"topic": "observations/events/player/victim_evacuated", "message_type": "event", "sub_type": "Event:VictimEvacuated"},
+            {"topic": "observations/events/player/marker_placed", "message_type": "event", "sub_type": "Event:MarkerPlaced"},
+            {"topic": "observations/events/player/location", "message_type": "event", "sub_type": "Event:location", "qos":  2},
+            {"topic": "observations/events/mission", "message_type": "event", "sub_type": "Event:MissionState"},
+            {"topic": "observations/events/player/proximity", "message_type": "event", "sub_type": "Event:proximity"},
+            {"topic": "observations/events/player/proximity_block", "message_type": "event", "sub_type": "Event:ProximityBlockInteraction"},
+            {"topic": "observations/events/player/rubble_destroyed", "message_type": "event", "sub_type": "Event:RubbleDestroyed"},
+            {"topic": "observations/events/player/jag", "message_type": "event"}
+        ],
+        "config": []
+    }
+}

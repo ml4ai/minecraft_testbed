@@ -1,0 +1,33 @@
+[
+    {
+        "name": "all",
+        "arg": "--all",
+        "abbrev": "-a",
+        "services": [
+            "elk",
+            "metadata",
+            "import_export",
+            "minecraft"
+        ],
+        "display": "All the services"
+    },
+    {
+        "name": "elk",
+        "arg": "--elk",
+        "abbrev": "-e",
+        "services": [
+            "elk"
+        ],
+        "display": "DEMO: Just the ELK stack."
+    },
+    {
+        "name": "elk_and_metadata",
+        "arg": "--elk_and_meta",
+        "abbrev": "-em",
+        "services": [
+            "elk",
+            "metadata"
+        ],
+        "display": "DEMO: ELK and metadata services"
+    }
+]

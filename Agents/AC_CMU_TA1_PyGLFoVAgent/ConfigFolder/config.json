@@ -1,0 +1,18 @@
+{
+    "mqtt_bus": "file:///mqtt_bus.json",
+    "agent_name": "pygl_fov",
+    "version": "2.1.4",
+    "url": "https://gitlab.com/cmu_asist/PyGLFoVAgent",
+    "author": "CMU TA1",
+    "dependencies": "file:///dependencies.json",
+    "publishes": "file:///publishes.json",
+    "subscribes": "file:///subscribes.json",
+    "loggers": "file:///loggers.json",    
+    "maps": "file:///maps.json",
+    "window_size": { 
+    	"width": 426, 
+    	"height": 240
+    },
+    "include_openings": true,
+    "endpoints": "file:///endpoints.json"
+}

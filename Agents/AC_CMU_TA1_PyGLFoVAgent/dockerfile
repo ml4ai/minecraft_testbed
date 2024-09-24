@@ -1,0 +1,48 @@
+FROM python:3.8-slim-buster
+#FROM ubuntu:18.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Dependendies for glvnd and X11
+RUN apt-get update \
+  && apt-get install -y -qq --no-install-recommends \
+    libglvnd0 \
+    libgl1 \
+    libglx0 \
+    libegl1 \
+    libxext6 \
+    libx11-6 \
+  && rm -rf /var/lib/apt/lists/*
+
+
+RUN apt-get update && apt-get install -y dos2unix
+RUN apt-get update && apt-get install -y python3-pip
+RUN apt-get update && apt-get install -y redis-server
+
+RUN apt-get update && apt-get install -y freeglut3
+RUN apt-get update && apt-get install -y freeglut3-dev
+
+#RUN apt-get update && apt-get install -y x11vnc
+RUN apt-get update && apt-get install -y xvfb
+
+# Environment variables for the nvidia-container-runtime
+ENV NVIDIA_VISIBLE_DEVICES all
+ENV NVIDIA_DRIVER_CAPABILITIES graphics,utility,compute
+
+ARG CACHE_BREAKER
+
+COPY src/ /app/src
+COPY lib/ /app/lib
+COPY requirements.txt /app/
+COPY requirements_local.txt /app/
+
+RUN pip3 install -r /app/requirements.txt
+RUN pip3 install -r /app/requirements_local.txt
+
+WORKDIR /app/src
+
+RUN chmod 777 entrypoint.sh
+RUN dos2unix entrypoint.sh
+CMD [ "sh", "entrypoint.sh" ]
+
+

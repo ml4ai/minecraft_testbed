@@ -1,0 +1,14 @@
+﻿.swagger-section #header {
+    background-color: #607D8B;
+    padding: 14px;
+}
+
+.swagger-section #explore {
+    background-color: #607D8B;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+}
+
+.swagger-section #explore:hover {
+    background-color: #4b6775;
+}
+

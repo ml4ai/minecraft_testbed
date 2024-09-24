@@ -1,0 +1,218 @@
+
+<mat-card>
+
+  <mat-card-title style="text-align: center;">
+    ASIST CONTROL CENTER HELP
+  </mat-card-title>
+
+  <mat-card-content style="text-align: center;">
+    
+    <div>
+      <div>
+        <div class = text>MISSION RUNNER</div>
+          <p> The Mission Runner widget is the main point of interaction in the Control GUI. It is generally the first widget you should click on.
+              Begin the experiment setup by clicking on the "Create Trial and Run Mission" button. This should open a dialog with 3 tab sections.
+              These sections are "Select Experiment", "Create Experiment", and "Create Trial".
+              <br> 
+              <br>
+              You will not be able to run a Mission until you either Choose OR Create an Experiment AND Create a Trial. If the Experiment you wish 
+              to reference is not in the Select Experiment Tab List, you can create a new one in the Create Experiment Tab.
+              <br> 
+              <br>
+              Once you have entered all the appropriate Experiment and Trial information in the associated fields, click the "Start Trial and Run Mission" button at the bottom of the Create Trial tab.
+              <br> 
+              <br>
+              You should see the System Status widget respond by changing the "Trial is Running" section from "False" to "True". 
+              Within 30 seconds, the "Minecraft Container is Up" section should also change from "False" to "True".
+              <br> 
+              <br>
+              At this point, Minecraft Clients will be able to join the Minecraft Server via the default port --> 25565, unless otherwise instructed by the Experiment admin.
+            </p>         
+      </div>
+      
+      <div class = text>TRIAL INFO</div>
+        <p>
+          This widget displays a summary of the Trial Information entered for the current Trial. This is a copy of the exact JSON message that created the Trial currently running.
+        </p>
+      <div class = text>OBTAINING IDS FOR YOUR AGENT</div>
+        <p>
+          The experiment_id and trial_id will be available after a trial has started. 
+        <br>
+        <br>  
+        Your agent can obtain these via api call to "https://localhost:9000/MalmoControl/api/experiment/getIds" if outside the asist_net network.
+        OR "http://malmocontrol:5002/api/experiment/getIds" if integrated into the asist_net network (started via the docker-compose.asistmod.yml file).
+        <br>
+        <br>
+        The JSON object returned will have two keys: "trial_id" and "experiment_id". Use these when utilizing messaging over the mqtt bus. 
+        <br>
+        <br>
+        At this time, you may ignore ssl authentication for this request. 
+        If using the curl command in a bash shell, this is done with the -k flag. Most languages have a similar option for ignoring ssl authentication.
+        <br> 
+        <br>
+        You may also obtain these ids via an MQTT request using the request/response pattern. Simply have your agent send any message on the "control/request/getTrialInfo" topic.
+        Before doing this, your agent should be subscribed to the "control/response/getTrialInfo" topic. You will receive a json object with the following properties: 
+        <br> 
+        <br>
+        'experiment_id':'string'
+        <br> 
+        <br>
+        'trial_id':'string'
+        <br> 
+        <br>
+        'mission_name':'string'
+        </p>
+         
+    </div>    
+      <div>
+        <div class = text>SYSTEM STATUS</div>
+          <p> The System Status widget monitors the status of all containers in the MCRVM (malmonet) network stack.
+              
+              When a container is running, the associated boolean value will display True. Otherwise, it will be False.
+              <br> 
+              <br> 
+              <strong class = emphasize>MALMO MOD:</strong>
+
+              <br> 
+              <br>
+              The "Malmo is Ready For Connections" field will change to True when port 10000 is opened in the Malmo Container.
+
+              This can be verified in the Port Viewer widget.
+
+              <br> 
+              <br>
+
+              <strong class = emphasize>ASIST MOD:</strong>
+
+              <br> 
+              <br>
+              The "Minecraft Container is Up" field is irrelevant during startup as there is no mission loaded yet.             
+              <br> 
+              <br>              
+              Once you've started a Mission via the "Create Trial tab", the "Minecraft Container is Up" section will turn from "False" to "True" in roughly 30 seconds.  You can then
+              join the Minecraft Server with an Asist Mod enabled client. When running subsequent Missions, the container will be programattically be taken down and restarted.
+              During the restart process, you should see the aforementioned field change to "False" again, and then return to "True" within 30 seconds.
+              <br>
+              <br>
+              You may turn the message validator on to view if your agent messages are in the appropriate format. With validation on, click on the Exclamation Point icon in the title bar. These errors
+              are caught by the MQTTValidationService and fed to the UI as they are intercepted.
+          </p>
+      </div>     
+      <div>
+        <div class = text>PORT MAPPER</div>
+          <p> 
+            
+              <strong class = emphasize> MOD: MALMO</strong>
+              <br> 
+              <br>
+              The Port Mapper widget allows the user to map a port from the Minecraft/Malmo instance inside of the Malmo Container out
+               
+              to the host machine. Consequently, experiment subjects will be able to connect to this Minecraft instance
+              
+              via the standard Minecraft Multiplayer system. 
+              
+              <br> 
+              <br>
+
+              The port opening process is performed by starting a mission, then navigating to the VNC client
+              
+              @ localhost:5900. Click inside the VNC Client window, press Escape, and select the "Open To LAN" option. 
+
+              Finally, click "Start LAN World".
+              
+              <br> 
+              <br>
+              
+              In the bottom left of the Minecraft GUI
+              
+              you should see a radomly generated port number. Enter this port number into the field containing the string "GetMeFromMinecraft".
+              
+              You may choose any free port on your machine as an External port. The default is 4000. Once this is done, press "Open to Port".
+
+              <br> 
+              <br>
+
+              *NOTE: if you have previously mapped a Minecraft session out to port 4000 (or any other port), you will need to remove the verb/socat container
+              that performs the mapping from your docker containers. This must be done between each experiment session. The alternative is using a different port for each experiment session.
+              <br> 
+              <br>
+              Container removal can be performed by typing "docker container ls" into the shell of your choice.
+              This command lists all container instances docker is currently using. To remove the verb/socat container causing the issue, type
+              "docker container rm -f cb7". Replace "cb7" with the first 3 characters of the container id belonging to the verb/socat container.
+              This should free up the port that was previously being used.
+              <br> 
+              <br>
+              <strong class = emphasize>MOD: ASIST</strong>
+              <br> 
+              <br>
+              Port mapping is completely unnecessary with the new asist mod
+        </p>     
+      </div>
+      <!-- <div>
+        <div class = text>REFERENCE AGENT</div>
+        <p> Note* This section CANNOT be used until an Experiment and a Trial has been started, as each agent message should contain the experiment_name and trial_id.
+          <br>
+          <br>
+          The reference agent widget allows the user to control the initialization, starting, and stopping of an agent.            
+          <br> 
+          <br>
+          Any agent script connected to the malmonet network (initiated via the docker-compose.v1_testbed.yml or docker-compose.asistmod.yml file) can obtain the experiment_id and trial_id with a GET api call to          
+          http://malmocontrol/api/Experiment/getIds . 
+          <br>
+          <br>
+          If outside the docker compose network, call https://localhost:9000/MalmoControl/api/Experiment/getIds. 
+          If you receive ssl authentication errors, you should ignore SSL authentication in the client you are using. With curl this can be done using the -k option. 
+          <br> 
+          <br>
+          The experiment_id and trial_id can be accessed with the "experiment_id" and "trial_id" keys of the returned object. 
+          <br> 
+          <br>
+          Once an experiment has started, you may click the Init Agent button, which will send an init command message over the mqtt message bus. If your agent is subscribed to the           
+          'control' topic, it should receive this message and perform any initialization operations. 
+          <br> 
+          <br>
+          The agent should receive start and stop messages in precisely 
+          the same manner. The button itself will change according to the last command sent. After each button click, you will see the associated json object populate in the 
+          section below.
+          <br>
+          <br>
+          If you wish to obtain trial and experiment ids via the mqtt response/request pattern, please see the section above titled "OBTAINING IDS FOR YOUR AGENT".
+        </p>   
+      </div> -->
+      <div>
+        <div class = text>PORT VIEWER</div>
+        <p> 
+          <strong class = emphasize>MOD: MALMO</strong>
+          <br> 
+          <br>
+            This section allows the user to view the ports that are being used in the Malmo Container instance. This is purely for debugging purposes and will
+            eventually be removed.
+          <br> 
+            <br>
+            <strong class = emphasize>MOD: ASIST</strong>
+            <br> 
+            <br>
+            Not implemented at this time
+        </p>   
+      </div>
+      <div>
+        <br> 
+        <br>
+        <div class = text>ERRORS/VALIDATION</div>
+        <p>          
+          <br> 
+          <br>
+            Errors in messages sent over the mqttbus can be viewed by clicking on the Exclamation Point icon in the title bar. These errors
+            are caught by the MQTTValidationService and fed to the UI as they are intercepted.<br> 
+          <br>            
+           
+        </p>   
+      </div>
+  </mat-card-content>
+
+  <mat-card-footer>    
+    <button mat-button style="float:right" (click)=close()> Close </button>
+  </mat-card-footer>
+
+</mat-card>
+

@@ -1,0 +1,35 @@
+<div>
+
+    <!--Instance Number (first one is 0):
+
+    <input type='text' [(ngModel)]='instanceNumber'>-->
+    <div>
+
+       <div>
+
+        <p>Minecraft Internal Server Port:</p>
+
+        <input type='text' [(ngModel)]='internalPort'>    
+
+       </div>
+
+       <div>
+
+        <p>Map to External Port:</p>
+
+        <input type='text' [(ngModel)]='externalPort'>  
+
+       </div>         
+        
+    </div>
+   
+
+    <!--On this Docker Network:
+
+    <input type='text' [(ngModel)]='dockerNetwork'>-->
+
+    <button mat-button (click)=openExternalPort()> Open to Port </button>
+
+
+</div>
+

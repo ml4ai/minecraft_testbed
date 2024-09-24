@@ -1,0 +1,20 @@
+version: '3.7'
+
+networks:
+  asist_net:
+   external: true    
+    
+services:
+  asist_agent:
+    image: "registry.gitlab.com/artificialsocialintelligence/study3/ac_cornell_ta2_teamtrust:1.0.3"
+    container_name: "AC_CORNELL_TA2_TEAMTRUST"
+    environment:
+      - AGENT_NAME=AC_CORNELL_TA2_TEAMTRUST
+      - AGENT_MAIN_RUN_FILE=ac_cornell_ta2_teamtrust.py
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./ConfigFolder:/app/ConfigFolder    
+    networks:
+      asist_net:
+        aliases:
+          - "AC_CORNELL_TA2_TEAMTRUST"

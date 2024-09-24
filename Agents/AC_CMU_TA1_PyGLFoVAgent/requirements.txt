@@ -1,0 +1,11 @@
+numpy
+matplotlib
+pyopengl
+glfw
+paho-mqtt
+requests
+ciso8601
+yappi
+python-dateutil
+packaging
+scipy

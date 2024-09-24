@@ -1,0 +1,103 @@
+.bold {
+  font-weight: bold;
+}
+
+.lighter {
+  font-weight: lighter;
+}
+
+.container {
+  margin: 2em;
+}
+
+.mat-card {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  overflow: hidden;
+ }
+
+ .mat-card-content {
+   overflow: auto;
+   display: flex;
+   flex-direction: column;
+   flex: 1;
+   //.container-button-container {
+   //  display: flex;
+   //  justify-content: space-between;
+   //  button {
+   //    //align-self: end;
+   //    margin-bottom: 1em;
+   //    cursor: pointer;
+   //
+   //    .mat-icon {
+   //      cursor: pointer;
+   //    }
+   //  }
+   //}
+ }
+
+.mat-mini-fab {
+  margin: 0 8px;
+}
+
+:host ::ng-deep .mat-card-header-text {
+  flex: 1;
+}
+
+.mat-card-avatar mat-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+}
+
+.dashboard-card-narrow {
+  margin: 0.5em;
+  flex: 1;
+}
+
+.dashboard-card {
+  margin: 2em;
+  flex: 1;
+}
+
+.mat-icon {
+  cursor: pointer;
+}
+
+.log-content {
+  overflow-y: auto;
+  display: flex;
+  background-color: black;
+  color: #33FF00;
+  scroll-snap-type: y mandatory;
+  //flex-direction: column;
+  //flex: 1 1 auto;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  flex: 1;
+}
+
+.log-list {
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  //overflow: auto;
+  font-family: "Courier New";
+  font-size: smaller;
+  //overflow-x: auto;
+  div {
+    scroll-snap-align: start;
+  }
+}
+
+.agent-output {
+  background: black;
+  width: 100%;
+  display: flex;
+  padding: 0 0.5em;
+  color: white;
+  text-align: left;
+  font-size: x-small;
+}

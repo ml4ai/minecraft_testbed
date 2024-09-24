@@ -1,0 +1,59 @@
+<form [formGroup]="exportTrialForm" class="example-form">
+
+  <fieldset [ngClass]="{'accent-color' : isExportingTrial}" [disabled]="isExportingTrial">
+    <legend>elasticsearch Index</legend>
+    <div fxLayout="column">
+      <mat-form-field class="field-width">
+        <mat-label>Select Index</mat-label>
+        <input matInput placeholder="Index" aria-label="Index" [matAutocomplete]="autoIndex" formControlName="indexName" required autocomplete="off">
+        <mat-autocomplete #autoIndex="matAutocomplete" (optionSelected)="updateIndexSelection($event)" [displayWith]="displayIndexNameFn">
+          <mat-option *ngFor="let index of filteredIndices | async" [value]="index">
+            <span>{{index.index}}</span>
+            <br>
+            <small class="accent-color">Count: {{index['docs.count']}}</small>
+          </mat-option>
+        </mat-autocomplete>
+        <button type="button" mat-icon-button matSuffix mat-icon-button aria-label="Clear" (click)="indexNameControl.setValue('')" [disabled]="indexNameControl.disabled">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field floatLabel="always" appearance="none">
+        <mat-slide-toggle color="primary" formControlName="overrideIndexNameToggle">
+          Manual Index Entry
+        </mat-slide-toggle>
+        <textarea matInput hidden></textarea>
+      </mat-form-field>
+
+      <mat-form-field class="field-width">
+        <mat-label>Enter Index</mat-label>
+        <input matInput placeholder="Index" aria-label="Index" formControlName="indexNameEntered" [pattern]="indexPattern" required autocomplete="off">
+        <mat-error>Invalid index name.</mat-error>
+      </mat-form-field>
+    </div>
+  </fieldset>
+
+  <fieldset [ngClass]="{'accent-color' : isExportingTrial}" [disabled]="isExportingTrial">
+    <legend>Time Window</legend>
+    <div fxLayout="column">
+      <mat-form-field class="field-width">
+        <mat-label>Begin Date (mm/dd/yyyy hh:mm:ss) Local Time</mat-label>
+        <input matInput mask="M0/d0/0000 Hh:m0:s0" [dropSpecialCharacters]="false" [showMaskTyped] = "true" [clearIfNotMatch]="false" [validation]="true" formControlName="beginDateTime" required autocomplete="off">
+        <mat-error>Invalid begin date.</mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout="column">
+      <mat-form-field class="field-width">
+        <mat-label>End Date (mm/dd/yyyy hh:mm:ss) Local Time</mat-label>
+        <input matInput mask="M0/d0/0000 Hh:m0:s0" [dropSpecialCharacters]="false" [showMaskTyped] = "true" [clearIfNotMatch]="false" [validation]="true" formControlName="endDateTime" required autocomplete="off">
+        <mat-error>Invalid end date.</mat-error>
+      </mat-form-field>
+    </div>
+  </fieldset>
+
+</form>
+<br>
+<div fxLayout="row" fxLayoutAlign="end center">
+  <mat-spinner *ngIf="isExportingTrial" mode="indeterminate" diameter="36"></mat-spinner>
+  <button mat-raised-button color="primary" (click)="onExportClick()" [disabled]="!exportTrialForm.valid">Export</button>
+</div>

@@ -1,0 +1,111 @@
+LocationXYZ,BlockType,Command,CommandOptions,RoomName,FeatureType
+-2070 60 150,block_victim_2,,,Executive Suite 1,Victim
+-2059 61 145,air,,,Executive Suite 1,Opening - Passable
+-2059 62 145,air,,,Executive Suite 1,Opening - Passable
+-2059 63 145,air,,,Executive Suite 1,Opening - Passable
+-2059 64 145,air,,,Executive Suite 1,Opening - Passable
+-2053 60 148,block_victim_1,,,Executive Suite 2,Victim
+-2045 60 144,block_victim_1,,,Executive Suite 2,Victim
+-2037 60 150,block_victim_1,,,King Chris's Office,Victim
+-2029 60 158,block_victim_1,,,King Chris's Office,Victim
+-2023 60 146,block_victim_2,,,The King's Terrace,Victim
+-2022 60 154,block_victim_1,,,The King's Terrace,Victim
+-2030 60 161,block_victim_2,,,Room 101,Victim
+-2036 60 161,block_victim_1,,,Room 101,Victim
+-2036 61 169,air,,,Room 101/Room 102,Opening - Passable
+-2036 62 169,air,,,Room 101/Room 102,Opening - Passable
+-2036 63 169,air,,,Room 101/Room 102,Opening - Passable
+-2036 64 169,air,,,Room 101/Room 102,Opening - Passable
+-2029 60 170,block_victim_1,,,Room 102,Victim
+-2031 60 170,block_victim_1,,,Room 102,Victim
+-2038 60 185,block_victim_1,,,Room 104,Victim
+-2039 60 190,block_victim_1,,,Room 104,Victim
+-2047 60 191,block_victim_1,,,Room 105,Victim
+-2055 61 190,air,,,Room 105/Room 106,Opening - Passable
+-2055 62 190,air,,,Room 105/Room 106,Opening - Passable
+-2055 63 190,air,,,Room 105/Room 106,Opening - Passable
+-2055 64 190,air,,,Room 105/Room 106,Opening - Passable
+-2064 61 186,air,,,Room 106/Room 107,Opening - Passable
+-2064 62 186,air,,,Room 106/Room 107,Opening - Passable
+-2064 63 186,air,,,Room 106/Room 107,Opening - Passable
+-2064 64 186,air,,,Room 106/Room 107,Opening - Passable
+-2074 60 185,block_victim_1,,,Room 108,Victim
+-2076 60 191,block_victim_1,,,Room 108,Victim
+-2093 60 185,block_victim_2,,,Room 110,Victim
+-2096 60 186,block_victim_1,,,Room 110,Victim
+-2092 60 191,block_victim_1,,,Room 110,Victim
+-2101 60 186,block_victim_2,,,Room 111,Victim
+-2104 60 190,block_victim_1,,,Room 111,Victim
+-2093 60 160,block_victim_2,,,The Computer Farm,Victim
+-2081 60 172,block_victim_1,,,The Computer Farm,Victim
+-2078 61 177,air,,,The Computer Farm/Lower Hallway,Opening - Passable
+-2078 62 177,air,,,The Computer Farm/Lower Hallway,Opening - Passable
+-2078 63 177,air,,,The Computer Farm/Lower Hallway,Opening - Passable
+-2078 64 177,air,,,The Computer Farm/Lower Hallway,Opening - Passable
+-2070 60 164,block_victim_1,,,Men's Room,Victim
+-2072 60 167,block_victim_1,,,Men's Room,Victim
+-2072 60 172,block_victim_2,,,Women's Room,Victim
+-2066 61 170,air,,,Women's Room/ Mary Kay Conference Room,Opening - Passable
+-2066 62 170,air,,,Women's Room/ Mary Kay Conference Room,Opening - Passable
+-2066 63 170,air,,,Women's Room/ Mary Kay Conference Room,Opening - Passable
+-2066 64 170,air,,,Women's Room/ Mary Kay Conference Room,Opening - Passable
+-2065 61 170,air,,,Women's Room/ Mary Kay Conference Room,Opening - Passable
+-2065 62 170,air,,,Women's Room/ Mary Kay Conference Room,Opening - Passable
+-2065 63 170,air,,,Women's Room/ Mary Kay Conference Room,Opening - Passable
+-2065 64 170,air,,,Women's Room/ Mary Kay Conference Room,Opening - Passable
+-2060 60 176,block_victim_1,,,Mary Kay Conference Room,Victim
+-2059 60 157,block_victim_1,,,Amway Conference Room,Victim
+-2064 60 158,block_victim_1,,,Amway Conference Room,Victim
+-2064 60 166,block_victim_2,,,Amway Conference Room,Victim
+-2043 60 175,block_victim_2,,,Herbalife Conference Room,Victim
+-2049 60 169,block_victim_1,,,Herbalife Conference Room,Victim
+-2049 60 163,block_victim_1,,,Herbalife Conference Room,Victim
+-2047 60 160,block_victim_2,,,Herbalife Conference Room,Victim
+-2061 60 152,bedrock,,,Left Hallway,Blockage
+-2061 61 152,bedrock,,,Left Hallway,Blockage
+-2061 62 152,bedrock,,,Left Hallway,Blockage
+-2061 60 153,bedrock,,,Left Hallway,Blockage
+-2061 61 153,bedrock,,,Left Hallway,Blockage
+-2061 62 153,bedrock,,,Left Hallway,Blockage
+-2061 60 154,bedrock,,,Left Hallway,Blockage
+-2061 61 154,bedrock,,,Left Hallway,Blockage
+-2061 62 154,bedrock,,,Left Hallway,Blockage
+-2061 60 155,bedrock,,,Left Hallway,Blockage
+-2061 61 155,bedrock,,,Left Hallway,Blockage
+-2061 62 155,bedrock,,,Left Hallway,Blockage
+-2041 60 168,bedrock,,,North Hallway,Blockage
+-2041 61 168,bedrock,,,North Hallway,Blockage
+-2041 62 168,bedrock,,,North Hallway,Blockage
+-2040 60 168,bedrock,,,North Hallway,Blockage
+-2040 61 168,bedrock,,,North Hallway,Blockage
+-2040 62 168,bedrock,,,North Hallway,Blockage
+-2039 60 168,bedrock,,,North Hallway,Blockage
+-2039 61 168,bedrock,,,North Hallway,Blockage
+-2039 62 168,bedrock,,,North Hallway,Blockage
+-2038 60 168,bedrock,,,North Hallway,Blockage
+-2038 61 168,bedrock,,,North Hallway,Blockage
+-2038 62 168,bedrock,,,North Hallway,Blockage
+-2063 60 179,bedrock,,,Right Hallway,Blockage
+-2063 61 179,bedrock,,,Right Hallway,Blockage
+-2063 62 179,bedrock,,,Right Hallway,Blockage
+-2063 60 180,bedrock,,,Right Hallway,Blockage
+-2063 61 180,bedrock,,,Right Hallway,Blockage
+-2063 62 180,bedrock,,,Right Hallway,Blockage
+-2063 60 181,bedrock,,,Right Hallway,Blockage
+-2063 61 181,bedrock,,,Right Hallway,Blockage
+-2063 62 181,bedrock,,,Right Hallway,Blockage
+-2063 60 182,bedrock,,,Right Hallway,Blockage
+-2063 61 182,bedrock,,,Right Hallway,Blockage
+-2063 62 182,bedrock,,,Right Hallway,Blockage
+-2089 60 157,bedrock,,,The Computer Farm,Blockage
+-2089 61 157,bedrock,,,The Computer Farm,Blockage
+-2089 62 157,bedrock,,,The Computer Farm,Blockage
+-2088 60 157,bedrock,,,The Computer Farm,Blockage
+-2088 61 157,bedrock,,,The Computer Farm,Blockage
+-2088 62 157,bedrock,,,The Computer Farm,Blockage
+-2087 60 157,bedrock,,,The Computer Farm,Blockage
+-2087 61 157,bedrock,,,The Computer Farm,Blockage
+-2087 62 157,bedrock,,,The Computer Farm,Blockage
+-2086 60 157,bedrock,,,The Computer Farm,Blockage
+-2086 61 157,bedrock,,,The Computer Farm,Blockage
+-2086 62 157,bedrock,,,The Computer Farm,Blockage

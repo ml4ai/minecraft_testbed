@@ -1,0 +1,79 @@
+<div class="container">
+  <h2>Experiments</h2>
+
+  <div fxLayout="column">
+
+    <mat-form-field>
+      <mat-label>Filter Table</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Filter" autocomplete="off">
+    </mat-form-field>
+
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let experiment"> {{experiment.id}} </td>
+        </ng-container>
+
+        <!-- Experiment ID Column -->
+        <ng-container matColumnDef="experiment_id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Experiment ID </th>
+          <td mat-cell *matCellDef="let experiment"> {{experiment.experiment_id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <td mat-cell *matCellDef="let experiment"> {{experiment.name}} </td>
+        </ng-container>
+
+        <!-- Date Column -->
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+          <td mat-cell *matCellDef="let experiment"> {{experiment.date}} </td>
+        </ng-container>
+
+        <!-- Author Column -->
+        <ng-container matColumnDef="author">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Author </th>
+          <td mat-cell *matCellDef="let experiment"> {{experiment.author}} </td>
+        </ng-container>
+
+        <!-- Mission Column -->
+        <ng-container matColumnDef="mission">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Mission </th>
+          <td mat-cell *matCellDef="let experiment"> {{experiment.mission}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell class="create-button" *matHeaderCellDef>
+            <button mat-icon-button (click)="openCreateExperimentDialog()">
+              <mat-icon aria-label="Create">add_circle</mat-icon>
+            </button>
+          </th>
+
+          <td mat-cell *matCellDef="let row; let i = index;">
+            <div class="mat-cell-buttons">
+            <button mat-icon-button color="accent" (click)="openUpdateExperimentDialog(this.paginator.pageIndex == 0 ?  i : i + this.paginator.pageIndex * this.paginator.pageSize, row.id, row.experiment_id, row.name, row.date, row.author, row.mission)">
+              <mat-icon aria-label="Edit">edit</mat-icon>
+            </button>
+
+            <button mat-icon-button color="accent" (click)="openDeleteExperimentDialog(this.paginator.pageIndex == 0 ?  i : i + this.paginator.pageIndex * this.paginator.pageSize, row.id, row.experiment_id, row.name, row.date, row.author, row.mission)">
+              <mat-icon aria-label="Delete">delete</mat-icon>
+            </button>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <div class="no-results" [style.display]="dataSource.data.length == 0 ? '' : 'none'">
+        No results
+      </div>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>

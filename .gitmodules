@@ -1,0 +1,9 @@
+[submodule "Tools/basemap/mcworldlib"]
+	path = Tools/basemap/mcworldlib
+	url = https://github.com/MestreLion/mcworldlib.git
+[submodule "Tools/basemap/IMCW"]
+	path = Tools/basemap/IMCW
+	url = https://github.com/paulratdollabs/IMCW.git
+[submodule "Tools/basemap/ASIST-MC-toolbox"]
+	path = Tools/basemap/ASIST-MC-toolbox
+	url = https://github.com/zt-yang/ASIST-MC-toolbox.git

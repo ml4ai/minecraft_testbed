@@ -1,0 +1,35 @@
+<div class="section-div">
+  <mat-card>
+    <mat-card-title>Validation Error Log</mat-card-title>
+    <div id=buttonDiv><button mat-button (click)=close()>CLOSE</button></div>
+    <cdk-virtual-scroll-viewport itemSize="80" class="errorViewport">
+      <div
+        *cdkVirtualFor="
+          let logLine of webSocketService.validatorMessages$ | async
+        "
+        class="list"
+      >
+      <div class = "messageContainer">
+
+        <b>{{ logLine.msg.status }} :</b>
+        <div fxLayout="row" fxLayoutGap="20px">
+          <div *ngIf="logLine.msg.messagetopic">Topic = {{ logLine.msg.messagetopic }}</div>
+          <div *ngIf="logLine.msg.message_type">Message_Type = {{ logLine.msg.message_type }}</div>
+          <div *ngIf="logLine.msg.sub_type">Sub_Type = {{ logLine.msg.sub_type }}</div>
+          <div *ngIf="logLine.msg.source">Source = {{ logLine.msg.source }}</div>
+        </div>
+        <div>Header = {{ logLine.msg.messageheader }}</div>
+        <div class="errorLine">
+          Errors =
+          <div *ngFor="let errorMsg; last as isLast; of: logLine.msg.errors">
+            <span>{{ errorMsg }}</span>
+            <span *ngIf="!isLast">, </span>
+          </div>
+        </div>
+
+      </div>
+        
+      </div>
+    </cdk-virtual-scroll-viewport>
+  </mat-card>
+</div>

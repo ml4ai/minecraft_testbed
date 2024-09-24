@@ -1,0 +1,40 @@
+<div>
+  <div style="display:flex">
+    <div class="text"> Mod Loading :</div><div style='flex-grow: 1'></div> 
+    
+      <mat-progress-bar mode="determinate" value={{experimentService.modLoadingProgress}}></mat-progress-bar>
+    
+  </div>
+
+  <div style="display:flex">
+    <div class="text"> Minecraft Container is Up : </div><div style='flex-grow: 1'></div> <div class="text">{{experimentService.minecraftContainerInitialized}}</div>
+  </div>
+  
+  <div style="display:flex">
+    <div class="text"> Mod is Ready for Connections :</div><div style='flex-grow: 1'></div> <div class="text">{{experimentService.asistModIsReady}}</div>
+  </div>
+
+  <!-- <div style="display:flex">
+    <div class="text"> Agent Container is Up : </div><div style='flex-grow: 1'></div> <div class="text">{{experimentService.agentContainerInitialized}}</div>
+  </div>
+  <div style="display:flex">
+    <div class="text"> Agent Is Running : </div><div style='flex-grow: 1'></div> <div class="text">{{agentService.agent_running}}</div>
+  </div> -->
+  <div style="display:flex">
+    <div class="text"> Trial is Running : </div><div style='flex-grow: 1'></div> <div class="text">{{experimentService.trial_running}}</div>
+  </div>
+  <div style="display:flex">
+    <div class="text"> Message Validator Container is Up: </div><div style='flex-grow: 1'></div> <div class="text">{{experimentService.messageValidatorInitialized}}</div>
+  </div>
+  <div class="slider" style="display:flex" (click)='toggleValidator()'>
+    <mat-slide-toggle [color]="color" (click)="$event.preventDefault()" [checked]="experimentService.messageValidatorActive == 'True'">
+      Message Validator Active: {{experimentService.messageValidatorActive}}
+    </mat-slide-toggle>
+  </div>
+  <div style="display:flex">
+    <div matTooltip="View Agent Details" class="clickable" (click)="viewContainerDetails()"><div class="text"> Agents Running : {{experimentService.agentContainers.length}} </div><div fxFlex></div> <div class="text">View</div></div>
+  </div>
+
+
+</div>
+

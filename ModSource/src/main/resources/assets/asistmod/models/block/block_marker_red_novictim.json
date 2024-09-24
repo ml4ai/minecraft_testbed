@@ -1,0 +1,7 @@
+{
+    "parent": "block/carpet",
+    "textures": {
+        "particle": "asistmod:blocks/block_marker_red_novictim",
+        "wool": "asistmod:blocks/block_marker_red_novictim"
+    }
+}

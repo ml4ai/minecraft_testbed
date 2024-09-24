@@ -1,0 +1,51 @@
+
+
+#main-grid-div {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-gap:1em;
+    width:100%;
+    box-sizing: border-box;
+    margin-top:2rem;
+  }
+  
+  .section-div {
+    border:1px solid purple; 
+    width:100%;
+    box-sizing: border-box; 
+  }
+
+  #client-table {
+    grid-column-start: 1;
+    grid-column-end: 3; 
+  }
+  
+  #observer-table {
+    grid-column-start: 3;
+    grid-column-end: 4; 
+  }
+
+  mat-card {
+    width:100%;
+    height:100%;
+    text-align:center;
+    box-sizing: border-box;
+    border: 1px black solid;
+    
+  }
+  
+  mat-card-title {
+    border: 1px black solid;
+    background-color: #c2bec4
+  }
+  
+  .matcard-inner-div {
+    background-color: white; 
+    padding:20%;
+    box-sizing: border-box;
+  }
+  
+  .buttonspacer {
+    display: inline-block;
+    width: 2%;
+  }

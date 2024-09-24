@@ -1,0 +1,120 @@
+<mat-tab-group >
+  <mat-tab label="Selection">
+    <form [formGroup]="runFirstLookForm" class="example-form">
+
+      <fieldset [ngClass]="{'accent-color' : isFirstLookRunning}" [disabled]="isFirstLookRunning">
+        <legend>UUID</legend>
+        <div fxLayout="column">
+
+          <mat-form-field floatLabel="always" appearance="none">
+            <mat-label>First Look Type</mat-label>
+            <mat-radio-group formControlName="firstLookType" color="primary" (change)="firstLookTypeChanged($event)">
+              <mat-radio-button *ngFor="let firstLookType of firstLookTypes" [value]="firstLookType">
+                {{firstLookType}}
+              </mat-radio-button>
+            </mat-radio-group>
+            <textarea matInput hidden></textarea>
+            <mat-error>First Look Type is required.</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="mat-form-field-cursor">
+            <mat-label>Select First Look</mat-label>
+            <input matInput placeholder="UUID" aria-label="UUID" [matAutocomplete]="autoFirstLook" formControlName="firstLookId" required autocomplete="off">
+            <mat-autocomplete #autoFirstLook="matAutocomplete" [displayWith]="displayFirstLookIdFn">
+              <mat-option *ngFor="let firstLook of filteredFirstLooks | async" [value]="firstLook">
+                {{getDisplayName(firstLook)}}
+              </mat-option>
+            </mat-autocomplete>
+            <button type="button" matSuffix mat-icon-button aria-label="Clear" (click)="firstLookIdControl.setValue('')" [disabled]="firstLookIdControl.disabled">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <mat-form-field floatLabel="always" appearance="none">
+            <mat-slide-toggle color="primary" formControlName="overrideFirstLookIdToggle">
+              Manual UUID Entry
+            </mat-slide-toggle>
+            <textarea matInput hidden></textarea>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Enter UUID</mat-label>
+            <input matInput placeholder="UUID" aria-label="UUID" formControlName="firstLookIdEntered" [pattern]="uuidPattern" required autocomplete="off">
+            <mat-error>Invalid UUID.</mat-error>
+          </mat-form-field>
+        </div>
+      </fieldset>
+      <fieldset [ngClass]="{'accent-color' : isFirstLookRunning}" [disabled]="isFirstLookRunning">
+        <legend>elasticsearch Source Index</legend>
+        <div fxLayout="column">
+          <mat-form-field class="mat-form-field-cursor">
+            <mat-label>Select Index</mat-label>
+            <input matInput placeholder="Index" aria-label="Index" [matAutocomplete]="autoIndex" formControlName="indexName" required autocomplete="off">
+            <mat-autocomplete #autoIndex="matAutocomplete" (optionSelected)="updateIndexSelection($event)" [displayWith]="displayIndexNameFn">
+              <mat-option *ngFor="let index of filteredIndices | async" [value]="index">
+                <span>{{index.index}}</span>
+                <br>
+                <small class="accent-color">Count: {{index['docs.count']}}</small>
+              </mat-option>
+            </mat-autocomplete>
+            <button type="button" matSuffix mat-icon-button aria-label="Clear" (click)="indexNameControl.setValue('')" [disabled]="indexNameControl.disabled">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <mat-form-field floatLabel="always" appearance="none">
+            <mat-slide-toggle color="primary" formControlName="overrideIndexNameToggle">
+              Manual Index Entry
+            </mat-slide-toggle>
+            <textarea matInput hidden></textarea>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Enter Index</mat-label>
+            <input matInput placeholder="Index" aria-label="Index" formControlName="indexNameEntered" [pattern]="indexPattern" required autocomplete="off">
+            <mat-error>Invalid index name.</mat-error>
+          </mat-form-field>
+        </div>
+      </fieldset>
+      <!--  <fieldset [ngClass]="{'accent-color' : isFirstLookRunning}" [disabled]="isFirstLookRunning">-->
+      <!--    <legend>Tests</legend>-->
+
+      <!--  </fieldset>-->
+    </form>
+    <br>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <mat-spinner *ngIf="isFirstLookRunning" mode="indeterminate" diameter="36"></mat-spinner>
+        <button mat-raised-button color="primary" (click)="onRunClick()" [disabled]="!runFirstLookForm.valid">Run</button>
+        <button mat-raised-button color="primary" (click)="onClearClick()" [disabled]="!areResultsReady">Clear</button>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Results">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <mat-card ngClass="stats-card" [ngClass.lt-md]="'stats-card-narrow'">
+        <mat-card-header>
+          <mat-card-title>{{areResultsReady ? firstLookReport.trial.name : ''}}</mat-card-title>
+          <mat-card-subtitle>{{areResultsReady ? firstLookReport.id: ''}} {{areResultsReady ? firstLookReport.is_replay ? '[REPLAY]' : '' : ''}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div fxLayout="column">
+            <mat-selection-list #firstLookList [multiple]="false">
+              <mat-list-option *ngFor="let item of firstLookData; let i = index">
+                <mat-icon *ngIf="firstLookTests[i] !== undefined" mat-list-icon color="{{firstLookTests[i].valid === true ? 'primary' : 'warn'}}" matTooltip="{{firstLookTests[i] !== undefined && firstLookTests[i].valid === true ? 'Passed' : 'Failed'}}">lens</mat-icon>
+                <div mat-line>[{{item.message_type}}] {{item.sub_type}} {{item.comparison.operator}} {{item.comparison.value}}</div>
+              </mat-list-option>
+            </mat-selection-list>
+          </div>
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+        <mat-card-actions align="end">
+          <button mat-mini-fab color="primary" aria-label="Download container log." (click)="generateReport()" [disabled]="!areResultsReady" matTooltip="Generate report.">
+            <mat-icon>download</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+

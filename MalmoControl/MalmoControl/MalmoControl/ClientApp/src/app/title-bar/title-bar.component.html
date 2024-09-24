@@ -1,0 +1,35 @@
+<div class='title-container' style="display:flex;">  
+  
+   <div style="display:flex; width:100%">
+    
+    <div style="display:inline-block;" routerLink="">
+      <img id= "block-image" style="height:8rem;" >
+    </div>
+   
+    <div style='flex-grow: 1'></div>
+    
+    <div style="display:inline-block;position:relative;top:3rem;" routerLink="">ASIST CONTROL CENTER</div>
+    <div style="display:inline-block; font-size:.75rem; margin-left: 1rem; position:relative;top:3rem;">v {{experimentService.testbed_version}}</div> 
+    
+    <div style='flex-grow: 1'></div>
+
+    <div style='display:inline-block; position:relative;top:5rem;'(click)=launchErrorDialog()>            
+      <img id= "error-image" style="display:block; height:2.5rem; filter:invert();">      
+      <div style='display:block; font-size:.75rem; position:relative; bottom:.5rem; text-align: center;'>Errors</div>
+    </div>
+
+    <div style='display:inline-block; position:relative;top:5rem;'>            
+      <img id= "help-image" style="display:block; height:2.5rem; filter:invert();" (click)=launchHelpDialog()>      
+      <div style='display:block; font-size:.75rem; position:relative; bottom:.5rem; text-align: center;'>Help</div>
+    </div>
+    
+    <div style='display:inline-block; position:relative;top:5rem;'>            
+      <img id= "about-image" style="display:block; height:2.5rem; filter:invert();" (click)=launchAboutDialog()>      
+      <div style='display:block; font-size:.75rem; position:relative; bottom:.5rem; text-align: center;'>About</div>
+    </div>
+    
+    <div style="display:inline-block;">
+      <img id= "block-image2" style="height:8rem;" >
+    </div>    
+  </div>
+</div>

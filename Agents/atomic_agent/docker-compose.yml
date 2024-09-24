@@ -1,0 +1,20 @@
+version: '3.7'
+
+networks:
+  asist_net:
+   external: true    
+    
+services:
+  asist_agent:
+    image: registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${DOCKER_IMAGE_TAG}
+    container_name: ${DOCKER_CONTAINER_NAME}
+    environment:
+      - AGENT_NAME=${AGENT_NAME}
+      - AGENT_MAIN_RUN_FILE=${AGENT_MAIN_RUN_FILE}
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ${HOST_DIRECTORY}ConfigFolder:/app/ConfigFolder    
+    networks:
+      asist_net:
+        aliases:
+          - atomic_agent

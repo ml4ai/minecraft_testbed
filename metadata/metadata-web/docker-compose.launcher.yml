@@ -1,0 +1,15 @@
+version: '3.6'
+
+services:
+  metadata-web:
+    image: registry.gitlab.com/artificialsocialintelligence/study3/metadata-web:${LAUNCHER_TAG}
+    container_name: metadata-web
+    env_file:
+      - metadata-web.env
+    # command: nginx -g "daemon off";
+    command: /bin/sh -c "envsubst < /usr/share/nginx/html/assets/env.template.js > /usr/share/nginx/html/assets/env.js && exec nginx -g 'daemon off;'"
+    ports:
+      - 8082:80
+      # - 8443:443
+    extra_hosts:
+      - "metadataweb.asist.aptima.com:127.0.0.1"

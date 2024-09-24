@@ -1,0 +1,10 @@
+div{
+  margin:3%;
+  text-align:center;
+}
+button {
+  background-color: blue;
+  color: white;
+  height: 2rem;
+  font-size: 1rem;
+}

@@ -1,0 +1,63 @@
+version: '3'
+
+networks:
+  asist_net:
+   external: true    
+    
+services:
+  speech_analyzer:
+    image: registry.gitlab.com/artificialsocialintelligence/study3/speech_analyzer:${SPEECH_ANALYZER_VERSION}
+    container_name: AC_UAZ_TA1_SpeechAnalyzer
+    volumes:
+      - ./logs:/logs
+    networks:
+      asist_net:
+        aliases:
+          - speech_analyzer
+    entrypoint: ./speechAnalyzer --mqtt_host_internal asr_agent-mosquitto --mqtt_port_internal 1883 
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: '15G'
+          
+  
+  mmc:
+    image: registry.gitlab.com/artificialsocialintelligence/study3/mmc:${MMC_VERSION}
+    container_name: AC_UAZ_TA1_SpeechAnalyzer-mmc
+    networks:
+      asist_net:
+        aliases:
+          - speech_analyzer-mmc
+    entrypoint: uvicorn mmc_server:app --host 0.0.0.0 --port 8001
+
+  db:
+    image: registry.gitlab.com/artificialsocialintelligence/study3/features_database:1.1.0
+    container_name: AC_UAZ_TA1_SpeechAnalyzer-db
+    command: postgres -c 'max_connections=250'
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: docker
+    ports:
+      - 63332:5432
+    networks:
+      asist_net:
+        aliases:
+          - features_db
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          
+
+  heartbeat:
+    image: registry.gitlab.com/artificialsocialintelligence/study3/heartbeat:${HEARTBEATS_VERSION}
+    container_name: AC_UAZ_TA1_SpeechAnalyzer-heartbeat
+    volumes:
+      - ./config.json:/heartbeat/config.json
+    networks:
+      asist_net:
+        aliases:
+          - speech_analyzer-heartbeat
+    entrypoint: ["python3", "heartbeat.py"]
+

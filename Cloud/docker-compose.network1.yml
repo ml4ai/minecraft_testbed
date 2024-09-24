@@ -1,0 +1,53 @@
+version: '3.7'
+
+networks:
+  malmonet1:
+   external: true    
+    
+services:
+  malmocontrol:    
+    image: malmocontrol:latest
+    build: ./MalmoControl/.
+    ports: 
+      - "5003:5002"
+    volumes:
+      - //var/run/docker.sock:/var/run/docker.sock
+    container_name: malmocontrol1
+    networks: 
+      malmonet1:
+        aliases: 
+          - malmocontrol
+    
+
+  malmo-server:    
+    image: malmoserver:latest
+    build: ./MalmoContainer/.
+    ports:
+      - "5901:5900"              
+    depends_on:
+      - malmocontrol      
+    container_name: malmo-server1
+    volumes:
+      - ./MalmoContainer/MQTTClient/config.json:/home/malmo/MalmoPlatform/build/install/Python_Examples/MQTTClient/config.json
+    networks: 
+      malmonet1:
+        aliases: 
+          - malmo-server
+    environment:
+     - MALMO_INSTANCE=1
+     - MQTT_BROKER_HOSTNAME=10.150.0.3
+
+  pmengine:
+    image: "pmengine:latest"
+    build: ./PMEContainer
+    container_name: pmengine1
+    environment:
+     - MQTT_BROKER_HOSTNAME=10.150.0.3
+     - MQTT_BROKER_PORT=1883
+     - MinecraftTopic=malmo/test/1
+    networks: 
+      malmonet1:
+        aliases: 
+          - pmengine
+
+    

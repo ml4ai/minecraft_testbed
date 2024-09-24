@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Parse</h1>
+<div mat-dialog-content [formGroup]="jsonExperimentForm" layout="row" layout-align="center center">
+  <fieldset>
+    <legend>JSON Trial</legend>
+    <mat-form-field appearance="fill">
+      <mat-label>JSON</mat-label>
+      <textarea matInput
+                cdkTextareaAutosize
+                #autosize="cdkTextareaAutosize"
+                cdkAutosizeMinRows="20"
+                cdkAutosizeMaxRows="20" md-detect-hidden formControlName="json" placeholder="{ }" autocomplete="off"></textarea>
+    </mat-form-field>
+  </fieldset>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-raised-button color="accent" (click)="onCancelClick()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onParseClick()" [disabled]="!jsonExperimentForm.valid">Parse</button>
+</div>

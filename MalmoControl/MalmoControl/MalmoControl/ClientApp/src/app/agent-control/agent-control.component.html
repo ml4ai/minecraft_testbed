@@ -1,0 +1,25 @@
+<div class="text">Active Agent</div>
+
+<div style="display:flex">
+    <div class="text"> {{active_agent}} last response : </div><div style='flex-grow: 1'></div> <div class="text" id=time_div>{{last_response_time}}</div>
+  </div>
+    
+<select id=agentSelect (change)='assignInterventionAgent($event)'>
+    <option *ngFor='let a of experimentService.asi_list'>{{a}}</option>      
+</select>
+
+<div *ngIf="!experimentService.agent_running" >
+    <button *ngIf="!startAgentInProgress" mat-button (click) = launchAgent() >Launch Agent</button>
+    <mat-spinner id=spinner diameter=50 style="margin:0 auto;" *ngIf="startAgentInProgress"></mat-spinner>
+</div>
+
+<div *ngIf="experimentService.agent_running"> 
+    
+    <button *ngIf="!stopAgentInProgress" style="margin-top:20px; height:2rem; background-color:#c21807 !important; border-radius:20px;" mat-button (click) = stopAgent()>Stop Agent </button>
+    
+    <mat-spinner id=spinner diameter=50 style="margin:0 auto;" *ngIf="stopAgentInProgress"></mat-spinner>
+
+</div>
+
+
+

@@ -1,0 +1,98 @@
+<div class="container">
+  <h2>Docker</h2>
+  <div fxLayout="row wrap" [fxLayout.lt-md]="'column wrap'" fxLayoutAlign="center top"> <!--fxLayoutGap="2em"-->
+    <div [fxFlex.gt-sm]="100 / 2 + '%'" fxLayoutAlign="stretch">
+      <mat-card ngClass="dashboard-card" [ngClass.lt-md]="'dashboard-card-narrow'">
+        <mat-card-header>
+          <div mat-card-avatar>
+            <mat-icon aria-label="Containers">web_stories</mat-icon>
+          </div>
+          <mat-card-title>Containers</mat-card-title>
+          <mat-card-subtitle>Status</mat-card-subtitle>
+          <mat-icon color="{{dockerOnline ? 'primary' : 'warn'}}" matTooltip="{{dockerOnline ? 'Docker online' : 'Docker offline'}}">lens</mat-icon>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-selection-list #containerList [multiple]="false" (selectionChange)="onSelectionChange($event)" [compareWith]="compare">
+            <mat-list-option *ngFor="let item of containers | keyvalue" [value]="item.value" [selected]="isSelected(item.value.Id)">
+              <mat-icon mat-list-icon color="{{item.value.State ==='running'  ? 'primary' : 'warn'}}" matTooltip="{{item.value.Status}}">lens</mat-icon>
+              <div mat-line>{{item.value.Names[0].substring(1)}}</div>
+              <div mat-line>CPU: {{item.value.State === 'running' ? calcCpuPercent(item.value.Id) + '%' : '0'}} MEM: {{item.value.State === 'running' ? calcMemPercent(item.value.Id) + '%' : '0'}}</div>
+            </mat-list-option>
+          </mat-selection-list>
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+        <mat-card-actions align="end">
+          <button mat-mini-fab color="primary" aria-label="Download container log." (click)="containerLogsDownload()" [disabled]="!dockerOnline" matTooltip="Download all container logs">
+            <mat-icon>download</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div [fxFlex.gt-sm]="100 / 2 + '%'" fxLayoutAlign="stretch">
+      <mat-card ngClass="dashboard-card" [ngClass.lt-md]="'dashboard-card-narrow'">
+        <mat-card-header>
+          <div mat-card-avatar>
+            <mat-icon aria-label="Container Details">notes</mat-icon>
+          </div>
+          <mat-card-title>Container</mat-card-title>
+          <mat-card-subtitle>{{selectedContainer === null ? 'Details' : selectedContainer.Names[0].substring(1)}}</mat-card-subtitle>
+          <mat-icon color="{{selectedContainer === null || selectedContainer.State === 'running' ? 'primary' : 'warn'}}" matTooltip="{{selectedContainer === null ? '' : selectedContainer.Status}}">lens</mat-icon>
+        </mat-card-header>
+        <mat-card-content>
+          <p *ngIf="selectedContainer !== null" class="lighter"><span class="bold">Id: </span>{{selectedContainer.Id}}</p>
+          <p *ngIf="selectedContainer !== null" class="lighter"><span class="bold">Image: </span>{{selectedContainer.Image}}</p>
+          <div class="log-content" *ngIf="selectedContainer !== null">
+            <div class="log-list">
+              <div *ngFor='let line of selectedContainerLog'> {{line}} </div>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+        <mat-card-actions align="end">
+          <button mat-mini-fab color="primary" aria-label="Refresh last 100 lines of container log." (click)="containerLog(selectedContainer.Id)" [disabled]="selectedContainer === null" matTooltip="Refresh last 100 line of log">
+            <mat-icon>refresh</mat-icon>
+          </button>
+          <button mat-mini-fab color="primary" aria-label="Download container log." (click)="containerLogDownload(selectedContainer.Id)" [disabled]="selectedContainer === null" matTooltip="Download container log">
+            <mat-icon>download</mat-icon>
+          </button>
+          <button mat-raised-button color="primary" [disabled]="selectedContainer === null || selectedContainer.State !== 'running'" (click)="stopContainer(selectedContainer.Id)" matTooltip="Stop container">Stop</button>
+          <button mat-raised-button color="primary" [disabled]="selectedContainer === null || selectedContainer.State !== 'exited'" (click)="startContainer(selectedContainer.Id)" matTooltip="Start container">Start</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div [fxFlex.gt-sm]="100 / 2 + '%'" fxLayoutAlign="stretch">
+      <mat-card ngClass="dashboard-card" [ngClass.lt-md]="'dashboard-card-narrow'">
+        <mat-card-header>
+          <div mat-card-avatar>
+            <mat-icon aria-label="Agents">group</mat-icon>
+          </div>
+          <mat-card-title>Agents</mat-card-title>
+          <mat-card-subtitle>Status</mat-card-subtitle>
+          <mat-icon color="{{dockerOnline ? 'primary' : 'warn'}}" matTooltip="{{dockerOnline ? 'Docker online' : 'Docker offline'}}">lens</mat-icon>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-action-list #agentList>
+            <mat-list-item *ngFor="let item of agents">
+              <div mat-line>{{item}}</div>
+              <button mat-mini-fab color="primary" (click)="agentDown(item)" matTooltip="Down {{item}}">
+                <mat-icon aria-label="Down">stop</mat-icon>
+              </button>
+              <button mat-mini-fab color="primary" (click)="agentUp(item)" matTooltip="Up {{item}}">
+                <mat-icon aria-label="Up">play_arrow</mat-icon>
+              </button>
+            </mat-list-item>
+          </mat-action-list>
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+        <mat-card-actions align="end">
+          <div *ngIf="agentLog != ''" class="agent-output caption">
+            {{agentLog}}
+          </div>
+<!--          <button mat-mini-fab color="primary" aria-label="Download container log." (click)="containerLogsDownload()" [disabled]="!dockerOnline" matTooltip="Download all container logs">-->
+<!--            <mat-icon>download</mat-icon>-->
+<!--          </button>-->
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

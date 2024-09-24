@@ -1,0 +1,31 @@
+.bottom-sheet-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-sheet-toolbar {
+  min-height: 30px;
+  max-height: 30px;
+  color: #393939;
+  //margin-bottom: 8px;
+}
+
+.bottom-sheet-toolbar-text {
+  color: #c7c7c7;
+  font-size: small;
+}
+
+.bottom-sheet-toolbar-row {
+  //padding: 0;
+}
+
+.message-button-close {
+  color: white;
+  font-size: 20px;
+  transform: translateY(3px);
+  cursor: pointer;
+}
+
+.message-button-close-spacer {
+  flex: 1 1 auto;
+}

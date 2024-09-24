@@ -1,0 +1,144 @@
+language.name=English
+language.region=US
+language.code=en_US
+
+
+item.item_unpause_cookie.name=Unpause Cookie
+item.item_marking_eraser.name=Marking Block Eraser
+item.item_first_aid.name=First Aid Kit
+
+tile.block_victim_1.name=Victim Block A
+tile.block_victim_1b.name=Victim Block B
+tile.block_victim_2.name=Victim Block C
+tile.block_victim_saved.name=Victim Saved Block
+tile.block_victim_saved_a.name=Victim Saved Block A
+tile.block_victim_saved_b.name=Victim Saved Block B
+tile.block_victim_saved_c.name=Victim Saved Block C
+tile.block_victim_expired.name=Victim Expired Block
+tile.block_victim_1_marking.name=Green Victim Marking Block
+tile.block_victim_2_marking.name=Yellow Victim Marking Block
+tile.block_intervention_forward.name=Forward Intervention Block
+tile.block_intervention_backward.name=Backward Intervention Block
+tile.block_intervention_left.name=Left Intervention Block
+tile.block_intervention_right.name=Right Intervention Block
+tile.block_intervention_path_clear.name=Path Clear Intervention Block
+tile.block_intervention_path_blocked.name=Path Blocked Intervention Block
+tile.block_intervention_no_victims.name=No Victims Intervention Block
+tile.block_intervention_unexplored.name=Unexplored Intervention Block
+
+tile.block_victim_3.name=Victim Block 3
+tile.block_role_admin.name=Administrator Role Block
+tile.block_role_med.name=Medical Specialist Role Block
+tile.block_role_ss.name=Search Specialist Role Block
+tile.block_role_hms.name=Hammer Specialist Role Block
+tile.block_perturbation_victim.name=Perturbation Victim Block
+tile.block_perturbation_gasleak.name=Gas Leak Block
+tile.block_mission_tutorial.name=Tutorial
+tile.block_mission_mission.name=Mission
+tile.block_marker_victim.name=Victim Marker Block
+tile.block_marker_rubble.name=Rubble Marker Block
+tile.block_marker_clear.name=Clear Marker Block
+tile.block_marker_1_red.name=Marker Block 1 Red
+tile.block_marker_2_red.name=Marker Block 2 Red
+tile.block_marker_3_red.name=Marker Block 3 Red
+tile.block_marker_1_green.name=Marker Block 1 Green
+tile.block_marker_2_green.name=Marker Block 2 Green
+tile.block_marker_3_green.name=Marker Block 3 Green
+tile.block_marker_1_blue.name=Marker Block 1 Blue
+tile.block_marker_2_blue.name=Marker Block 2 Blue
+tile.block_marker_3_blue.name=Marker Block 3 Blue
+
+tile.block_victim_proximity.name=Victim Proximity Block
+tile.block_freeze_player.name=Freeze Player Block
+tile.block_rubble_collapse.name=Rubble Collapse Block
+
+item.item_medical_kit.name=Medical Kit
+item.item_stretcher.name=Stretcher
+item.item_stretcher_occupied.name=Occupied Stretcher
+item.item_hammer.name=Hammer
+item.item_marker_victim.name=Victim Marker Placer
+item.item_marker_rubble.name=Rubble Marker Placer
+item.item_marker_clear.name=Clear Marker Placer
+item.item_marker_1_red.name= Marker Item 1 Red 
+item.item_marker_2_red.name= Marker Item 2 Red
+item.item_marker_3_red.name= Marker Item 3 Red
+item.item_marker_1_green.name= Marker Item 1 Green 
+item.item_marker_2_green.name= Marker Item 2 Green
+item.item_marker_3_green.name= Marker Item 3 Green
+item.item_marker_1_blue.name= Marker Item 1 Blue 
+item.item_marker_2_blue.name= Marker Item 2 Blue
+item.item_marker_3_blue.name= Marker Item 3 Blue
+
+tile.block_role_engineer.name=Engineering Specialist Role Block
+tile.block_role_medic.name=Medical Specialist Role Block
+tile.block_role_transporter.name=Transport Specialist Role Block
+
+tile.block_marker_blue_abrasion.name=Marker Block Blue Abrasion
+tile.block_marker_blue_novictim.name=Marker Block Blue No Victim
+tile.block_marker_blue_sos.name=Marker Block Blue SOS
+tile.block_marker_blue_bonedamage.name=Marker Block Blue Bonedamage
+tile.block_marker_blue_critical.name=Marker Block Blue Critical
+tile.block_marker_blue_criticalvictim.name=Marker Block Blue Criticalvictim
+tile.block_marker_blue_regularvictim.name=Marker Block Blue Regularvictim
+tile.block_marker_blue_rubble.name=Marker Block Blue Rubble
+tile.block_marker_blue_threat.name=Marker Block Blue Threat
+tile.block_marker_blue_wildcard.name=Marker Block Blue Wildcard
+
+tile.block_marker_green_abrasion.name=Marker Block Green Abrasion
+tile.block_marker_green_novictim.name=Marker Block Green No Victim
+tile.block_marker_green_sos.name=Marker Block Green SOS
+tile.block_marker_green_bonedamage.name=Marker Block Green Bonedamage
+tile.block_marker_green_critical.name=Marker Block Green Critical
+tile.block_marker_green_criticalvictim.name=Marker Block Green Criticalvictim
+tile.block_marker_green_regularvictim.name=Marker Block Green Regularvictim
+tile.block_marker_green_rubble.name=Marker Block Green Rubble
+tile.block_marker_green_threat.name=Marker Block Green Threat
+tile.block_marker_green_wildcard.name=Marker Block Green Wildcard
+
+tile.block_marker_red_abrasion.name=Marker Block Red Abrasion
+tile.block_marker_red_novictim.name=Marker Block Red No Victim
+tile.block_marker_red_sos.name=Marker Block Red SOS
+tile.block_marker_red_bonedamage.name=Marker Block Red Bonedamage
+tile.block_marker_red_critical.name=Marker Block Red Critical
+tile.block_marker_red_criticalvictim.name=Marker Block Red Criticalvictim
+tile.block_marker_red_regularvictim.name=Marker Block Red Regularvictim
+tile.block_marker_red_rubble.name=Marker Block Red Rubble
+tile.block_marker_red_threat.name=Marker Block Red Threat
+tile.block_marker_red_wildcard.name=Marker Block Red Wildcard
+
+tile.block_signal_victim.name=Victim Signal Block
+
+item.item_marker_blue_abrasion.name=Marker Item Blue Abrasion
+item.item_marker_blue_novictim.name=Marker Item Blue No Victim
+item.item_marker_blue_sos.name=Marker Item Blue SOS
+item.item_marker_blue_bonedamage.name=Marker Item Blue Bonedamage
+item.item_marker_blue_critical.name=Marker Item Blue Critical
+item.item_marker_blue_criticalvictim.name=Marker Item Blue Criticalvictim
+item.item_marker_blue_regularvictim.name=Marker Item Blue Regularvictim
+item.item_marker_blue_rubble.name=Marker Item Blue Rubble
+item.item_marker_blue_threat.name=Marker Item Blue Threat
+item.item_marker_blue_wildcard.name=Marker Item Blue Wildcard
+
+item.item_marker_green_abrasion.name=Marker Item Green Abrasion
+item.item_marker_green_novictim.name=Marker Item Green No Victim
+item.item_marker_green_sos.name=Marker Item Green SOS
+item.item_marker_green_bonedamage.name=Marker Item Green Bonedamage
+item.item_marker_green_critical.name=Marker Item Green Critical
+item.item_marker_green_criticalvictim.name=Marker Item Green Criticalvictim
+item.item_marker_green_regularvictim.name=Marker Item Green Regularvictim
+item.item_marker_green_rubble.name=Marker Item Green Rubble
+item.item_marker_green_threat.name=Marker Item Green Threat
+item.item_marker_green_wildcard.name=Marker Item Green Wildcard
+
+item.item_marker_red_abrasion.name=Marker Item Red Abrasion
+item.item_marker_red_novictim.name=Marker Item Red No Victim
+item.item_marker_red_sos.name=Marker Item Red SOS
+item.item_marker_red_bonedamage.name=Marker Item Red Bonedamage
+item.item_marker_red_critical.name=Marker Item Red Critical
+item.item_marker_red_criticalvictim.name=Marker Item Red Criticalvictim
+item.item_marker_red_regularvictim.name=Marker Item Red Regularvictim
+item.item_marker_red_rubble.name=Marker Item Red Rubble
+item.item_marker_red_threat.name=Marker Item Red Threat
+item.item_marker_red_wildcard.name=Marker Item Red Wildcard
+
+

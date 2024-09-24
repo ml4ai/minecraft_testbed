@@ -1,0 +1,58 @@
+{
+  "_args": [
+    [
+      "streamsaver@2.0.4",
+      "C:\\Users\\Charlie Kapopoulos\\Projects\\Aptima\\testbed\\metadata\\metadata-web"
+    ]
+  ],
+  "_from": "streamsaver@2.0.4",
+  "_id": "streamsaver@2.0.4",
+  "_inBundle": false,
+  "_integrity": "sha512-rGES0zmHIPxinV32H2Dz55qgOE5dXui8yfu+JEjPAI294cDmwX4Oe7tCZLrnhjc/1z7hyIv9H6TMH2kqN2Tdqw==",
+  "_location": "/streamsaver",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "streamsaver@2.0.4",
+    "name": "streamsaver",
+    "escapedName": "streamsaver",
+    "rawSpec": "2.0.4",
+    "saveSpec": null,
+    "fetchSpec": "2.0.4"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/streamsaver/-/streamsaver-2.0.4.tgz",
+  "_spec": "2.0.4",
+  "_where": "C:\\Users\\Charlie Kapopoulos\\Projects\\Aptima\\testbed\\metadata\\metadata-web",
+  "author": {
+    "name": "Jimmy Wärting",
+    "email": "jimmy@warting.se"
+  },
+  "bugs": {
+    "url": "https://github.com/jimmywarting/StreamSaver.js/issues"
+  },
+  "description": "StreamSaver writes stream to the filesystem directly - asynchronous",
+  "homepage": "https://github.com/jimmywarting/StreamSaver.js#readme",
+  "keywords": [
+    "saving",
+    "streams",
+    "stream",
+    "html5",
+    "file",
+    "blob"
+  ],
+  "license": "MIT",
+  "main": "StreamSaver.js",
+  "name": "streamsaver",
+  "repository": {
+    "type": "git",
+    "url": "git+https://jimmywarting@github.com/jimmywarting/StreamSaver.js.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "version": "2.0.4"
+}

@@ -1,0 +1,4766 @@
+{
+  "locations": [
+    {
+      "id": "loc_1",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "child_locations": [
+        "loc_1_1",
+        "loc_1_2",
+        "loc_1_3",
+        "loc_1_4",
+        "loc_1_5",
+        "loc_1_6",
+        "loc_1_7",
+        "loc_1_8",
+        "loc_1_9",
+        "loc_1_10",
+        "loc_1_11",
+        "loc_1_12",
+        "loc_1_13",
+        "loc_1_14",
+        "loc_1_15",
+        "loc_1_16",
+        "loc_1_17"
+      ]
+    },
+    {
+      "id": "loc_1_1",
+      "name": "Part of loc_1",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2157,
+            "z": 113
+          },
+          {
+            "x": -2154,
+            "z": 114
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_1_2",
+      "name": "Part of loc_1",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2153,
+            "z": 113
+          },
+          {
+            "x": -2150,
+            "z": 114
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_1_3",
+      "name": "Part of loc_1",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2149,
+            "z": 113
+          },
+          {
+            "x": -2146,
+            "z": 114
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_1_4",
+      "name": "Part of loc_1",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2145,
+            "z": 113
+          },
+          {
+            "x": -2142,
+            "z": 114
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_1_5",
+      "name": "Part of loc_1",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2141,
+            "z": 113
+          },
+          {
+            "x": -2138,
+            "z": 114
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_1_6",
+      "name": "Part of loc_1",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2158,
+            "z": 114
+          },
+          {
+            "x": -2137,
+            "z": 115
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_1_7",
+      "name": "Part of loc_1",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2159,
+            "z": 115
+          },
+          {
+            "x": -2136,
+            "z": 118
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_1_8",
+      "name": "Part of loc_1",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2158,
+            "z": 118
+          },
+          {
+            "x": -2137,
+            "z": 119
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_1_9",
+      "name": "Part of loc_1",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2159,
+            "z": 119
+          },
+          {
+            "x": -2136,
+            "z": 122
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_1_10",
+      "name": "Part of loc_1",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2158,
+            "z": 122
+          },
+          {
+            "x": -2137,
+            "z": 123
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_1_11",
+      "name": "Part of loc_1",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2159,
+            "z": 123
+          },
+          {
+            "x": -2136,
+            "z": 126
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_1_12",
+      "name": "Part of loc_1",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2158,
+            "z": 126
+          },
+          {
+            "x": -2137,
+            "z": 127
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_1_13",
+      "name": "Part of loc_1",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2157,
+            "z": 127
+          },
+          {
+            "x": -2154,
+            "z": 128
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_1_14",
+      "name": "Part of loc_1",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2153,
+            "z": 127
+          },
+          {
+            "x": -2150,
+            "z": 128
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_1_15",
+      "name": "Part of loc_1",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2149,
+            "z": 127
+          },
+          {
+            "x": -2146,
+            "z": 128
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_1_16",
+      "name": "Part of loc_1",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2145,
+            "z": 127
+          },
+          {
+            "x": -2142,
+            "z": 128
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_1_17",
+      "name": "Part of loc_1",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2141,
+            "z": 127
+          },
+          {
+            "x": -2138,
+            "z": 128
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_2",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2153,
+            "z": 1
+          },
+          {
+            "x": -2145,
+            "z": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_3",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2153,
+            "z": 15
+          },
+          {
+            "x": -2148,
+            "z": 21
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_4",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2153,
+            "z": 22
+          },
+          {
+            "x": -2148,
+            "z": 25
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_5",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2153,
+            "z": 32
+          },
+          {
+            "x": -2148,
+            "z": 38
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_6",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2153,
+            "z": 39
+          },
+          {
+            "x": -2148,
+            "z": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_7",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "child_locations": [
+        "loc_7_1",
+        "loc_7_2",
+        "loc_7_3"
+      ]
+    },
+    {
+      "id": "loc_7_1",
+      "name": "Part of loc_7",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2153,
+            "z": 49
+          },
+          {
+            "x": -2148,
+            "z": 51
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_7_2",
+      "name": "Part of loc_7",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2152,
+            "z": 51
+          },
+          {
+            "x": -2149,
+            "z": 53
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_7_3",
+      "name": "Part of loc_7",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2153,
+            "z": 53
+          },
+          {
+            "x": -2148,
+            "z": 55
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_8",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2153,
+            "z": 56
+          },
+          {
+            "x": -2148,
+            "z": 59
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_9",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2150,
+            "z": 128
+          },
+          {
+            "x": -2149,
+            "z": 128
+          }
+        ]
+      }
+    },
+    {
+      "id": "lib",
+      "name": "Library",
+      "type": "room",
+      "child_locations": [
+        "lib_1",
+        "lib_2",
+        "lib_3",
+        "lib_4",
+        "lib_5",
+        "lib_6",
+        "lib_7",
+        "lib_8",
+        "lib_9"
+      ]
+    },
+    {
+      "id": "lib_1",
+      "name": "Part of Library",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2146,
+            "z": -49
+          },
+          {
+            "x": -2138,
+            "z": -44
+          }
+        ]
+      }
+    },
+    {
+      "id": "lib_2",
+      "name": "Part of Library",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2146,
+            "z": -44
+          },
+          {
+            "x": -2144,
+            "z": -41
+          }
+        ]
+      }
+    },
+    {
+      "id": "lib_3",
+      "name": "Part of Library",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2144,
+            "z": -43
+          },
+          {
+            "x": -2138,
+            "z": -38
+          }
+        ]
+      }
+    },
+    {
+      "id": "lib_4",
+      "name": "Part of Library",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2145,
+            "z": -41
+          },
+          {
+            "x": -2144,
+            "z": -38
+          }
+        ]
+      }
+    },
+    {
+      "id": "lib_5",
+      "name": "Part of Library",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2142,
+            "z": -38
+          },
+          {
+            "x": -2138,
+            "z": -37
+          }
+        ]
+      }
+    },
+    {
+      "id": "lib_6",
+      "name": "Part of Library",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2146,
+            "z": -37
+          },
+          {
+            "x": -2139,
+            "z": -36
+          }
+        ]
+      }
+    },
+    {
+      "id": "lib_7",
+      "name": "Part of Library",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2146,
+            "z": -36
+          },
+          {
+            "x": -2142,
+            "z": -32
+          }
+        ]
+      }
+    },
+    {
+      "id": "lib_8",
+      "name": "Part of Library",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2141,
+            "z": -36
+          },
+          {
+            "x": -2139,
+            "z": -32
+          }
+        ]
+      }
+    },
+    {
+      "id": "lib_9",
+      "name": "Part of Library",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2139,
+            "z": -35
+          },
+          {
+            "x": -2138,
+            "z": -32
+          }
+        ]
+      }
+    },
+    {
+      "id": "zg",
+      "name": "Zen Garden",
+      "type": "room",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2146,
+            "z": -31
+          },
+          {
+            "x": -2138,
+            "z": -19
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_12",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2146,
+            "z": 128
+          },
+          {
+            "x": -2145,
+            "z": 128
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_13",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "child_locations": [
+        "loc_13_1",
+        "loc_13_2",
+        "loc_13_3"
+      ]
+    },
+    {
+      "id": "loc_13_1",
+      "name": "Part of loc_13",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2144,
+            "z": 1
+          },
+          {
+            "x": -2142,
+            "z": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_13_2",
+      "name": "Part of loc_13",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2141,
+            "z": 1
+          },
+          {
+            "x": -2139,
+            "z": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_13_3",
+      "name": "Part of loc_13",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2142,
+            "z": 6
+          },
+          {
+            "x": -2141,
+            "z": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_14",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2144,
+            "z": 15
+          },
+          {
+            "x": -2139,
+            "z": 21
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_15",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2144,
+            "z": 22
+          },
+          {
+            "x": -2139,
+            "z": 25
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_16",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2144,
+            "z": 32
+          },
+          {
+            "x": -2139,
+            "z": 35
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_17",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2144,
+            "z": 36
+          },
+          {
+            "x": -2139,
+            "z": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_18",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2144,
+            "z": 49
+          },
+          {
+            "x": -2139,
+            "z": 52
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_19",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2144,
+            "z": 53
+          },
+          {
+            "x": -2139,
+            "z": 59
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_20",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2142,
+            "z": 128
+          },
+          {
+            "x": -2141,
+            "z": 128
+          }
+        ]
+      }
+    },
+    {
+      "id": "lh",
+      "name": "Left Hallway",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2137,
+            "z": -49
+          },
+          {
+            "x": -2132,
+            "z": -18
+          }
+        ]
+      }
+    },
+    {
+      "id": "cht",
+      "name": "Center Hallway Top",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2131,
+            "z": -49
+          },
+          {
+            "x": -2113,
+            "z": -45
+          }
+        ]
+      }
+    },
+    {
+      "id": "of",
+      "name": "Offices",
+      "type": "room",
+      "child_locations": [
+        "of_1",
+        "of_2",
+        "of_3",
+        "of_4",
+        "of_5",
+        "of_6"
+      ]
+    },
+    {
+      "id": "of_1",
+      "name": "Part of Offices",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2131,
+            "z": -44
+          },
+          {
+            "x": -2126,
+            "z": -40
+          }
+        ]
+      }
+    },
+    {
+      "id": "of_2",
+      "name": "Part of Offices",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2125,
+            "z": -44
+          },
+          {
+            "x": -2113,
+            "z": -41
+          }
+        ]
+      }
+    },
+    {
+      "id": "of_3",
+      "name": "Part of Offices",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2125,
+            "z": -41
+          },
+          {
+            "x": -2117,
+            "z": -40
+          }
+        ]
+      }
+    },
+    {
+      "id": "of_4",
+      "name": "Part of Offices",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2127,
+            "z": -40
+          },
+          {
+            "x": -2119,
+            "z": -36
+          }
+        ]
+      }
+    },
+    {
+      "id": "of_5",
+      "name": "Part of Offices",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2118,
+            "z": -40
+          },
+          {
+            "x": -2113,
+            "z": -36
+          }
+        ]
+      }
+    },
+    {
+      "id": "of_6",
+      "name": "Part of Offices",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2131,
+            "z": -39
+          },
+          {
+            "x": -2127,
+            "z": -36
+          }
+        ]
+      }
+    },
+    {
+      "id": "chm",
+      "name": "Center Hallway Middle",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2131,
+            "z": -35
+          },
+          {
+            "x": -2113,
+            "z": -32
+          }
+        ]
+      }
+    },
+    {
+      "id": "pr",
+      "name": "Pumpkin Room",
+      "type": "room",
+      "child_locations": [
+        "pr_1",
+        "pr_2",
+        "pr_3",
+        "pr_4",
+        "pr_5",
+        "pr_6",
+        "pr_7",
+        "pr_8",
+        "pr_9",
+        "pr_10",
+        "pr_11"
+      ]
+    },
+    {
+      "id": "pr_1",
+      "name": "Part of Pumpkin Room",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2131,
+            "z": -31
+          },
+          {
+            "x": -2113,
+            "z": -30
+          }
+        ]
+      }
+    },
+    {
+      "id": "pr_2",
+      "name": "Part of Pumpkin Room",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2131,
+            "z": -30
+          },
+          {
+            "x": -2126,
+            "z": -28
+          }
+        ]
+      }
+    },
+    {
+      "id": "pr_3",
+      "name": "Part of Pumpkin Room",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2123,
+            "z": -30
+          },
+          {
+            "x": -2121,
+            "z": -29
+          }
+        ]
+      }
+    },
+    {
+      "id": "pr_4",
+      "name": "Part of Pumpkin Room",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2118,
+            "z": -30
+          },
+          {
+            "x": -2113,
+            "z": -28
+          }
+        ]
+      }
+    },
+    {
+      "id": "pr_5",
+      "name": "Part of Pumpkin Room",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2125,
+            "z": -29
+          },
+          {
+            "x": -2119,
+            "z": -26
+          }
+        ]
+      }
+    },
+    {
+      "id": "pr_6",
+      "name": "Part of Pumpkin Room",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2131,
+            "z": -28
+          },
+          {
+            "x": -2128,
+            "z": -24
+          }
+        ]
+      }
+    },
+    {
+      "id": "pr_7",
+      "name": "Part of Pumpkin Room",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2116,
+            "z": -28
+          },
+          {
+            "x": -2113,
+            "z": -24
+          }
+        ]
+      }
+    },
+    {
+      "id": "pr_8",
+      "name": "Part of Pumpkin Room",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2128,
+            "z": -27
+          },
+          {
+            "x": -2126,
+            "z": -24
+          }
+        ]
+      }
+    },
+    {
+      "id": "pr_9",
+      "name": "Part of Pumpkin Room",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2118,
+            "z": -27
+          },
+          {
+            "x": -2116,
+            "z": -24
+          }
+        ]
+      }
+    },
+    {
+      "id": "pr_10",
+      "name": "Part of Pumpkin Room",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2123,
+            "z": -26
+          },
+          {
+            "x": -2121,
+            "z": -25
+          }
+        ]
+      }
+    },
+    {
+      "id": "pr_11",
+      "name": "Part of Pumpkin Room",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2126,
+            "z": -25
+          },
+          {
+            "x": -2118,
+            "z": -24
+          }
+        ]
+      }
+    },
+    {
+      "id": "chb",
+      "name": "Center Hallway Bottom",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2131,
+            "z": -23
+          },
+          {
+            "x": -2113,
+            "z": -18
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_27",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2129,
+            "z": 1
+          },
+          {
+            "x": -2121,
+            "z": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_28",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2129,
+            "z": 15
+          },
+          {
+            "x": -2124,
+            "z": 21
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_29",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2129,
+            "z": 22
+          },
+          {
+            "x": -2124,
+            "z": 25
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_30",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2129,
+            "z": 32
+          },
+          {
+            "x": -2124,
+            "z": 38
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_31",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2129,
+            "z": 39
+          },
+          {
+            "x": -2124,
+            "z": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_32",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "child_locations": [
+        "loc_32_1",
+        "loc_32_2",
+        "loc_32_3"
+      ]
+    },
+    {
+      "id": "loc_32_1",
+      "name": "Part of loc_32",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2129,
+            "z": 49
+          },
+          {
+            "x": -2124,
+            "z": 51
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_32_2",
+      "name": "Part of loc_32",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2128,
+            "z": 51
+          },
+          {
+            "x": -2125,
+            "z": 53
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_32_3",
+      "name": "Part of loc_32",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2129,
+            "z": 53
+          },
+          {
+            "x": -2124,
+            "z": 55
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_33",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2129,
+            "z": 56
+          },
+          {
+            "x": -2124,
+            "z": 59
+          }
+        ]
+      }
+    },
+    {
+      "id": "el",
+      "name": "Entrance Lobby",
+      "type": "room",
+      "child_locations": [
+        "el_1",
+        "el_2"
+      ]
+    },
+    {
+      "id": "el_1",
+      "name": "Part of Entrance Lobby",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2124,
+            "z": -17
+          },
+          {
+            "x": -2120,
+            "z": -6
+          }
+        ]
+      }
+    },
+    {
+      "id": "el_2",
+      "name": "Part of Entrance Lobby",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2120,
+            "z": -13
+          },
+          {
+            "x": -2116,
+            "z": -6
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_35",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "child_locations": [
+        "loc_35_1",
+        "loc_35_2",
+        "loc_35_3"
+      ]
+    },
+    {
+      "id": "loc_35_1",
+      "name": "Part of loc_35",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2120,
+            "z": 1
+          },
+          {
+            "x": -2118,
+            "z": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_35_2",
+      "name": "Part of loc_35",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2117,
+            "z": 1
+          },
+          {
+            "x": -2115,
+            "z": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_35_3",
+      "name": "Part of loc_35",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2118,
+            "z": 6
+          },
+          {
+            "x": -2117,
+            "z": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_36",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2120,
+            "z": 15
+          },
+          {
+            "x": -2115,
+            "z": 21
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_37",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2120,
+            "z": 22
+          },
+          {
+            "x": -2115,
+            "z": 25
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_38",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2120,
+            "z": 32
+          },
+          {
+            "x": -2115,
+            "z": 35
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_39",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2120,
+            "z": 36
+          },
+          {
+            "x": -2115,
+            "z": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_40",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2120,
+            "z": 49
+          },
+          {
+            "x": -2115,
+            "z": 52
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_41",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2120,
+            "z": 53
+          },
+          {
+            "x": -2115,
+            "z": 59
+          }
+        ]
+      }
+    },
+    {
+      "id": "rh",
+      "name": "Right Hallway",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2112,
+            "z": -49
+          },
+          {
+            "x": -2107,
+            "z": -18
+          }
+        ]
+      }
+    },
+    {
+      "id": "opr",
+      "name": "Office Party Room",
+      "type": "room",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2106,
+            "z": -49
+          },
+          {
+            "x": -2097,
+            "z": -37
+          }
+        ]
+      }
+    },
+    {
+      "id": "br2",
+      "name": "Bedroom 2",
+      "type": "room",
+      "child_locations": [
+        "br2_1",
+        "br2_2",
+        "br2_3"
+      ]
+    },
+    {
+      "id": "br2_1",
+      "name": "Part of Bedroom 2",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2106,
+            "z": -36
+          },
+          {
+            "x": -2097,
+            "z": -32
+          }
+        ]
+      }
+    },
+    {
+      "id": "br2_2",
+      "name": "Part of Bedroom 2",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2102,
+            "z": -32
+          },
+          {
+            "x": -2097,
+            "z": -30
+          }
+        ]
+      }
+    },
+    {
+      "id": "br2_3",
+      "name": "Part of Bedroom 2",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2106,
+            "z": -31
+          },
+          {
+            "x": -2102,
+            "z": -30
+          }
+        ]
+      }
+    },
+    {
+      "id": "br1",
+      "name": "Bedroom 1",
+      "type": "room",
+      "child_locations": [
+        "br1_1",
+        "br1_2",
+        "br1_3"
+      ]
+    },
+    {
+      "id": "br1_1",
+      "name": "Part of Bedroom 1",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2106,
+            "z": -29
+          },
+          {
+            "x": -2097,
+            "z": -26
+          }
+        ]
+      }
+    },
+    {
+      "id": "br1_2",
+      "name": "Part of Bedroom 1",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2102,
+            "z": -26
+          },
+          {
+            "x": -2097,
+            "z": -24
+          }
+        ]
+      }
+    },
+    {
+      "id": "br1_3",
+      "name": "Part of Bedroom 1",
+      "type": "room_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2106,
+            "z": -25
+          },
+          {
+            "x": -2102,
+            "z": -24
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_46",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2106,
+            "z": -23
+          },
+          {
+            "x": -2103,
+            "z": -18
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_47",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2105,
+            "z": 1
+          },
+          {
+            "x": -2097,
+            "z": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_48",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2105,
+            "z": 15
+          },
+          {
+            "x": -2100,
+            "z": 21
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_49",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2105,
+            "z": 22
+          },
+          {
+            "x": -2100,
+            "z": 25
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_50",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2105,
+            "z": 32
+          },
+          {
+            "x": -2100,
+            "z": 38
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_51",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2105,
+            "z": 39
+          },
+          {
+            "x": -2100,
+            "z": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_52",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "child_locations": [
+        "loc_52_1",
+        "loc_52_2",
+        "loc_52_3"
+      ]
+    },
+    {
+      "id": "loc_52_1",
+      "name": "Part of loc_52",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2105,
+            "z": 49
+          },
+          {
+            "x": -2100,
+            "z": 51
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_52_2",
+      "name": "Part of loc_52",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2104,
+            "z": 51
+          },
+          {
+            "x": -2101,
+            "z": 53
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_52_3",
+      "name": "Part of loc_52",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2105,
+            "z": 53
+          },
+          {
+            "x": -2100,
+            "z": 55
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_53",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2105,
+            "z": 56
+          },
+          {
+            "x": -2100,
+            "z": 59
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_54",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "child_locations": [
+        "loc_54_1",
+        "loc_54_2",
+        "loc_54_3"
+      ]
+    },
+    {
+      "id": "loc_54_1",
+      "name": "Part of loc_54",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2096,
+            "z": 1
+          },
+          {
+            "x": -2094,
+            "z": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_54_2",
+      "name": "Part of loc_54",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2093,
+            "z": 1
+          },
+          {
+            "x": -2091,
+            "z": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_54_3",
+      "name": "Part of loc_54",
+      "type": "hallway_part",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2094,
+            "z": 6
+          },
+          {
+            "x": -2093,
+            "z": 8
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_55",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2096,
+            "z": 15
+          },
+          {
+            "x": -2091,
+            "z": 21
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_56",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2096,
+            "z": 22
+          },
+          {
+            "x": -2091,
+            "z": 25
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_57",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2096,
+            "z": 32
+          },
+          {
+            "x": -2091,
+            "z": 35
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_58",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2096,
+            "z": 36
+          },
+          {
+            "x": -2091,
+            "z": 42
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_59",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2096,
+            "z": 49
+          },
+          {
+            "x": -2091,
+            "z": 52
+          }
+        ]
+      }
+    },
+    {
+      "id": "loc_60",
+      "name": "UNKNOWN",
+      "type": "hallway",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2096,
+            "z": 53
+          },
+          {
+            "x": -2091,
+            "z": 59
+          }
+        ]
+      }
+    }
+  ],
+  "connections": [
+    {
+      "id": "c_94_-118_95_-117",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2107,
+            "z": -43
+          },
+          {
+            "x": -2106,
+            "z": -42
+          }
+        ]
+      },
+      "connected_locations": [
+        "rh",
+        "opr"
+      ],
+      "facing": "east",
+      "passable": false
+    },
+    {
+      "id": "c_88_-119_89_-118",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2113,
+            "z": -44
+          },
+          {
+            "x": -2112,
+            "z": -43
+          }
+        ]
+      },
+      "connected_locations": [
+        "of_2",
+        "rh"
+      ],
+      "facing": "west",
+      "passable": false
+    },
+    {
+      "id": "c_69_-113_70_-112",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2132,
+            "z": -38
+          },
+          {
+            "x": -2131,
+            "z": -37
+          }
+        ]
+      },
+      "connected_locations": [
+        "lh",
+        "of_6"
+      ],
+      "facing": "east",
+      "passable": false
+    },
+    {
+      "id": "c_63_-102_64_-97",
+      "type": "opening",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2138,
+            "z": -27
+          },
+          {
+            "x": -2137,
+            "z": -22
+          }
+        ]
+      },
+      "connected_locations": [
+        "zg",
+        "lh"
+      ]
+    },
+    {
+      "id": "c_69_-124_70_-120",
+      "type": "opening",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2132,
+            "z": -49
+          },
+          {
+            "x": -2131,
+            "z": -45
+          }
+        ]
+      },
+      "connected_locations": [
+        "lh",
+        "cht"
+      ]
+    },
+    {
+      "id": "c_88_-124_89_-120",
+      "type": "opening",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2113,
+            "z": -49
+          },
+          {
+            "x": -2112,
+            "z": -45
+          }
+        ]
+      },
+      "connected_locations": [
+        "cht",
+        "rh"
+      ]
+    },
+    {
+      "id": "c_88_-110_89_-107",
+      "type": "opening",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2113,
+            "z": -35
+          },
+          {
+            "x": -2112,
+            "z": -32
+          }
+        ]
+      },
+      "connected_locations": [
+        "chm",
+        "rh"
+      ]
+    },
+    {
+      "id": "c_69_-98_70_-93",
+      "type": "opening",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2132,
+            "z": -23
+          },
+          {
+            "x": -2131,
+            "z": -18
+          }
+        ]
+      },
+      "connected_locations": [
+        "lh",
+        "chb"
+      ]
+    },
+    {
+      "id": "c_88_-98_89_-93",
+      "type": "opening",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2113,
+            "z": -23
+          },
+          {
+            "x": -2112,
+            "z": -18
+          }
+        ]
+      },
+      "connected_locations": [
+        "chb",
+        "rh"
+      ]
+    },
+    {
+      "id": "c_78_-93_80_-92",
+      "type": "double_door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2123,
+            "z": -18
+          },
+          {
+            "x": -2121,
+            "z": -17
+          }
+        ]
+      },
+      "connected_locations": [
+        "chb",
+        "el_1"
+      ],
+      "facing": "south",
+      "passable": false
+    },
+    {
+      "id": "c_94_-100_95_-99",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2107,
+            "z": -25
+          },
+          {
+            "x": -2106,
+            "z": -24
+          }
+        ]
+      },
+      "connected_locations": [
+        "rh",
+        "br1_3"
+      ],
+      "facing": "east",
+      "passable": false
+    },
+    {
+      "id": "c_94_-106_95_-105",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2107,
+            "z": -31
+          },
+          {
+            "x": -2106,
+            "z": -30
+          }
+        ]
+      },
+      "connected_locations": [
+        "rh",
+        "br2_3"
+      ],
+      "facing": "east",
+      "passable": false
+    },
+    {
+      "id": "c_69_-103_70_-102",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2132,
+            "z": -28
+          },
+          {
+            "x": -2131,
+            "z": -27
+          }
+        ]
+      },
+      "connected_locations": [
+        "lh",
+        "pr_6"
+      ],
+      "facing": "east",
+      "passable": false
+    },
+    {
+      "id": "c_63_-108_64_-107",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2138,
+            "z": -33
+          },
+          {
+            "x": -2137,
+            "z": -32
+          }
+        ]
+      },
+      "connected_locations": [
+        "lib_9",
+        "lh"
+      ],
+      "facing": "west",
+      "passable": false
+    },
+    {
+      "id": "c_107_-23_108_-22",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2094,
+            "z": 52
+          },
+          {
+            "x": -2093,
+            "z": 53
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_59",
+        "loc_60"
+      ],
+      "facing": "north",
+      "passable": false
+    },
+    {
+      "id": "c_107_-40_108_-39",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2094,
+            "z": 35
+          },
+          {
+            "x": -2093,
+            "z": 36
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_57",
+        "loc_58"
+      ],
+      "facing": "north",
+      "passable": false
+    },
+    {
+      "id": "c_107_-54_108_-53",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2094,
+            "z": 21
+          },
+          {
+            "x": -2093,
+            "z": 22
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_55",
+        "loc_56"
+      ],
+      "facing": "north",
+      "passable": false
+    },
+    {
+      "id": "c_104_-71_105_-70",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2097,
+            "z": 4
+          },
+          {
+            "x": -2096,
+            "z": 5
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_47",
+        "loc_54_1"
+      ],
+      "facing": "east",
+      "passable": false
+    },
+    {
+      "id": "c_98_-20_99_-19",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2103,
+            "z": 55
+          },
+          {
+            "x": -2102,
+            "z": 56
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_52_3",
+        "loc_53"
+      ],
+      "facing": "north",
+      "passable": false
+    },
+    {
+      "id": "c_98_-37_99_-36",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2103,
+            "z": 38
+          },
+          {
+            "x": -2102,
+            "z": 39
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_50",
+        "loc_51"
+      ],
+      "facing": "north",
+      "passable": false
+    },
+    {
+      "id": "c_98_-54_99_-53",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2103,
+            "z": 21
+          },
+          {
+            "x": -2102,
+            "z": 22
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_48",
+        "loc_49"
+      ],
+      "facing": "north",
+      "passable": false
+    },
+    {
+      "id": "c_88_-103_89_-102",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2113,
+            "z": -28
+          },
+          {
+            "x": -2112,
+            "z": -27
+          }
+        ]
+      },
+      "connected_locations": [
+        "pr_7",
+        "rh"
+      ],
+      "facing": "west",
+      "passable": false
+    },
+    {
+      "id": "c_83_-23_84_-22",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2118,
+            "z": 52
+          },
+          {
+            "x": -2117,
+            "z": 53
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_40",
+        "loc_41"
+      ],
+      "facing": "north",
+      "passable": false
+    },
+    {
+      "id": "c_83_-40_84_-39",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2118,
+            "z": 35
+          },
+          {
+            "x": -2117,
+            "z": 36
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_38",
+        "loc_39"
+      ],
+      "facing": "north",
+      "passable": false
+    },
+    {
+      "id": "c_83_-54_84_-53",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2118,
+            "z": 21
+          },
+          {
+            "x": -2117,
+            "z": 22
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_36",
+        "loc_37"
+      ],
+      "facing": "north",
+      "passable": false
+    },
+    {
+      "id": "c_80_-71_81_-70",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2121,
+            "z": 4
+          },
+          {
+            "x": -2120,
+            "z": 5
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_27",
+        "loc_35_1"
+      ],
+      "facing": "east",
+      "passable": false
+    },
+    {
+      "id": "c_74_-20_75_-19",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2127,
+            "z": 55
+          },
+          {
+            "x": -2126,
+            "z": 56
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_32_3",
+        "loc_33"
+      ],
+      "facing": "north",
+      "passable": false
+    },
+    {
+      "id": "c_74_-37_75_-36",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2127,
+            "z": 38
+          },
+          {
+            "x": -2126,
+            "z": 39
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_30",
+        "loc_31"
+      ],
+      "facing": "north",
+      "passable": false
+    },
+    {
+      "id": "c_74_-54_75_-53",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2127,
+            "z": 21
+          },
+          {
+            "x": -2126,
+            "z": 22
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_28",
+        "loc_29"
+      ],
+      "facing": "north",
+      "passable": false
+    },
+    {
+      "id": "c_59_-23_60_-22",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2142,
+            "z": 52
+          },
+          {
+            "x": -2141,
+            "z": 53
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_18",
+        "loc_19"
+      ],
+      "facing": "north",
+      "passable": false
+    },
+    {
+      "id": "c_59_-40_60_-39",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2142,
+            "z": 35
+          },
+          {
+            "x": -2141,
+            "z": 36
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_16",
+        "loc_17"
+      ],
+      "facing": "north",
+      "passable": false
+    },
+    {
+      "id": "c_59_-54_60_-53",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2142,
+            "z": 21
+          },
+          {
+            "x": -2141,
+            "z": 22
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_14",
+        "loc_15"
+      ],
+      "facing": "north",
+      "passable": false
+    },
+    {
+      "id": "c_56_-71_57_-70",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2145,
+            "z": 4
+          },
+          {
+            "x": -2144,
+            "z": 5
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_2",
+        "loc_13_1"
+      ],
+      "facing": "east",
+      "passable": false
+    },
+    {
+      "id": "c_50_-20_51_-19",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2151,
+            "z": 55
+          },
+          {
+            "x": -2150,
+            "z": 56
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_7_3",
+        "loc_8"
+      ],
+      "facing": "north",
+      "passable": false
+    },
+    {
+      "id": "c_50_-37_51_-36",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2151,
+            "z": 38
+          },
+          {
+            "x": -2150,
+            "z": 39
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_5",
+        "loc_6"
+      ],
+      "facing": "north",
+      "passable": false
+    },
+    {
+      "id": "c_50_-54_51_-53",
+      "type": "door",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2151,
+            "z": 21
+          },
+          {
+            "x": -2150,
+            "z": 22
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_3",
+        "loc_4"
+      ],
+      "facing": "north",
+      "passable": false
+    },
+    {
+      "id": "c_69_-110_70_-107",
+      "type": "opening",
+      "bounds": {
+        "type": "rectangle",
+        "coordinates": [
+          {
+            "x": -2132,
+            "z": -35
+          },
+          {
+            "x": -2131,
+            "z": -32
+          }
+        ]
+      },
+      "connected_locations": [
+        "lh",
+        "chm"
+      ]
+    },
+    {
+      "id": "ce_44_39_47_39",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2157,
+            "z": 114
+          },
+          {
+            "x": -2154,
+            "z": 114
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_1_1",
+        "loc_1_6"
+      ]
+    },
+    {
+      "id": "ce_48_39_51_39",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2153,
+            "z": 114
+          },
+          {
+            "x": -2150,
+            "z": 114
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_1_2",
+        "loc_1_6"
+      ]
+    },
+    {
+      "id": "ce_52_39_55_39",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2149,
+            "z": 114
+          },
+          {
+            "x": -2146,
+            "z": 114
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_1_3",
+        "loc_1_6"
+      ]
+    },
+    {
+      "id": "ce_56_39_59_39",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2145,
+            "z": 114
+          },
+          {
+            "x": -2142,
+            "z": 114
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_1_4",
+        "loc_1_6"
+      ]
+    },
+    {
+      "id": "ce_60_39_63_39",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2141,
+            "z": 114
+          },
+          {
+            "x": -2138,
+            "z": 114
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_1_5",
+        "loc_1_6"
+      ]
+    },
+    {
+      "id": "ce_43_40_64_40",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2158,
+            "z": 115
+          },
+          {
+            "x": -2137,
+            "z": 115
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_1_6",
+        "loc_1_7"
+      ]
+    },
+    {
+      "id": "ce_43_43_64_43",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2158,
+            "z": 118
+          },
+          {
+            "x": -2137,
+            "z": 118
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_1_7",
+        "loc_1_8"
+      ]
+    },
+    {
+      "id": "ce_43_44_64_44",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2158,
+            "z": 119
+          },
+          {
+            "x": -2137,
+            "z": 119
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_1_8",
+        "loc_1_9"
+      ]
+    },
+    {
+      "id": "ce_43_47_64_47",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2158,
+            "z": 122
+          },
+          {
+            "x": -2137,
+            "z": 122
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_1_9",
+        "loc_1_10"
+      ]
+    },
+    {
+      "id": "ce_43_48_64_48",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2158,
+            "z": 123
+          },
+          {
+            "x": -2137,
+            "z": 123
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_1_10",
+        "loc_1_11"
+      ]
+    },
+    {
+      "id": "ce_43_51_64_51",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2158,
+            "z": 126
+          },
+          {
+            "x": -2137,
+            "z": 126
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_1_11",
+        "loc_1_12"
+      ]
+    },
+    {
+      "id": "ce_44_52_47_52",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2157,
+            "z": 127
+          },
+          {
+            "x": -2154,
+            "z": 127
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_1_12",
+        "loc_1_13"
+      ]
+    },
+    {
+      "id": "ce_48_52_51_52",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2153,
+            "z": 127
+          },
+          {
+            "x": -2150,
+            "z": 127
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_1_12",
+        "loc_1_14"
+      ]
+    },
+    {
+      "id": "ce_52_52_55_52",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2149,
+            "z": 127
+          },
+          {
+            "x": -2146,
+            "z": 127
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_1_12",
+        "loc_1_15"
+      ]
+    },
+    {
+      "id": "ce_56_52_59_52",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2145,
+            "z": 127
+          },
+          {
+            "x": -2142,
+            "z": 127
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_1_12",
+        "loc_1_16"
+      ]
+    },
+    {
+      "id": "ce_60_52_63_52",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2141,
+            "z": 127
+          },
+          {
+            "x": -2138,
+            "z": 127
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_1_12",
+        "loc_1_17"
+      ]
+    },
+    {
+      "id": "ce_49_-24_52_-24",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2152,
+            "z": 51
+          },
+          {
+            "x": -2149,
+            "z": 51
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_7_1",
+        "loc_7_2"
+      ]
+    },
+    {
+      "id": "ce_49_-22_52_-22",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2152,
+            "z": 53
+          },
+          {
+            "x": -2149,
+            "z": 53
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_7_2",
+        "loc_7_3"
+      ]
+    },
+    {
+      "id": "ce_55_-119_57_-119",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2146,
+            "z": -44
+          },
+          {
+            "x": -2144,
+            "z": -44
+          }
+        ]
+      },
+      "connected_locations": [
+        "lib_1",
+        "lib_2"
+      ]
+    },
+    {
+      "id": "ce_57_-118_57_-116",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2144,
+            "z": -43
+          },
+          {
+            "x": -2144,
+            "z": -41
+          }
+        ]
+      },
+      "connected_locations": [
+        "lib_2",
+        "lib_3"
+      ]
+    },
+    {
+      "id": "ce_56_-116_57_-116",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2145,
+            "z": -41
+          },
+          {
+            "x": -2144,
+            "z": -41
+          }
+        ]
+      },
+      "connected_locations": [
+        "lib_2",
+        "lib_4"
+      ]
+    },
+    {
+      "id": "ce_57_-116_57_-113",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2144,
+            "z": -41
+          },
+          {
+            "x": -2144,
+            "z": -38
+          }
+        ]
+      },
+      "connected_locations": [
+        "lib_3",
+        "lib_4"
+      ]
+    },
+    {
+      "id": "ce_59_-113_63_-113",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2142,
+            "z": -38
+          },
+          {
+            "x": -2138,
+            "z": -38
+          }
+        ]
+      },
+      "connected_locations": [
+        "lib_3",
+        "lib_5"
+      ]
+    },
+    {
+      "id": "ce_59_-112_62_-112",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2142,
+            "z": -37
+          },
+          {
+            "x": -2139,
+            "z": -37
+          }
+        ]
+      },
+      "connected_locations": [
+        "lib_5",
+        "lib_6"
+      ]
+    },
+    {
+      "id": "ce_55_-111_59_-111",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2146,
+            "z": -36
+          },
+          {
+            "x": -2142,
+            "z": -36
+          }
+        ]
+      },
+      "connected_locations": [
+        "lib_6",
+        "lib_7"
+      ]
+    },
+    {
+      "id": "ce_60_-111_62_-111",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2141,
+            "z": -36
+          },
+          {
+            "x": -2139,
+            "z": -36
+          }
+        ]
+      },
+      "connected_locations": [
+        "lib_6",
+        "lib_8"
+      ]
+    },
+    {
+      "id": "ce_62_-110_62_-107",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2139,
+            "z": -35
+          },
+          {
+            "x": -2139,
+            "z": -32
+          }
+        ]
+      },
+      "connected_locations": [
+        "lib_8",
+        "lib_9"
+      ]
+    },
+    {
+      "id": "ce_59_-69_59_-67",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2142,
+            "z": 6
+          },
+          {
+            "x": -2142,
+            "z": 8
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_13_1",
+        "loc_13_3"
+      ]
+    },
+    {
+      "id": "ce_60_-69_60_-67",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2141,
+            "z": 6
+          },
+          {
+            "x": -2141,
+            "z": 8
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_13_2",
+        "loc_13_3"
+      ]
+    },
+    {
+      "id": "ce_74_-115_75_-115",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2127,
+            "z": -40
+          },
+          {
+            "x": -2126,
+            "z": -40
+          }
+        ]
+      },
+      "connected_locations": [
+        "of_1",
+        "of_4"
+      ]
+    },
+    {
+      "id": "ce_76_-116_84_-116",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2125,
+            "z": -41
+          },
+          {
+            "x": -2117,
+            "z": -41
+          }
+        ]
+      },
+      "connected_locations": [
+        "of_2",
+        "of_3"
+      ]
+    },
+    {
+      "id": "ce_76_-115_82_-115",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2125,
+            "z": -40
+          },
+          {
+            "x": -2119,
+            "z": -40
+          }
+        ]
+      },
+      "connected_locations": [
+        "of_3",
+        "of_4"
+      ]
+    },
+    {
+      "id": "ce_83_-115_84_-115",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2118,
+            "z": -40
+          },
+          {
+            "x": -2117,
+            "z": -40
+          }
+        ]
+      },
+      "connected_locations": [
+        "of_3",
+        "of_5"
+      ]
+    },
+    {
+      "id": "ce_74_-114_74_-111",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2127,
+            "z": -39
+          },
+          {
+            "x": -2127,
+            "z": -36
+          }
+        ]
+      },
+      "connected_locations": [
+        "of_4",
+        "of_6"
+      ]
+    },
+    {
+      "id": "ce_70_-105_75_-105",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2131,
+            "z": -30
+          },
+          {
+            "x": -2126,
+            "z": -30
+          }
+        ]
+      },
+      "connected_locations": [
+        "pr_1",
+        "pr_2"
+      ]
+    },
+    {
+      "id": "ce_78_-105_80_-105",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2123,
+            "z": -30
+          },
+          {
+            "x": -2121,
+            "z": -30
+          }
+        ]
+      },
+      "connected_locations": [
+        "pr_1",
+        "pr_3"
+      ]
+    },
+    {
+      "id": "ce_83_-105_88_-105",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2118,
+            "z": -30
+          },
+          {
+            "x": -2113,
+            "z": -30
+          }
+        ]
+      },
+      "connected_locations": [
+        "pr_1",
+        "pr_4"
+      ]
+    },
+    {
+      "id": "ce_70_-103_73_-103",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2131,
+            "z": -28
+          },
+          {
+            "x": -2128,
+            "z": -28
+          }
+        ]
+      },
+      "connected_locations": [
+        "pr_2",
+        "pr_6"
+      ]
+    },
+    {
+      "id": "ce_78_-104_80_-104",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2123,
+            "z": -29
+          },
+          {
+            "x": -2121,
+            "z": -29
+          }
+        ]
+      },
+      "connected_locations": [
+        "pr_3",
+        "pr_5"
+      ]
+    },
+    {
+      "id": "ce_85_-103_88_-103",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2116,
+            "z": -28
+          },
+          {
+            "x": -2113,
+            "z": -28
+          }
+        ]
+      },
+      "connected_locations": [
+        "pr_4",
+        "pr_7"
+      ]
+    },
+    {
+      "id": "ce_78_-101_80_-101",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2123,
+            "z": -26
+          },
+          {
+            "x": -2121,
+            "z": -26
+          }
+        ]
+      },
+      "connected_locations": [
+        "pr_5",
+        "pr_10"
+      ]
+    },
+    {
+      "id": "ce_73_-102_73_-99",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2128,
+            "z": -27
+          },
+          {
+            "x": -2128,
+            "z": -24
+          }
+        ]
+      },
+      "connected_locations": [
+        "pr_6",
+        "pr_8"
+      ]
+    },
+    {
+      "id": "ce_85_-102_85_-99",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2116,
+            "z": -27
+          },
+          {
+            "x": -2116,
+            "z": -24
+          }
+        ]
+      },
+      "connected_locations": [
+        "pr_7",
+        "pr_9"
+      ]
+    },
+    {
+      "id": "ce_75_-100_75_-99",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2126,
+            "z": -25
+          },
+          {
+            "x": -2126,
+            "z": -24
+          }
+        ]
+      },
+      "connected_locations": [
+        "pr_8",
+        "pr_11"
+      ]
+    },
+    {
+      "id": "ce_83_-100_83_-99",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2118,
+            "z": -25
+          },
+          {
+            "x": -2118,
+            "z": -24
+          }
+        ]
+      },
+      "connected_locations": [
+        "pr_9",
+        "pr_11"
+      ]
+    },
+    {
+      "id": "ce_78_-100_80_-100",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2123,
+            "z": -25
+          },
+          {
+            "x": -2121,
+            "z": -25
+          }
+        ]
+      },
+      "connected_locations": [
+        "pr_10",
+        "pr_11"
+      ]
+    },
+    {
+      "id": "ce_73_-24_76_-24",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2128,
+            "z": 51
+          },
+          {
+            "x": -2125,
+            "z": 51
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_32_1",
+        "loc_32_2"
+      ]
+    },
+    {
+      "id": "ce_73_-22_76_-22",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2128,
+            "z": 53
+          },
+          {
+            "x": -2125,
+            "z": 53
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_32_2",
+        "loc_32_3"
+      ]
+    },
+    {
+      "id": "ce_81_-88_81_-81",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2120,
+            "z": -13
+          },
+          {
+            "x": -2120,
+            "z": -6
+          }
+        ]
+      },
+      "connected_locations": [
+        "el_1",
+        "el_2"
+      ]
+    },
+    {
+      "id": "ce_83_-69_83_-67",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2118,
+            "z": 6
+          },
+          {
+            "x": -2118,
+            "z": 8
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_35_1",
+        "loc_35_3"
+      ]
+    },
+    {
+      "id": "ce_84_-69_84_-67",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2117,
+            "z": 6
+          },
+          {
+            "x": -2117,
+            "z": 8
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_35_2",
+        "loc_35_3"
+      ]
+    },
+    {
+      "id": "ce_99_-107_104_-107",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2102,
+            "z": -32
+          },
+          {
+            "x": -2097,
+            "z": -32
+          }
+        ]
+      },
+      "connected_locations": [
+        "br2_1",
+        "br2_2"
+      ]
+    },
+    {
+      "id": "ce_99_-106_99_-105",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2102,
+            "z": -31
+          },
+          {
+            "x": -2102,
+            "z": -30
+          }
+        ]
+      },
+      "connected_locations": [
+        "br2_2",
+        "br2_3"
+      ]
+    },
+    {
+      "id": "ce_99_-101_104_-101",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2102,
+            "z": -26
+          },
+          {
+            "x": -2097,
+            "z": -26
+          }
+        ]
+      },
+      "connected_locations": [
+        "br1_1",
+        "br1_2"
+      ]
+    },
+    {
+      "id": "ce_99_-100_99_-99",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2102,
+            "z": -25
+          },
+          {
+            "x": -2102,
+            "z": -24
+          }
+        ]
+      },
+      "connected_locations": [
+        "br1_2",
+        "br1_3"
+      ]
+    },
+    {
+      "id": "ce_97_-24_100_-24",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2104,
+            "z": 51
+          },
+          {
+            "x": -2101,
+            "z": 51
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_52_1",
+        "loc_52_2"
+      ]
+    },
+    {
+      "id": "ce_97_-22_100_-22",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2104,
+            "z": 53
+          },
+          {
+            "x": -2101,
+            "z": 53
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_52_2",
+        "loc_52_3"
+      ]
+    },
+    {
+      "id": "ce_107_-69_107_-67",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2094,
+            "z": 6
+          },
+          {
+            "x": -2094,
+            "z": 8
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_54_1",
+        "loc_54_3"
+      ]
+    },
+    {
+      "id": "ce_108_-69_108_-67",
+      "type": "extension",
+      "bounds": {
+        "type": "line",
+        "coordinates": [
+          {
+            "x": -2093,
+            "z": 6
+          },
+          {
+            "x": -2093,
+            "z": 8
+          }
+        ]
+      },
+      "connected_locations": [
+        "loc_54_2",
+        "loc_54_3"
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "ls_1",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2092,
+            "z": 4
+          }
+        ]
+      },
+      "facing": "west"
+    },
+    {
+      "id": "ls_2",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2094,
+            "z": 49
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_3",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2094,
+            "z": 32
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_4",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2094,
+            "z": 15
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_5",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2103,
+            "z": 49
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_6",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2103,
+            "z": 32
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_7",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2103,
+            "z": 15
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_8",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2116,
+            "z": 4
+          }
+        ]
+      },
+      "facing": "west"
+    },
+    {
+      "id": "ls_9",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2118,
+            "z": 49
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_10",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2118,
+            "z": 32
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_11",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2118,
+            "z": 15
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_12",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2127,
+            "z": 49
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_13",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2127,
+            "z": 32
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_14",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2127,
+            "z": 15
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_15",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2140,
+            "z": 113
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_16",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2140,
+            "z": 4
+          }
+        ]
+      },
+      "facing": "west"
+    },
+    {
+      "id": "ls_17",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2142,
+            "z": 49
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_18",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2142,
+            "z": 32
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_19",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2142,
+            "z": 15
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_20",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2148,
+            "z": 113
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_21",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2148,
+            "z": 13
+          }
+        ]
+      },
+      "facing": "north"
+    },
+    {
+      "id": "ls_22",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2151,
+            "z": 49
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_23",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2151,
+            "z": 32
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_24",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2151,
+            "z": 15
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_25",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2156,
+            "z": 113
+          }
+        ]
+      },
+      "facing": "south"
+    },
+    {
+      "id": "ls_26",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2091,
+            "z": 45
+          }
+        ]
+      },
+      "facing": "east"
+    },
+    {
+      "id": "ls_27",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2096,
+            "z": 29
+          }
+        ]
+      },
+      "facing": "north"
+    },
+    {
+      "id": "ls_28",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2096,
+            "z": 27
+          }
+        ]
+      },
+      "facing": "north"
+    },
+    {
+      "id": "ls_29",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2116,
+            "z": 44
+          }
+        ]
+      },
+      "facing": "north"
+    },
+    {
+      "id": "ls_30",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2125,
+            "z": 27
+          }
+        ]
+      },
+      "facing": "north"
+    },
+    {
+      "id": "ls_31",
+      "type": "button",
+      "bounds": {
+        "type": "block",
+        "coordinates": [
+          {
+            "x": -2140,
+            "z": 44
+          }
+        ]
+      },
+      "facing": "north"
+    }
+  ]
+}

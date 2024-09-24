@@ -1,0 +1,53 @@
+.message-container {
+  min-height: 200px;
+  max-height: 200px;
+  display: flex;
+  flex-direction: row;
+}
+
+.message-toolbar {
+  display: flex;
+  flex-direction: column;
+  //margin-right: 16px;
+}
+
+.message-button-clear {
+  color: white;
+  font-size: 20px;
+  transform: translateX(2px);
+  cursor: pointer;
+}
+
+.message-content {
+  overflow-y: auto;
+  display: flex;
+  background-color: black;
+  color: #33FF00;
+  scroll-snap-type: y mandatory;
+  //flex-direction: column;
+  //flex: 1 1 auto;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  flex: 1;
+}
+
+.message-list {
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  //overflow: auto;
+  font-family: "Courier New";
+  font-size: smaller;
+  overflow-x: auto;
+  div {
+    scroll-snap-align: start;
+  }
+}
+
+.message-header {
+  //min-height: 20px;
+  //max-height: 20px;
+  //color: #393939;
+  margin-bottom: 8px;
+}

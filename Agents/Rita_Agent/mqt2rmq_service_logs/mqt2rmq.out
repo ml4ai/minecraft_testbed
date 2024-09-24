@@ -1,0 +1,1 @@
+/Applications/bin/ensurerabbitmq.sh java -jar /Applications/mqt2rmq/build/libs/mqt2rmq-all.jar --host rabbitmq --mqhost mosquitto

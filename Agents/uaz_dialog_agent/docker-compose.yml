@@ -1,0 +1,28 @@
+version: '3.7'
+
+networks:
+  asist_net:
+   external: true
+
+services:
+
+  uaz_dialog_agent:
+    image: registry.gitlab.com/artificialsocialintelligence/study3/uaz_dialog_agent:4.1.5
+    container_name: uaz_dialog_agent
+
+    # Allocate enough memory for NLP
+    environment:
+      - JAVA_OPTS=-Xmx6g
+
+    networks:
+      asist_net:
+        aliases:
+          - uaz_dialog_agent
+
+    entrypoint: |
+      sbt "runMain org.clulab.asist.apps.RunDialogAgent mqtt mosquitto 1883"
+    deploy:
+      resources:
+        limits:
+          cpus: '1.5'
+          

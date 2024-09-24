@@ -1,0 +1,36 @@
+{
+	"agent_name": "AC_UAZ_TA1_SpeechAnalyzer",
+	"agent_hostname": "speech_analyzer", 
+	"version": "4.1.5",
+	"owner": "UAZ",
+	"config": [],	
+	"publishes": [
+		{
+		    "topic": "agent/speech_analyzer/sentiment",
+		    "message_type": "observation",
+		    "sub_type":  "speech_analyzer:sentiment"
+		},
+		{
+		    "topic": "agent/speech_analyzer/personality",
+		    "message_type": "observation",
+		    "sub_type":  "speech_analyzer:personality"
+		}
+	],
+	"subscribes": [
+		{
+		    "topic": "trial",
+		    "message_type": "trial",
+		    "sub_type": "start"
+		},
+		{
+		    "topic": "trial",
+		    "message_type": "trial",
+		    "sub_type": "stop"
+		},
+		{
+		    "topic": "agent/asr/final",
+		    "message_type": "observation",
+		    "sub_type": "asr:transcription"
+		}
+	] 
+}

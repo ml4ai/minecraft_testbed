@@ -1,0 +1,11 @@
+div {  
+  /* margin:5%; */
+  text-align: left;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  height: 2rem;
+  font-size: 1rem;
+}

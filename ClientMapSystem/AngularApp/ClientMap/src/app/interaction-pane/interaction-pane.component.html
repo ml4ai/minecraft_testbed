@@ -1,0 +1,47 @@
+
+<div id="InteractionContainer">
+
+    <div id="Timer" class="padding header">
+        Mission Timer: {{minutes}} : {{seconds}}
+    </div>
+
+    <div *ngIf="webSocketService.playerName != 'asist_advisor'" >
+
+        <div   id="Guidance" class="padding">
+            <div class="header"> Critical Mission Information </div>        
+    
+            <div id="role_text">
+    
+                <h3 id=news_room_update> News Room Update </h3>
+            
+                <div *ngFor="let text of roleText">                
+                    
+                    <div>{{text}}</div>
+    
+                </div>
+    
+            </div> 
+            
+            <div id="puzzle_image_div">
+                <img id="puzzle_image">
+            </div>
+        </div>
+    
+    
+        <div class="button-container" fxLayout="row">
+            <mat-button-toggle color="primary" [checked]="audioEnabled" (change)="audioSelectionChanged($event)">
+                <mat-icon class="white-icon" *ngIf="audioEnabled">volume_up</mat-icon>
+                <mat-icon *ngIf="!audioEnabled">volume_off</mat-icon>
+            </mat-button-toggle>
+            <div fxFlex></div>
+            <button mat-button mat-raised-button color="primary" class="survey-button" [matMenuTriggerFor]="menu" #menuTrigger>Open Survey</button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item *ngFor='let survey of surveys | orderBy:"name"' (click)="openSurveyDialog(survey)">
+                    {{survey.name}}
+                </button>
+            </mat-menu>
+        </div>
+
+    </div>    
+
+</div>

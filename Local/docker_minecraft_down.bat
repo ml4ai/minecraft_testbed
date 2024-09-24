@@ -1,0 +1,1 @@
+docker-compose -f "docker-compose.asistmod.yml" down --remove-orphans

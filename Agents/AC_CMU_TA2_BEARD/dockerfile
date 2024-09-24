@@ -1,0 +1,23 @@
+FROM python:3.8-slim-buster
+
+RUN apt-get update
+RUN apt-get install dos2unix
+RUN apt-get -y install git
+# RUN python3 -m pip install -U --force-reinstall pip
+
+ARG POETRY_VERSION
+ENV POETRY_VERSION=1.1.6
+RUN pip install "poetry==$POETRY_VERSION"
+ENV PATH="${PATH}:/root/.local/bin"
+
+ARG CACHE_BREAKER
+
+WORKDIR /app/
+COPY poetry.lock pyproject.toml /app/
+RUN poetry install --no-dev --no-interaction --no-ansi
+
+COPY src/ /app
+
+# RUN chmod 777 entrypoint.sh
+# RUN dos2unix entrypoint.sh
+CMD [ "sh", "entrypoint.sh" ]

@@ -1,0 +1,5 @@
+{
+    "asaServerPath" : "https://localhost:9000/AccessControl/",
+    "accessControlPath" : "https://localhost:9000/AccessControl/",
+    "microServiceName" : "AccessControl"
+}

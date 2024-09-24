@@ -1,0 +1,99 @@
+@import '~@angular/material/theming';
+@import '../../../metadata-theme.scss';
+
+mat-option {
+  min-height: 48px;
+  line-height: 1.15;
+  height: auto;
+  padding: 8px 16px;
+  white-space: normal;
+}
+
+:host ::ng-deep .mat-form-field-cursor div.mat-form-field-wrapper {
+  cursor: pointer;
+}
+
+.accent-color {
+  color: mat-color($mat-accent, main) !important;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mat-radio-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.mat-radio-button {
+  margin-right: 0.5em;
+}
+
+.mat-icon {
+  cursor: pointer;
+}
+
+.mat-slide-toggle-quick {
+  margin: 0 0.65em;
+}
+
+.fade-in {
+  animation: fadeIn ease 10s;
+  -webkit-animation: fadeIn ease 10s;
+  -moz-animation: fadeIn ease 10s;
+  -o-animation: fadeIn ease 10s;
+  -ms-animation: fadeIn ease 10s;
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+.hide-icon {
+  display: none;
+}
+
+.fade-in-out {
+  animation: fadeinout 3s linear forwards;
+  -webkit-animation: fadeinout 3s linear forwards;
+  -moz-animation: fadeinout 3s linear forwards;
+  -o-animation: fadeinout 3s linear forwards;
+  -ms-animation: fadeinout 3s linear forwards;
+}
+
+@-webkit-keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}

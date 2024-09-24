@@ -1,0 +1,9 @@
+{
+    "mqtthost":"10.150.0.3",
+    "mqttport": "1883",
+    "observeX": 26,
+    "observeY": 2,
+    "observeZ": 33,
+    "missionTime": 30000,
+    "observationInterval":".0498"
+}

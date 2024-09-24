@@ -1,0 +1,48 @@
+{
+    "host": "mosquitto",
+    "port": "1883",
+    "heartbeats_per_minute": 6,
+    "version_info": {
+        "owner": "USC - atomic",
+        "version": "0.0.3",
+        "source": [
+            "https://gitlab.com/artificialsocialintelligence/study3/-/tree/main/Agents/atomic_agent"
+        ],
+        "publishes": [
+            {"topic": "agent/intervention/atomic_agent/chat", "message_type": "agent", "sub_type": "Intervention:Chat"}
+        ],
+        "subscribes": [
+            {"topic": "trial", "message_type": "trial"},
+            {"topic": "observations/events/mission"},
+            {"topic": "observations/events/player/jag"},
+	    {"topic": "observations/events/mission/planning"},
+            {"topic": "agent/ac/player_compliance"},
+            {"topic": "agent/ac/cmuta2-ted-ac/ted"},
+            {"topic": "agent/gelp"},
+
+            {"topic": "observations/events/server/victim_evacuated", "message_type": "event", "sub_type": "Event:VictimEvacuated"},
+	    
+            {"topic": "observations/events/player/role_selected", "message_type": "event", "sub_type": "Event:RoleSelected"},
+            {"topic": "observations/events/player/triage", "message_type": "event", "sub_type": "Event:Triage"},
+	    {"topic": "ground_truth/mission/victims_list", "message_type": "groundtruth", "sub_type": "Mission:VictimList"},
+	    {"topic": "ground_truth/semantic_map/initialized", "message_type": "groundtruth", "sub_type": "SemanticMap:Initialized"},
+	    {"topic": "observations/events/player/rubble_destroyed", "message_type": "event", "sub_type": "Event:RubbleDestroyed"},
+	    {"topic": "ground_truth/mission/threatsign_list", "message_type": "groundtruth", "sub_type": "Mission:ThreatSignList"},
+	    {"topic": "ground_truth/mission/blockages_list", "message_type": "groundtruth", "sub_type": "Mission:FreezeBlockList"},
+
+	    {"topic": "ground_truth/mission/role_text", "message_type": "groundtruth", "sub_type": "Mission:RoleText"},	    
+	    {"topic": "observations/events/player/location", "message_type": "event", "sub_type": "Event:location"},
+	    {"topic": "observations/events/player/marker_placed", "message_type": "event", "sub_type": "Event:MarkerPlaced"},
+	    {"topic": "observations/state", "message_type": "observation", "sub_type": "state"},
+	    {"topic": "observations/events/mission", "message_type": "event", "sub_type": "Event:MissionState"},
+	    {"topic": "observations/events/player/tool_used", "message_type": "event", "sub_type": "Event:ToolUsed"},
+	    {"topic": "agent/dialoag", "message_type": "event", "sub_type": "Event:dialogue_event"},
+	    {"topic": "agent/asr/intermediate", "message_type": "observation", "sub_type": "asr:transcription"},
+	    {"topic": "observations/events/scoreboard", "message_type": "observation", "sub_type": "Event:Scoreboard"},
+	    {"topic": "observations/events/player/victim_picked_up", "message_type": "event", "sub_type": "Event:VictimPickedUp"},
+	    {"topic": "observations/events/player/itemequipped", "message_type": "event", "sub_type": "Event:ItemEquipped"},
+	    {"topic": "observations/events/player/tool_depleted", "message_type": "event", "sub_type": "Event:ToolDepleted"},
+	    {"topic": "observations/events/player/victim_placed", "message_type": "event", "sub_type": "Event:VictimPlaced"}
+        ]
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "host": ["mosquitto", "localhost"],
+    "port": "1883",
+    "heartbeats_per_minute": 6,
+    "version_info": {
+        "owner": "IHMC/CMU - TA2",
+        "agent_type": "AC",
+        "version": "0.0.3",
+        "source": [
+            "https://gitlab.com/artificialsocialintelligence/study3/-/tree/main/Agents/AC_CMUFMS_TA2_Cognitive"
+        ],
+        "dependencies": ["ac_ihmc_ta2_joint-activity-interdependence"],
+        "publishes": [
+            {"topic": "agent/measure/AC_CMUFMS_TA2_Cognitive/load", "message_type": "agent", "sub_type": "Measure:cognitive_load"}
+        ],
+        "subscribes": [
+            {"topic": "trial", "message_type": "trial", "qos": 1},
+            {"topic": "observations/events/player/jag", "message_type": "event", "sub_type": "Event:Discovered", "qos": 1},
+            {"topic": "observations/events/player/victim_placed", "qos": 1},
+            {"topic": "observations/events/player/triage", "qos": 1},
+            {"topic": "observations/events/server/victim_evacuated", "qos": 1}
+        ]
+    }
+}

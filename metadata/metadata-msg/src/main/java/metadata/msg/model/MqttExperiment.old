@@ -1,0 +1,35 @@
+package metadata.msg.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class MqttExperiment {
+	private Header header;
+	private MsgExperiment msgExperiment;
+
+	@JsonCreator
+	public MqttExperiment(@JsonProperty("header") Header header, @JsonProperty("msg") MsgExperiment msgExperiment) {
+		this.header = header;
+		this.msgExperiment = msgExperiment;
+	}
+
+	@JsonProperty("header")
+	public Header getHeader() {
+		return header;
+	}
+
+	@JsonProperty("header")
+	public void setHeader(Header header) {
+		this.header = header;
+	}
+
+	@JsonProperty("msg")
+	public MsgExperiment getMsgExperiment() {
+		return msgExperiment;
+	}
+
+	@JsonProperty("msg")
+	public void setMsgExperiment(MsgExperiment msgExperiment) {
+		this.msgExperiment = msgExperiment;
+	}
+}

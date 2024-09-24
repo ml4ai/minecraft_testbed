@@ -1,0 +1,19 @@
+# intellij
+.idea
+
+# scala
+*.class
+*.log
+target/
+project/project
+project/target
+
+data/*
+
+.DS_Store
+
+# Preventing people from accidentally committing ASIST human subjects data to the repo.
+HSR*
+
+# Vim swap files
+*.swp

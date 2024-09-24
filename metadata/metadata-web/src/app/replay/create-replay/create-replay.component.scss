@@ -1,0 +1,25 @@
+@import '~@angular/material/theming';
+@import '../../../metadata-theme.scss';
+
+mat-form-field {
+  width: 100%;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mat-radio-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.mat-radio-button {
+  margin-right: 0.5em;
+}
+
+.mat-subheader {
+  color: $light-disabled-text !important;
+}

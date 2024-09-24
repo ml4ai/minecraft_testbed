@@ -1,0 +1,25 @@
+{
+    "host": ["mosquitto", "localhost"],
+    "port": "1883",
+    "heartbeats_per_minute": 6,
+    "version_info": {
+        "owner": "CMU - TA2",
+        "version": "0.0.3",
+        "source": [
+            "https://gitlab.com/artificialsocialintelligence/study3/-/tree/main/Agents/AC_CMU_TA2_TED"
+        ],
+        "subscribes": [
+            {"topic": "trial", "message_type": "trial"},
+            {"topic": "observations/events/mission"},
+            {"topic": "observations/state"},
+            {"topic": "observations/events/scoreboard"},
+            {"topic": "observations/events/player/triage"},
+            {"topic": "observations/events/player/role_selected"},
+            {"topic": "observations/events/player/tool_used"},
+            {"topic": "observations/events/player/rubble_destroyed"},
+            {"topic": "observations/events/player/victim_picked_up"},
+            {"topic": "observations/events/player/victim_placed"},
+            {"topic": "agent/asr/final"}
+        ]
+    }
+}

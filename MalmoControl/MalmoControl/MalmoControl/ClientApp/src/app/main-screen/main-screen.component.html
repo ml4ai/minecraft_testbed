@@ -1,0 +1,61 @@
+<div id='main-grid-div'>
+
+  <div class='section-div'>
+    <mat-card>
+      <mat-card-title>SYSTEM STATUS</mat-card-title>
+      <app-malmo-status></app-malmo-status>
+    </mat-card>
+  </div>
+
+  <div class='section-div'>
+    <mat-card>
+      <mat-card-title>MISSION RUNNER</mat-card-title>
+      <app-mission-runner></app-mission-runner>
+    </mat-card>
+  </div>
+
+  <!-- <div class='section-div'>
+    <mat-card>
+      <mat-card-title>PORT MAPPER</mat-card-title>
+      <app-port-out></app-port-out>
+    </mat-card>
+  </div> -->
+
+  <!-- <div class='section-div'>
+    <mat-card>
+      <mat-card-title>REFERENCE AGENT</mat-card-title>
+      <app-reference-agent></app-reference-agent>
+    </mat-card>
+  </div> -->
+
+  <!-- <div class='section-div'>
+    <mat-card class='ports'>
+      <mat-card-title>PORT VIEWER</mat-card-title>
+      <app-fetch-ports></app-fetch-ports>
+    </mat-card>
+  </div> -->
+
+  <div class='section-div'>
+    <mat-card style="max-height:400px">
+      <!-- <mat-card-title>TRIAL INFORMATION</mat-card-title>
+      <app-experiment-info></app-experiment-info>           -->
+      <mat-card-title>AGENT CONTROL</mat-card-title>
+      <app-agent-control></app-agent-control>
+    </mat-card>
+  </div>
+
+  <div class='section-div' id="client-table">
+    <mat-card style="max-height:400px">
+      <mat-card-title>CLIENT INFORMATION</mat-card-title>
+      <app-client-info></app-client-info>          
+    </mat-card>
+  </div>
+
+  <div class='section-div' id="observer-table">
+    <mat-card style="max-height:400px">
+      <mat-card-title>OBSERVER INFORMATION</mat-card-title>
+      <app-observer-info></app-observer-info>          
+    </mat-card>
+  </div>
+
+</div>

@@ -1,0 +1,102 @@
+@keyframes heatmap {
+   from {
+      opacity: 0.5;
+      background-color: rgb(3, 235, 215);
+   }
+   to {
+      opacity: 0.95;
+      background-color: rgba(0, 0, 255, 0.425);
+   }
+   
+}
+#body{
+   position:absolute;
+}
+
+#Map,#BlackoutImageElement, #QRImageElement {
+   position:absolute;
+   // left: 50%;   
+   // transform: translateX(-50%);   
+    // border:3px blue solid;    
+    margin-left:10px;
+    width: 98%;
+    height: 60%;
+    //max-height: 70%;
+    //max-width:auto;
+    //max-width: 90%;
+    //height: auto;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    
+ }
+ #Map{
+   z-index: 0;
+ }
+ #BlackoutImageElement{
+   z-index: -1;
+ }
+ 
+ #QRImageElement{
+   z-index: -1;
+ }
+
+ #GridLayer{ 
+    position:absolute;
+    margin-left:10px;
+    //left: 50%;   
+    //transform: translateX(-50%);
+    z-index: 1;
+    display:grid;
+    //grid-template-columns: repeat(139,1fr) ;
+    //grid-template-columns: repeat(50,1fr) ;
+ }
+ 
+ #MapContainer {   
+   
+ }
+
+ #InteractionContainer{
+
+   position: absolute;
+   border: 1px solid black; 
+  
+}
+ 
+ .Player{
+   z-index: 3;
+   position: absolute;
+   width:16px;
+   height:16px;   
+ }
+
+ .Marker{
+   z-index: 2;
+   position: absolute;
+   width:10px;
+   height:10px;   
+ }
+
+ .GridDivs{    
+    z-index: inherit;
+    font-size: 2px;
+    color:blue;
+    
+ }
+ 
+ html,body{
+     width:100%;
+     height:100%;
+ }
+
+ .heatmap{
+   background-color: rgba(0, 0, 255, 0.7);
+   border-color: aqua;
+   border-width: '2px';
+   animation-name: heatmap;
+   animation-duration: 3s;
+   animation-iteration-count: infinite;
+ }
+
+ .heatmap-stable{
+    background-color: rgba(0, 0, 255, 0.7);
+ }

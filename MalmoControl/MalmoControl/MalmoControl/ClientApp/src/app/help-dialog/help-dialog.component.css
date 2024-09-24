@@ -1,0 +1,38 @@
+div{
+    margin:1%;
+}
+
+button{
+    margin:2%;
+}
+
+p{ 
+    text-align: left;
+    
+    
+}
+
+mat-card-title {
+    border: 1px black solid;
+    background-color: #c2bec4
+}
+
+mat-card-content {
+    max-width: 800px;
+    max-height:500px;
+    overflow: scroll;
+    margin-left: -2%;
+}
+
+.text{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.25rem;
+    color: blue;
+}
+
+.emphasize {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+
+    color: rgb(30, 94, 155);
+}

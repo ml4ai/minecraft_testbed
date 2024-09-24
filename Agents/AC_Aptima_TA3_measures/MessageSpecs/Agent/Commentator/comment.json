@@ -1,0 +1,60 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://asist.aptima.com/schemas/comment.json",
+  "type": "object",
+  "title": "The Comment Event Schema",
+  "version": "1.0",
+  "required": [
+    "header",
+    "msg",
+    "data"
+  ],
+  "properties": {
+    "header": {
+      "$ref": "../Common_Header/common_header.json"
+    },
+    "msg": {      
+      "$ref": "../Common_Message/common_message.json"
+    },
+    "data": {
+      "$id": "#/properties/data",
+      "type": "object",
+      "title": "The Comment Data Schema",
+      "required": [
+        "comment"
+      ],
+      "properties": {
+        "playername": {
+          "$id": "#/properties/event/state/playername",
+          "type": "string",
+          "title": "The PlayerName Schema",
+          "examples": [
+            "Aptiminer1"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "role": {
+          "$id": "#/properties/data/properties/new_role",
+          "type": "string",
+          "title": "The New Role Schema",
+          "enum": [ "None", "Search_Specialist", "Hazardous_Material_Specialist","Medical_Specialist" ],
+          "examples": [
+
+            "Hazardous_Material_Specialist"
+          ]
+        },
+        "comment": {
+          "$id": "#/properties/data/properties/comment",
+          "type": "string",
+          "title": "The comment Schema",
+          "default": "",
+          "examples": [
+            "What are we doing here!"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    }
+  }
+}

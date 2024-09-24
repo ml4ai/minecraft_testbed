@@ -1,0 +1,50 @@
+version: '3.7'
+
+networks:
+  asist_net:
+   external: true    
+    
+services:
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx        
+    volumes:   
+    -  ./Nginx/nginx-replays.conf:/etc/nginx/nginx.conf
+    -  ./Nginx/cert-aspnetcore.crt:/etc/nginx/cert-aspnetcore.crt
+    -  ./Nginx/cert-aspnetcore.key:/etc/nginx/cert-aspnetcore.key
+    -  ./Nginx/ssl_passwords.txt:/etc/nginx/ssl_passwords.txt
+    ports:
+    - "9000:443"    
+    networks: 
+      asist_net:
+        aliases: 
+          - nginx
+
+  mqttvalidationservice:    
+    image: mqttvalidationservice:latest
+    build: ../MQTTValidationServiceContainer/.   
+    volumes:
+      - //var/run/docker.sock:/var/run/docker.sock
+      - ./MessageValidator/appsettings.json:/app/appsettings.json
+      - ../MessageSpecs:/app/MessageSpecs
+    container_name: mqttvalidationservice
+    environment:
+        - Kestrel__Certificates__Default__Path=cert-aspnetcore.pfx
+        - Kestrel__Certificates__Default__Password=password    
+    networks: 
+      asist_net:
+        aliases: 
+          - mqttvalidationservice 
+
+  dozzle:
+      container_name: dozzle
+      image: amir20/dozzle:latest
+      environment:
+          DOZZLE_BASE: /Logger
+      volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      networks:
+          asist_net:
+              aliases:
+                  - dozzle

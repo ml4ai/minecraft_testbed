@@ -1,0 +1,2 @@
+../../Tools/ihmc-python-agent-helper-package
+scikit-image>=0.18.3

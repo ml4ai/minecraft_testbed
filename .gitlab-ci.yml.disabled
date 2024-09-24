@@ -1,0 +1,72 @@
+stages:
+  - build
+  - test
+  - cleanup
+
+calculate_version:
+  stage: .pre
+  artifacts:
+    paths:
+      - version.txt
+      - version.svg
+  script:
+    - /usr/local/bin/gitversion /showvariable SemVer > version.txt
+    - cat version.txt
+    - REV_TAG=$(cat version.txt)
+    - curl https://badgen.net/badge/$CI_COMMIT_REF_NAME/$REV_TAG/blue?icon=nuget > version.svg
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+
+setup:
+  stage: .pre
+  script:
+    - echo "Pre stages"
+    - whoami
+    - cd Local
+    - sudo chown -R gitlab-runner:gitlab-runner .
+    - sudo chmod -R 777 .
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: $CI_COMMIT_REF_NAME == "batch-replays-229"
+
+build:
+  stage: build
+  script:
+    - cd Local
+    - chmod 777 testbed_build_ci.sh
+    - ./testbed_build_ci.sh
+    - chmod 777 permissions.sh
+    - sudo ./permissions.sh &
+    - ./testbed_up_core.sh -iz
+    - sudo pkill permissions.sh
+    - cd ..
+    - sudo chown -R gitlab-runner:gitlab-runner .
+    - sudo chmod -R 777 .
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: $CI_COMMIT_REF_NAME == "batch-replays-229"
+
+test:
+  stage: test
+  allow_failure: true
+  artifacts:
+    paths:
+      - "Tools/agent_testing/AgentPredicateTests/test_output.txt"
+  script:
+    - cd Tools/agent_testing
+    - ./test_agents.sh config.json
+    - cd -
+    - rm -rf Agents/*/logs
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - if: $CI_COMMIT_REF_NAME == "batch-replays-229"
+
+cleanup:
+  when: always
+  stage: cleanup
+  script:
+    - cd Local
+    - ./testbed_down.sh -c
+    - cd ..
+    - sudo chown -R gitlab-runner:gitlab-runner .
+    - sudo chmod -R 777 .

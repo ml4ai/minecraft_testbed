@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "cmuta2-ted-ac"
+version = "0.0.3"
+description = "CMU TA2 TED AC"
+authors = ["Jeff Rye <rye@sift.net>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+asistagenthelper-pkg-rcarff-ihmc = { git = "https://gitlab.com/ihmc-asist/python-agent-helper.git", branch = "main" }
+python-dateutil = "^2.8.2"
+paho-mqtt = "^1.6.1"
+matplotlib = "^3.4.3"
+json5 = "^0.9.6"
+pandas = "^1.3.4"
+jupyterlab = "^3.3.1"
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.11.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

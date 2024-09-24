@@ -1,0 +1,213 @@
+{
+  "mqtthost": "tcp://mosquitto:1883",
+  "useRoomDefinitionFile": false,
+  "roomDefinitionFile":"Room_Definitions.json",
+  "observationInterval": 100,
+  "clientSideMapBuilder": false,
+  "clientSideMapBuilderMapBlockFile": "MapBlocks_Saturn_Mission_1.csv",
+  "triageScoreVisibleToPlayer": true,
+  "removePlayersOnMissionEnd": true,
+  "proximityVictimPlayerCount": 2,
+  "criticalVictimsShouldExpire": false,
+  "markerBlocksActive": true,
+  "authorizePlayers": true,
+  "rubbleCollapseBlockInterval": 40000,
+  "victimSignalResetInterval":1000,
+  "missionLength": {
+    "minute": 17,
+    "second": 0
+  },
+  "planningEndTime": {
+    "minute": 15,
+    "second": 0
+  },
+  "missionLengthTraining": {
+        "minute": 20,
+        "second": 0
+  },
+  "criticalVictimExpirationTime": {
+    "minute": 5,
+    "second": 0
+  },
+  "observerNames": [],
+  "pauseTimes": [],
+  "triagePoints": {
+    "regular": 10,
+    "critical": 50
+
+  },
+  "Test": {
+    "SpawnPoint": {
+      "X": -2194,
+      "Y": 227,
+      "Z": 193
+    },
+    "MissionStartButton": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    }
+  },
+  "Training": {
+    "SpawnPoint": {
+      "X": -2234,
+      "Y": 54,
+      "Z": 180
+    },
+    "MissionStartButton": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    }
+  },
+  "Competency": {
+    "SpawnPoint": {
+      "X": -2116,
+      "Y": 29,
+      "Z": 149.5
+    },
+    "MissionStartButton": {
+      "X": -2119,
+      "Y": 30,
+      "Z": 149
+    }
+  },
+  "Falcon": {
+    "SpawnPoint": {
+      "X": -2151,
+      "Y": 60,
+      "Z": 147
+    },
+    "MissionStartButton": {
+      "X": -2150,
+      "Y": 61,
+      "Z": 147
+    }
+  },
+  "Custom": {
+    "SpawnPoint": {
+      "X": 1542,
+      "Y": 228,
+      "Z": 65
+    },
+    "MissionStartButton": {
+      "X": 1542,
+      "Y": 228,
+      "Z": 61
+    }
+  },  
+  "blackout_perturbation":[{
+    "triggering_mission":"Saturn_A_Blackout",
+    "start":{
+        "minute": 6,
+        "second": 0
+    },
+    "end":{
+        "minute": 4,
+        "second": 0
+    },    
+    "file":null 
+  },
+  {
+    "triggering_mission":"Saturn_B_Blackout",
+    "start":{
+        "minute": 6,
+        "second": 0
+    },
+    "end":{
+        "minute": 4,
+        "second": 0
+    },    
+    "file":null 
+  },
+  {
+    "triggering_mission":"Saturn_D",
+    "start":{
+        "minute": 6,
+        "second": 0
+    },
+    "end":{
+        "minute": 4,
+        "second": 0
+    },    
+    "file":null 
+  }],
+  "rubble_perturbation":[{
+    "triggering_mission":"Saturn_A_Rubble",
+    "start":{
+        "minute": 8,
+        "second": 0
+    },
+    "end":{
+        "minute": 0,
+        "second": 0
+    },
+    "file":"Perturbation_Rubble_1.0.csv" 
+  },
+  {
+    "triggering_mission":"Saturn_B_Rubble",
+    "start":{
+        "minute": 8,
+        "second": 0
+    },
+    "end":{
+        "minute": 0,
+        "second": 0
+    },
+    "file":"Perturbation_Rubble_1.0.csv" 
+  },
+  {
+    "triggering_mission":"Saturn_C",
+    "start":{
+        "minute": 8,
+        "second": 0
+    },
+    "end":{
+        "minute": 0,
+        "second": 0
+    },
+    "file":"Perturbation_Rubble_1.0.csv" 
+  }],
+  "safeZonesA": [
+    {
+      "minX": -2126,
+      "maxX": -2114,
+      "minZ": 61,
+      "maxZ": 63
+    },
+    {
+      "minX": -2194,
+      "maxX": -2182,
+      "minZ": -5,
+      "maxZ": -3
+    }
+  ],
+  "safeZonesB": [
+    {
+      "minX": -2194,
+      "maxX": -2182,
+      "minZ": 61,
+      "maxZ": 63
+    },
+    {
+      "minX": -2126,
+      "maxX": -2114,
+      "minZ": -5,
+      "maxZ": -3
+    }
+  ],
+  "safeZonesC": [
+    {
+      "minX": -2160,
+      "maxX": -2148,
+      "minZ": 61,
+      "maxZ": 63
+    },
+    {
+      "minX": -2160,
+      "maxX": -2148,
+      "minZ": -5,
+      "maxZ": -3
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+<div>
+
+  <div style="display:flex">
+    <div class="text"> Experiment ID : </div><div style='flex-grow: 1'></div> <div class="text">{{experimentService.experiment_id}}</div>
+  </div>  
+  <div style="display:flex">
+    <div class="text"> Trial ID : </div> <div style='flex-grow: 1'></div> <div class="text">{{experimentService.trial_id}}</div>
+  </div>
+  <div *ngIf="experimentService.trial_running !== 'True'" style="margin-top:40px">    
+    <button mat-button (click) = launchExperimentDialog() >Create Trial and Run Mission</button>
+  </div>
+
+  <div *ngIf="experimentService.trial_running === 'True'">     
+    <button *ngIf="killContainerInProgress === false" style="margin-top:20px; height:2rem; background-color:#dd1b09 !important; border-radius:20px;" mat-button (click) = stopTrial()>Stop Trial </button>    
+    <mat-spinner id=spinner diameter=50 style="margin:0 auto;" *ngIf="killContainerInProgress === true"></mat-spinner>
+  </div>
+
+  <div style="display:flex">
+    <img id="killcontainerimg" (click) = forceContainerKill() matTooltip="Force Kill Minecraft Container">
+    <div style='flex-grow: 1'></div> 
+    <mat-spinner id=spinner diameter=25 style="margin:0 auto;" *ngIf="killContainerInProgress === true"></mat-spinner>
+  </div>
+
+</div>
+

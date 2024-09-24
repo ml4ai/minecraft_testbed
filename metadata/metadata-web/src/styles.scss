@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.bottom-sheet-container {
+  //min-height: 100vh;
+  min-width: 100vw !important;
+  //margin-top: 80px;
+  padding: 0 !important;
+}
+
+.full-width-1-dialog .mat-dialog-container {
+  min-width: 80vw !important;
+}
+
+.full-width-2-dialog .mat-dialog-container {
+  min-width: 60vw !important;
+}
+
+.metadata-detected-panel .mat-expansion-panel-body {
+  padding: 0;
+}

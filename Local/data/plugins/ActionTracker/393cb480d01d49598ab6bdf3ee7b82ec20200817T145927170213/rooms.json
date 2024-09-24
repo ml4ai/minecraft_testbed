@@ -1,0 +1,218 @@
+{
+  "11": {
+    "bounds": {
+      "startX": -2073,
+      "startZ": 169,
+      "endX": -2066,
+      "endZ": 178
+    },
+    "entranceExitLocations": []
+  },
+  "22": {
+    "bounds": {
+      "startX": -2044,
+      "startZ": 143,
+      "endX": -2028,
+      "endZ": 151
+    },
+    "entranceExitLocations": []
+  },
+  "12": {
+    "bounds": {
+      "startX": -2037,
+      "startZ": 169,
+      "endX": -2028,
+      "endZ": 178
+    },
+    "entranceExitLocations": []
+  },
+  "23": {
+    "bounds": {
+      "startX": -2037,
+      "startZ": 150,
+      "endX": -2028,
+      "endZ": 159
+    },
+    "entranceExitLocations": []
+  },
+  "13": {
+    "bounds": {
+      "startX": -2109,
+      "startZ": 183,
+      "endX": -2100,
+      "endZ": 192
+    },
+    "entranceExitLocations": []
+  },
+  "14": {
+    "bounds": {
+      "startX": -2100,
+      "startZ": 183,
+      "endX": -2091,
+      "endZ": 192
+    },
+    "entranceExitLocations": []
+  },
+  "15": {
+    "bounds": {
+      "startX": -2091,
+      "startZ": 183,
+      "endX": -2082,
+      "endZ": 192
+    },
+    "entranceExitLocations": []
+  },
+  "16": {
+    "bounds": {
+      "startX": -2082,
+      "startZ": 183,
+      "endX": -2073,
+      "endZ": 192
+    },
+    "entranceExitLocations": []
+  },
+  "17": {
+    "bounds": {
+      "startX": -2073,
+      "startZ": 183,
+      "endX": -2064,
+      "endZ": 192
+    },
+    "entranceExitLocations": []
+  },
+  "18": {
+    "bounds": {
+      "startX": -2064,
+      "startZ": 183,
+      "endX": -2055,
+      "endZ": 192
+    },
+    "entranceExitLocations": []
+  },
+  "19": {
+    "bounds": {
+      "startX": -2055,
+      "startZ": 183,
+      "endX": -2046,
+      "endZ": 192
+    },
+    "entranceExitLocations": []
+  },
+  "0": {
+    "bounds": {
+      "startX": -2089,
+      "startZ": 143,
+      "endX": -2085,
+      "endZ": 151
+    },
+    "entranceExitLocations": []
+  },
+  "1": {
+    "bounds": {
+      "startX": -2076,
+      "startZ": 143,
+      "endX": -2059,
+      "endZ": 151
+    },
+    "entranceExitLocations": []
+  },
+  "2": {
+    "bounds": {
+      "startX": -2059,
+      "startZ": 143,
+      "endX": -2044,
+      "endZ": 151
+    },
+    "entranceExitLocations": []
+  },
+  "3": {
+    "bounds": {
+      "startX": -2028,
+      "startZ": 143,
+      "endX": -2020,
+      "endZ": 159
+    },
+    "entranceExitLocations": []
+  },
+  "4": {
+    "bounds": {
+      "startX": -2096,
+      "startZ": 156,
+      "endX": -2078,
+      "endZ": 178
+    },
+    "entranceExitLocations": []
+  },
+  "5": {
+    "bounds": {
+      "startX": -2072,
+      "startZ": 156,
+      "endX": -2066,
+      "endZ": 160
+    },
+    "entranceExitLocations": []
+  },
+  "6": {
+    "bounds": {
+      "startX": -2065,
+      "startZ": 156,
+      "endX": -2056,
+      "endZ": 167
+    },
+    "entranceExitLocations": []
+  },
+  "7": {
+    "bounds": {
+      "startX": -2051,
+      "startZ": 156,
+      "endX": -2042,
+      "endZ": 178
+    },
+    "entranceExitLocations": []
+  },
+  "8": {
+    "bounds": {
+      "startX": -2073,
+      "startZ": 160,
+      "endX": -2066,
+      "endZ": 169
+    },
+    "entranceExitLocations": []
+  },
+  "9": {
+    "bounds": {
+      "startX": -2037,
+      "startZ": 160,
+      "endX": -2028,
+      "endZ": 169
+    },
+    "entranceExitLocations": []
+  },
+  "20": {
+    "bounds": {
+      "startX": -2046,
+      "startZ": 183,
+      "endX": -2037,
+      "endZ": 192
+    },
+    "entranceExitLocations": []
+  },
+  "10": {
+    "bounds": {
+      "startX": -2065,
+      "startZ": 167,
+      "endX": -2056,
+      "endZ": 178
+    },
+    "entranceExitLocations": []
+  },
+  "21": {
+    "bounds": {
+      "startX": -2037,
+      "startZ": 183,
+      "endX": -2028,
+      "endZ": 192
+    },
+    "entranceExitLocations": []
+  }
+}

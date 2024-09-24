@@ -1,0 +1,94 @@
+<div class="container">
+
+  <h2>Replays</h2>
+
+  <div fxLayout="column">
+
+    <mat-form-field>
+      <mat-label>Filter Table</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Filter" autocomplete="off">
+    </mat-form-field>
+
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let replay"> {{replay.id}} </td>
+        </ng-container>
+
+        <!-- Replay ID Column -->
+        <ng-container matColumnDef="replay_id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Replay ID </th>
+          <td mat-cell *matCellDef="let replay"> {{replay.replay_id}} </td>
+        </ng-container>
+
+        <!-- Replay Parent Type Column -->
+        <ng-container matColumnDef="replay_parent_type">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Parent Type </th>
+          <td mat-cell *matCellDef="let replay"> {{replay.replay_parent_type}} </td>
+        </ng-container>
+
+        <!-- Replay Parent ID Column -->
+        <ng-container matColumnDef="replay_parent_id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Parent ID </th>
+          <td mat-cell *matCellDef="let replay"> {{replay.replay_parent_id}} </td>
+        </ng-container>
+
+        <!-- Date Column -->
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+          <td mat-cell *matCellDef="let replay"> {{replay.date}} </td>
+        </ng-container>
+
+        <!-- Ignore Message List Column -->
+        <ng-container matColumnDef="ignore_message_list">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Ignore Message List </th>
+          <td mat-cell *matCellDef="let replay"> {{replay.ignore_message_list | json}} </td>
+        </ng-container>
+
+        <!-- Ignore Source List Column -->
+        <ng-container matColumnDef="ignore_source_list">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Ignore Source List </th>
+          <td mat-cell *matCellDef="let replay"> {{replay.ignore_source_list | json}} </td>
+        </ng-container>
+
+        <!-- Ignore Topic List Column -->
+        <ng-container matColumnDef="ignore_topic_list">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Ignore Topic List </th>
+          <td mat-cell *matCellDef="let replay"> {{replay.ignore_topic_list | json}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell class="create-button" *matHeaderCellDef>
+            <button mat-icon-button (click)="openCreateReplayDialog()">
+              <mat-icon aria-label="Create">add_circle</mat-icon>
+            </button>
+          </th>
+
+          <td mat-cell *matCellDef="let row; let i = index;">
+            <div class="mat-cell-buttons">
+              <button mat-icon-button color="accent" (click)="openUpdateReplayDialog(this.paginator.pageIndex == 0 ?  i : i + this.paginator.pageIndex * this.paginator.pageSize, row.id, row.replay_id, row.replay_parent_id, row.replay_parent_type, row.date, row.ignore_message_list, row.ignore_source_list, row.ignore_topic_list)">
+                <mat-icon aria-label="Edit">edit</mat-icon>
+              </button>
+
+              <button mat-icon-button color="accent" (click)="openDeleteReplayDialog(this.paginator.pageIndex == 0 ?  i : i + this.paginator.pageIndex * this.paginator.pageSize, row.id, row.replay_id, row.replay_parent_id, row.replay_parent_type, row.date, row.ignore_message_list, row.ignore_source_list, row.ignore_topic_list)">
+                <mat-icon aria-label="Delete">delete</mat-icon>
+              </button>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <div class="no-results" [style.display]="dataSource.data.length == 0 ? '' : 'none'">
+        No results
+      </div>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>
+
+

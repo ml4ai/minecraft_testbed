@@ -1,0 +1,8 @@
+url: https://gitlab.asist.aptima.com
+projects:
+    - name: testbed
+      id: 2
+      token: glpat-ZCnzo9MJdbpiRV1ggEVP
+    - name: ASIST Requirements
+      id: 27
+      token: glpat-L4abqw_VqHSVQXpmGyEc

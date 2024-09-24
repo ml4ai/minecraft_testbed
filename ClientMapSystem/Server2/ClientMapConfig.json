@@ -1,0 +1,114 @@
+{
+    "showGlobalPositions":false,
+    "Saturn_A_Text": {
+        "Medic": [
+            "Scheduled to be used for meetings: Three rooms on the left side of the building (A2-Human Resources, B9-Zoom2 from Office, and C4-Security Training), two rooms in the middle region (D2-Lunch and E3-Storage Reorganization), and four rooms on the right side (I2-Zoom Meeting, I4A-Project Meeting, M1-Facilities Meeting, and M3-Management Meeting)"
+        ],
+        "Transporter":[            
+            "Three meetings were scheduled to have two or more attendees (Project Meeting, Lunch, and Management Meeting), three meetings were scheduled to have one attendee (Security Training, Facilities Meeting, and Human Resources Meeting), and three meetings were canceled (Storage Reorganization, Zoom Meeting, Zoom2 from Office)."            
+        ], 
+        "Engineer":[
+            "Three rooms were severely damaged (I4A, E5, and C4), three rooms were moderately damaged (M1, D2, and I2), and three rooms were mildly damaged (M3, B9, and A2)."
+        ]
+    },
+    "Saturn_B_Text": {
+        "Medic":[
+            "Scheduled to be used for meetings: Four rooms on the left side of the building (A1-Zoom Meeting, A4-Zoom2 from Office, B2-Facilities Meeting, and B6-Technical Exchange Meeting), three rooms in the middle region (D4-Management Meeting, F4-Lunch, and G3-Storage Reorganization), and two rooms on the right side (I2A-IT Training and M1-Human Resources Meeting)."
+        ],
+        "Transporter":[
+            "three meetings were scheduled to have two or more attendees (Technical Exchange Meeting, Lunch, Management Meeting), three meetings were scheduled to have one attendee (IT Training, Facilities Meeting, Human Resources Meeting), and three meetings were canceled (Storage Reorganization, Zoom Meeting, Zoom2 from Office)."
+        ],
+        "Engineer":[
+            "three rooms were severely damaged (B6, G3, I2A), three rooms were moderately damaged (A1, F4, B2), and three rooms were mildly damaged (M1, D4, A4)."
+        ]
+    },
+    "Saturn_C_Text": {
+        "Medic":[
+            "Three rooms on the left side of the building (A2-Storage Reorganization, A4-Lunch, C8-Human Resources Meeting), three rooms in the middle region (E2-Security Training, F2-Zoom2 from Office, H1A-Management Meeting), and three rooms on the right side (I2A-Zoom Meeting, I3A, Project Meeting, L1 Facilities Meeting) were scheduled to be used for meetings."
+        ],
+        "Transporter":[
+            "Three meetings were scheduled to have two or more attendees (Project Meeting, Lunch, Management Meeting), three meetings were scheduled to have one attendee (Security Training, Facilities Meeting, Human Resources Meeting), and three meetings were canceled (Storage Reorganization, Zoom Meeting, Zoom2 from Office)."
+        ],
+        "Engineer":[
+            "Three rooms were severely damaged (I3A, E2, A2), three rooms were moderately damaged (L1, I2A, A4), and three rooms were mildly damaged (F2, H1A, C8)."
+        ]
+    },
+    "Saturn_D_Text": {
+        "Medic":[
+            "Three rooms on the left side of the building (B5-Security Training, B8-Project Meeting, C2-Management Meeting), three rooms in the middle region (D4-Lunch, E3-Zoom Meeting, F2, Storage Reorganization), and three rooms on the right side (K4-Facilities Meeting, L2-Zoom2 from Office, M1-Human Resources Meeting) were scheduled to be used for meetings."
+        ],
+        "Transporter":[
+            "Three meetings were scheduled to have two or more attendees (Security Training, Facilities Meeting, Management Meeting), three meetings were scheduled to have one attendee (Zoom Meeting, Project Meeting, Human Resources Meeting), and three meetings were canceled (Storage Reorganization, Lunch, Zoom2 from Office)."
+        ],
+        "Engineer":[
+            "Three rooms were severely damaged (B5, F2, E3), three rooms were moderately damaged (B8, C2, D4), and three rooms were mildly damaged (L2, K4, M1)."
+        ]
+    },
+    "Training_Text":{
+        "Medic": ["Just in ... the trapped victim is a critical victim."],
+        "Transporter": ["Just in ... a victim is reported to have been injured by a rubble collapse."],
+        "Engineer": ["Just in ... a rubble collapse was reported in A2."]
+    },
+    "Saturn_A_Text_Summary": {
+
+        "Medic":[
+            "MEETING LOCATIONS"
+        ],
+        "Transporter":[            
+            "MEETING ATTENDANTS"            
+        ], 
+        "Engineer":[
+            "ROOM DAMAGE SEVERITY"
+        ]
+    },
+    "Saturn_B_Text_Summary": {
+
+        "Medic":[
+            "MEETING LOCATIONS"
+        ],
+        "Transporter":[            
+            "MEETING ATTENDANTS"            
+        ], 
+        "Engineer":[
+            "ROOM DAMAGE SEVERITY"
+        ]
+    },
+    "Saturn_C_Text_Summary": {
+
+        "Medic":[
+            "MEETING LOCATIONS"
+        ],
+        "Transporter":[            
+            "MEETING ATTENDANTS"            
+        ], 
+        "Engineer":[
+            "ROOM DAMAGE SEVERITY"
+        ]
+    },
+    "Saturn_D_Text_Summary": {
+
+        "Medic":[
+            "MEETING LOCATIONS"
+        ],
+        "Transporter":[            
+            "MEETING ATTENDANTS"            
+        ], 
+        "Engineer":[
+            "ROOM DAMAGE SEVERITY"
+        ]
+    },
+    "Training_Text_Summary":{
+
+        "Medic":[
+            "MEETING LOCATIONS"
+        ],
+        "Transporter":[            
+            "MEETING ATTENDANTS"            
+        ], 
+        "Engineer":[
+            "ROOM DAMAGE SEVERITY"
+        ]
+    }
+}
+
+    

@@ -1,0 +1,50 @@
+version: '3.7'
+
+networks:
+  asist_net:
+   external: true    
+    
+services:
+  clientmap:
+    image: client_map
+    container_name: clientmap
+    # ports:
+    #   - 3080:3080
+    environment:
+      - mqtt_host=mosquitto 
+      - map=ASIST    
+    networks: 
+      asist_net:
+        aliases: 
+          - clientmap
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx   
+    volumes:   
+    -  ./Nginx/nginx.conf:/etc/nginx/nginx.conf
+    -  ./Nginx/cert-aspnetcore.crt:/etc/nginx/cert-aspnetcore.crt
+    -  ./Nginx/cert-aspnetcore.key:/etc/nginx/cert-aspnetcore.key
+    -  ./Nginx/ssl_passwords.txt:/etc/nginx/ssl_passwords.txt
+    ports:
+    - "9000:443"    
+    networks: 
+      asist_net:
+        aliases: 
+          - nginx
+
+  mosquitto:
+    image: eclipse-mosquitto:1.6.9
+    restart: always
+    ports:
+     - "1883:1883"
+     - "9001:9001"
+    container_name: mosquitto
+    networks:
+          asist_net:
+              aliases:
+                  - mosquitto
+        
+
+
+

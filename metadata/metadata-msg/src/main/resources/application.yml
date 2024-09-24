@@ -1,0 +1,27 @@
+micronaut:
+   application:
+      name: metadata-msg
+   server:
+      port: ${METADATA_MSG_PORT}
+      cors:
+         enabled: true
+         
+jackson:
+  serializationInclusion: ALWAYS # Include empty arrays in JSON output
+  
+endpoints:
+   health:
+      enabled: true
+      sensitive: false # non-secured endpoint
+      details-visible: ANONYMOUS # show details for everyone
+      mqtt:
+         client:
+            enabled: true
+mqtt:
+   brokerUrl: ${MQTT_BROKER_URL}
+   clientId: ${MQTT_CLIENT_ID}
+   topic: ${MQTT_TOPIC}
+   qos: ${MQTT_QOS}
+   verbose: ${MQTT_VERBOSE}
+   cleanSession: ${MQTT_CLEAN_SESSION}
+   metadataApiUrl: ${MQTT_METADATA_API_URL}

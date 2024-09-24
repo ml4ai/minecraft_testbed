@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.2" last-position="0,0" last-zoom="1" max-obj-count="4"
+	 default-schema="public" default-owner="postgres">
+<database name="metadata" encoding="UTF8" lc-collate="English_United States.1252" lc-ctype="English_United States.1252" is-template="false" allow-conns="true">
+	<role name="postgres"/>
+	<tablespace name="pg_default"/>
+</database>
+
+<schema name="public" layer="0" rect-visible="true" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="trials" layer="0" collapse-mode="2" max-obj-count="15">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="60" y="60"/>
+	<column name="id" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[The trial database id.]]></comment>
+	</column>
+	<column name="trial_id" not-null="true">
+		<type name="uuid" length="0"/>
+		<comment><![CDATA[The trial id.]]></comment>
+	</column>
+	<column name="name">
+		<type name="text" length="0"/>
+		<comment><![CDATA[A user friendly name for the trial.]]></comment>
+	</column>
+	<column name="date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[The date and time the trial was run.]]></comment>
+	</column>
+	<column name="experimenter">
+		<type name="text" length="0"/>
+		<comment><![CDATA[A name of the experimenter performing the trial.]]></comment>
+	</column>
+	<column name="subjects">
+		<type name="text" length="0" dimension="1"/>
+		<comment><![CDATA[A list of the names or ids of the subjects in the trial.]]></comment>
+	</column>
+	<column name="trial_number">
+		<type name="text" length="0"/>
+		<comment><![CDATA[Sequentially numbered trial run.]]></comment>
+	</column>
+	<column name="group_number">
+		<type name="text" length="0"/>
+		<comment><![CDATA[Data organization identifier.]]></comment>
+	</column>
+	<column name="study_number">
+		<type name="text" length="0"/>
+		<comment><![CDATA[Study identifier.]]></comment>
+	</column>
+	<column name="condition">
+		<type name="text" length="0"/>
+		<comment><![CDATA[The experimental condition used for the trial.]]></comment>
+	</column>
+	<column name="notes">
+		<type name="text" length="0" dimension="1"/>
+		<comment><![CDATA[A list of notes for the trial.]]></comment>
+	</column>
+	<column name="testbed_version">
+		<type name="text" length="0"/>
+		<comment><![CDATA[The testbed version used for the trial.]]></comment>
+	</column>
+	<column name="experiment_id_experiments">
+		<type name="uuid" length="0"/>
+		<comment><![CDATA[The id of the experiment used in the trial.]]></comment>
+	</column>
+	<constraint name="trial_pk" type="pk-constr" table="public.trials">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="trial_id_uq" type="uq-constr" table="public.trials">
+		<columns names="trial_id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="trials_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1" sql-disabled="true">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="experiments" layer="0" collapse-mode="2" max-obj-count="7">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="540" y="80"/>
+	<column name="id" not-null="true"
+	 identity-type="ALWAYS">
+		<type name="integer" length="0"/>
+		<comment><![CDATA[The experiment database id.]]></comment>
+	</column>
+	<column name="experiment_id" not-null="true">
+		<type name="uuid" length="0"/>
+		<comment><![CDATA[The experiment id.]]></comment>
+	</column>
+	<column name="name">
+		<type name="text" length="0"/>
+		<comment><![CDATA[A user friendly name for the experiment.]]></comment>
+	</column>
+	<column name="date">
+		<type name="timestamp" length="0"/>
+		<comment><![CDATA[The date and time the experiment was created.]]></comment>
+	</column>
+	<column name="author">
+		<type name="text" length="0"/>
+		<comment><![CDATA[The name of the author of the experiment.]]></comment>
+	</column>
+	<column name="mission">
+		<type name="text" length="0"/>
+		<comment><![CDATA[The mission associated with this experiment.]]></comment>
+	</column>
+	<constraint name="experiment_pk" type="pk-constr" table="public.experiments">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="experiment_id_uq" type="uq-constr" table="public.experiments">
+		<columns names="experiment_id" ref-type="src-columns"/>
+	</constraint>
+	<constraint name="name_uq" type="uq-constr" table="public.experiments">
+		<columns names="name" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<sequence name="experiments_id_seq" cycle="false" start="1" increment="1" min-value="1" max-value="2147483647" cache="1" sql-disabled="true">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<constraint name="experiments_fk" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="SET NULL" ref-table="public.experiments" table="public.trials">
+	<columns names="experiment_id_experiments" ref-type="src-columns"/>
+	<columns names="experiment_id" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_trials_experiments" type="relfk" layer="0"
+	 custom-color="#ba0ee2"
+	 src-table="public.trials"
+	 dst-table="public.experiments" reference-fk="experiments_fk"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>

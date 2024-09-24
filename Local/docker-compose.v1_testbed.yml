@@ -1,0 +1,89 @@
+version: '3.7'
+
+networks:
+  malmonet:
+   external: true    
+    
+services:
+  malmocontrol:    
+    image: malmocontrol:latest
+    build: ../MalmoControl/.   
+    ports: 
+      - "5002:5002"
+    volumes:
+      - //var/run/docker.sock:/var/run/docker.sock
+      - ./MalmoControl/appsettings.json:/home/MalmoControl/appsettings.json
+    container_name: malmocontrol_Local    
+    networks: 
+      malmonet:
+        aliases: 
+          - malmocontrol    
+
+  malmo-server:    
+    image: malmoserver:latest
+    build: ../MalmoContainer/.
+    ports:
+      - "5900:5900"              
+    depends_on:
+      - malmocontrol      
+    container_name: malmo-server
+    volumes:    
+      - ./MalmoContainer/ConfigFolder:/home/malmo/MalmoPlatform/build/install/Python_Examples/ConfigFolder
+    networks: 
+      malmonet:
+        aliases: 
+          - malmo-server
+    environment:
+      - MALMO_INSTANCE=_Local 
+      - PYTHONUNBUFFERED=0
+  
+  reference_agent:
+    image: reference_agent:latest
+    build: ../ReferenceAgents/MQTTPythonReferenceAgent/.
+    container_name: reference_agent    
+    volumes:    
+      - ./ReferenceAgent/ConfigFolder:/app/ConfigFolder
+    depends_on: 
+      - malmocontrol 
+    networks: 
+      malmonet:
+        aliases: 
+          - reference_agent
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    depends_on:    
+    - malmocontrol    
+    volumes:   
+    -  ./Nginx/nginx.conf:/etc/nginx/nginx.conf
+    -  ./Nginx/cert-aspnetcore.crt:/etc/nginx/cert-aspnetcore.crt
+    -  ./Nginx/cert-aspnetcore.key:/etc/nginx/cert-aspnetcore.key
+    -  ./Nginx/ssl_passwords.txt:/etc/nginx/ssl_passwords.txt
+    ports:
+    - "9000:443"    
+    networks: 
+      malmonet:
+        aliases: 
+          - nginx
+  
+  mqttvalidationservice:    
+    image: mqttvalidationservice:latest
+    build: ../MQTTValidationServiceContainer/.   
+    volumes:
+      - //var/run/docker.sock:/var/run/docker.sock
+      - ./MessageValidator/appsettings.json:/home/MessageValidator/appsettings.json
+      - ../MessageSpecs:/app/MessageSpecs
+    container_name: mqttvalidationservice
+    environment:
+        - Kestrel__Certificates__Default__Path=cert-aspnetcore.pfx
+        - Kestrel__Certificates__Default__Password=password    
+    networks: 
+      malmonet:
+        aliases: 
+          - mqttvalidationservice
+
+
+
+
+

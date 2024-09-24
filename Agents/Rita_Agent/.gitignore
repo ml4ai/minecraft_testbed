@@ -1,0 +1,4 @@
+clojure_service_logs/**
+mongo_data_db/**
+mqtt_service_logs/**
+tailer_service_logs/**

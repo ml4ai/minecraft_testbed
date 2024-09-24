@@ -1,0 +1,92 @@
+{
+    "gaming_experience": {
+        "individual": {
+            "mean": 4.07,
+            "std": 0.81
+        },
+        "team": {
+            "mean": 4.08,
+            "std": 0.46
+        }
+    },
+    "mission_knowledge": {
+        "individual": {
+            "mean": 70.49,
+            "std": 12.27
+        },
+        "team": {
+            "mean": 70.38,
+            "std": 7.15
+        }
+    },
+    "anger": {
+        "individual": {
+            "mean": 1.20,
+            "std": 0.52
+        },
+        "team": {
+            "mean": 1.20,
+            "std": 0.34
+        }
+    },
+    "anxiety": {
+        "individual": {
+            "mean": 1.66,
+            "std": 0.68
+        },
+        "team": {
+            "mean": 1.66,
+            "std": 0.42
+        }
+    },
+    "rmie": {
+        "individual": {
+            "mean": 0.74,
+            "std": 0.11
+        },
+        "team": {
+            "mean": 0.74,
+            "std": 0.06
+        }
+    },
+    "sbsod": {
+        "individual": {
+            "mean": 4.89,
+            "std": 0.99
+        },
+        "team": {
+            "mean": 4.89,
+            "std": 0.58
+        }
+    },
+    "walking_skill": {
+        "individual": {
+            "mean": 0.47,
+            "std": 0.08
+        },
+        "team": {
+            "mean": 0.47,
+            "std": 0.08
+        }
+    },
+    "marking_skill": {
+        "individual": {
+            "mean": -1,
+            "std": -1
+        },
+        "team": {
+            "mean": -1,
+            "std": -1
+        }
+    },
+    "transporting_skill": {
+        "individual": {
+            "mean": -1,
+            "std": -1
+        },
+        "team": {
+            "mean": -1,
+            "std": -1
+        }
+    }
+}

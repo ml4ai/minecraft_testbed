@@ -1,0 +1,23 @@
+{
+    "host": ["mosquitto", "localhost", "192.168.69.158"],
+    "port": "1883",
+    "heartbeats_per_minute": 6,
+    "version_info": {
+        "owner": "IHMC - TA2",
+        "agent_type": "AC",
+        "version": "0.0.2",
+        "source": [
+            "https://gitlab.com/artificialsocialintelligence/study3/-/tree/main/Agents/AC_IHMC_TA2_Dyad-Reporting"
+        ],
+        "dependencies": ["AC_IHMC_TA2_Player-Proximity"],
+        "publishes": [
+            {"topic": "observations/events/player/dyad", "message_type": "event", "sub_type": "Event:dyad"}
+        ],
+        "subscribes": [
+            {"topic": "observations/events/player/proximity", "message_type": "event", "sub_type": "Event:proximity"}
+        ],
+        "config": [
+            {"name": "dyad_ranges", "value": "[[0.0, 13.0, 1.0], [13.0, 20.0, 0.5]]"}
+        ]
+    }
+}

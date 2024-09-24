@@ -1,0 +1,17 @@
+#!/bin/bash
+
+
+i=1
+while [ $i -eq 1 ];do    
+
+    sleep 10  
+
+    PORTS=`sudo lsof -i`
+
+    #assuming malmocontrol was started on the same network as malmo-server
+    curl -X PUT -H "Content-Type: application/json" -d "{\"Data\":\"$PORTS\"}" "malmocontrol"$MALMO_INSTANCE":5002/api/Malmo/sendPorts" >/dev/null
+    #curl -X PUT -H "Content-Type: application/json" -d "{\"Data\":\"$PORTS\"}" "host.docker.internal:5002/api/Malmo/sendPorts" >/dev/null     
+
+done
+
+

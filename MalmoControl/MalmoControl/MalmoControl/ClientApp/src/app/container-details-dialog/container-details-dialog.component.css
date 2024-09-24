@@ -1,0 +1,40 @@
+.wide{
+    width: 200px;
+}
+
+.narrow{
+    width: 100px;
+}
+
+.header{
+    font-size: 16px;
+    font-weight: bold;
+    color: #5e5e5e
+}
+
+.row:hover {
+    background-color: #e7e7e7;
+}
+
+.legend-box{
+    height: 10px;
+    width: 15px;
+    border: 2px solid;
+}
+
+.good-status {
+    background-color: rgba(48, 197, 98, 0.2);
+    border-color: rgb(48, 197, 98);
+}
+
+.ok-status {
+    background-color: rgba(246,190,0, 0.2);
+    border-color: rgb(246,190,0);
+}
+
+.not-ok-status {
+    background-color: rgba(170, 1, 20, 0.2);
+    border-color: rgb(170, 1, 20);
+}
+
+

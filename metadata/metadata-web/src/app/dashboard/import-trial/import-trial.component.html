@@ -1,0 +1,74 @@
+<form [formGroup]="importTrialForm" class="example-form">
+
+  <fieldset [ngClass]="{'accent-color' : isImportingTrial}" [disabled]="isImportingTrial">
+    <legend>Select File</legend>
+    <div fxLayout="column">
+      <mat-form-field class="extend-cursor">
+        <mat-label>Metadata Files Only</mat-label>
+        <ngx-mat-file-input #fileInputComponent (change)="onFileSelected();" formControlName="importFile" [accept]="'.metadata'" placeholder="Metadata Files Only" required></ngx-mat-file-input>
+        <mat-icon matSuffix>description</mat-icon>
+        <mat-error>File is required.</mat-error>
+        <!--        <mat-hint>Hint</mat-hint>-->
+      </mat-form-field>
+    </div>
+  </fieldset>
+
+  <mat-expansion-panel hideToggle [expanded]="metadataFileDetected" (opened)="metadataDetectedOpened()" (closed)="metadataDetectedClosed()" class="metadata-detected-panel">
+    <fieldset [ngClass]="{'accent-color' : isImportingTrial}" [disabled]="isImportingTrial">
+      <legend>Metadata Detected</legend>
+      <div fxLayout="column">
+        <div>
+          <div class="mat-caption accent-color">Trial:</div>
+          <div class="mat-small">{{fileTrial}}</div>
+          <div class="mat-caption accent-color">Experiment:</div>
+          <div class="mat-small">{{fileExperiment}}</div>
+          <div class="mat-caption accent-color">Index:</div>
+          <div class="mat-small">{{fileIndex}}</div>
+          <textarea matInput hidden></textarea>
+        </div>
+        <mat-form-field floatLabel="always" appearance="none">
+          <mat-checkbox color="primary" (change)="usingIndexFromMetadataFileChecked($event)" formControlName="useIndexFromMetadataFile">Use Source Index Name</mat-checkbox>
+          <textarea matInput hidden></textarea>
+        </mat-form-field>
+      </div>
+    </fieldset>
+  </mat-expansion-panel>
+
+  <fieldset [ngClass]="{'accent-color' : isImportingTrial || useIndexFromMetadataFileControl.value}" [disabled]="isImportingTrial || useIndexFromMetadataFileControl.value">
+    <legend>elasticsearch Index</legend>
+    <div fxLayout="column">
+      <mat-form-field class="mat-form-field-cursor">
+        <mat-label>Select Index</mat-label>
+        <input matInput placeholder="Index" aria-label="Index" [matAutocomplete]="autoIndex" formControlName="indexName" required autocomplete="off">
+        <mat-autocomplete #autoIndex="matAutocomplete" (optionSelected)="updateIndexSelection($event)" [displayWith]="displayIndexNameFn">
+          <mat-option *ngFor="let index of filteredIndices | async" [value]="index">
+            <span>{{index.index}}</span>
+            <br>
+            <small class="accent-color">Count: {{index['docs.count']}}</small>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <mat-form-field floatLabel="always" appearance="none">
+        <mat-slide-toggle color="primary" checked="index_name.disabled" (change)="toggleIndexOverrideChange()" formControlName="overrideIndexNameToggle">
+          Manual Index Entry
+        </mat-slide-toggle>
+        <textarea matInput hidden></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Enter Index</mat-label>
+        <input matInput placeholder="Index" aria-label="Index" formControlName="indexNameEntered" [pattern]="indexPattern" required autocomplete="off">
+        <mat-error>Invalid index name.</mat-error>
+        <div>
+          <mat-checkbox color="primary" labelPosition="after" formControlName="indexNameCreate">Create</mat-checkbox>
+        </div>
+      </mat-form-field>
+    </div>
+  </fieldset>
+</form>
+<br>
+<div fxLayout="row" fxLayoutAlign="end center">
+  <mat-spinner *ngIf="isImportingTrial" mode="indeterminate" diameter="36"></mat-spinner>
+  <button mat-raised-button color="primary" (click)="onImportClick()" [disabled]="isFormDisabled()">Import</button>
+</div>

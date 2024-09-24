@@ -1,0 +1,54 @@
+{
+    "PyGLFoVAgent":
+    {
+        "level": "INFO"
+    },
+    "FileBridge":
+    {
+        "level": "WARNING"
+    },
+    "BaseAgent":
+    {
+        "level": "WARNING"
+    },
+    "Bridge":
+    {
+        "level": "WARNING"
+    },
+    "FoVWorker":
+    {
+        "level": "INFO"
+    },
+    "Participant":
+    {
+        "level": "INFO"
+    },
+    "BlockSummaryMessageEndpoint":
+    {
+        "level": "WARNING"
+    },
+    "MatplotVisualizer":
+    {
+        "level": "WARNING"
+    },
+    "WorldModel":
+    {
+        "level": "INFO"
+    },
+    "StaticVboStore": 
+    {
+        "level": "WARNING"
+    },
+    "PlayerVboStore":
+    {
+        "level": "WARNING"
+    },
+    "CompositeVertexStore":
+    {
+        "level": "WARNING"
+    },
+    "ParserMap":
+    {
+        "level": "WARNING"
+    }
+}

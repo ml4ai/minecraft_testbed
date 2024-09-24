@@ -1,0 +1,288 @@
+#!/usr/bin/env python3
+
+# Author: Adarsh Pyarelal (adarsh@arizona.edu)
+# With contributions from:
+# - Prakash Manghwani
+# - Jeffrey Rye
+
+""" ELKless Replayer is a simple program to replay messages from a file
+containing messages collected during a TA3 experimental trial and dumped from
+an Elasticsearch database.
+
+For each line in the input file, it extracts the JSON-serialized message and
+the topic it was published to, and republishes the message to the same
+topic."""
+
+# To see the command line arguments and invocation pattern, run
+#     ./elkless_replayer -h
+
+import json
+import argparse
+import logging
+from pathlib import Path
+from logging import info, warn
+from pprint import pprint
+from time import sleep
+from uuid import uuid4
+from functools import partial
+
+from dateutil.parser import parse
+from dateutil.relativedelta import relativedelta
+import paho.mqtt.client as mqtt
+from tqdm import tqdm
+
+logging.basicConfig(level=logging.INFO)
+
+# Define a publisher MQTT client object at global scope
+PUBLISHER = mqtt.Client()
+
+# Define a global variable to track the number of messages published
+PUBLISHED_COUNT = 0
+
+
+def incr_publish_count(_client, _userdata, _mid):
+    """Increment the global variable PUBLISHED_COUNT that tracks the number of
+    messages published."""
+    global PUBLISHED_COUNT
+    PUBLISHED_COUNT += 1
+
+
+def collector_on_connect(client, userdata, flags, rc):
+    """Callback function for collector client object."""
+    # Subscribing in on_connect() means that if we lose the connection and
+    # reconnect then subscriptions will be renewed.
+    client.subscribe("#")
+
+
+def collector_on_message(output_file, client, userdata, msg):
+    data = json.loads(msg.payload)
+    data["topic"] = msg.topic
+    json.dump(data, output_file)
+    output_file.write("\n")
+
+
+def should_be_replayed(jline: dict, args) -> bool:
+    """Check whether message should be replayed."""
+
+    if args.exclude_topics and jline.get("topic") in args.exclude_topics:
+        return False
+    if args.include_topics and jline.get("topic") not in args.include_topics:
+        return False
+    if args.exclude_sources and jline["msg"]["source"] in args.exclude_sources:
+        return False
+    if (
+        args.include_sources
+        and jline["msg"]["source"] not in args.include_sources
+    ):
+        return False
+
+    return True
+
+
+def collect_and_sort_messages(inputfile: str) -> None:
+    """Gather messages from a .metadata file and sort them by timestamp."""
+    info("Collecting and sorting messages...")
+    with open(inputfile, "r") as f:
+        messages = []
+        for i, line in enumerate(f):
+            jline = None
+            try:
+                jline = json.loads(line)
+            except:
+                info(f"Bad json line of len: {len(line)} at line {line}")
+            if jline is not None:
+                if "header" not in jline:
+                    warn(f"Message does not have a header: {jline}")
+                    continue
+                if "msg" in jline and should_be_replayed(jline, args):
+                    messages.append(jline)
+
+        info(f"Sorting {len(messages)} messages...")
+
+        sorted_messages = sorted(
+            messages, key=lambda x: parse(x["header"]["timestamp"])
+        )
+
+        return sorted_messages
+
+
+def process_message(
+    i: int, message: dict, sorted_messages, args
+) -> None:
+    """Process and publish an individual message"""
+    # Delete keys that were not in the original message, for more
+    # faithful replaying.
+    for key in ("message", "@timestamp", "@version", "host"):
+        if key in message:
+            del message[key]
+
+    msg = message["msg"]
+
+    # Set the replay_parent_id to the previous replay ID or null if
+    # the key is not set.
+    msg["replay_parent_id"] = msg.get("replay_id")
+
+    # Set hte replay_id to the generated replay ID
+    msg["replay_id"] = replay_id
+
+    # Set the replay_parent_type to existing replay_parent_type if
+    # it is not null, and TRIAL otherwise.
+    if "replay_parent_type" in msg:
+        if msg["replay_parent_type"] == "TRIAL":
+            msg["replay_parent_type"] = "REPLAY"
+        elif msg["replay_parent_type"] is None:
+            msg["replay_parent_type"] = "TRIAL"
+        else:
+            pass
+    else:
+        msg["replay_parent_type"] = "TRIAL"
+
+    # Get the topic to publish the message to.
+    topic = "topic-not-available"
+
+    if "topic" in message:
+        topic = message.pop("topic")
+    else:
+        warn(
+            f"No topic for message {json.dumps(message)}!"
+            " This message will be published to the 'topic-not-available' topic."
+        )
+
+    msg_info = PUBLISHER.publish(topic, json.dumps(message), qos=2)
+    msg_info.wait_for_publish()
+
+    if args.simulate_publish_rate and i != (len(sorted_messages) - 1):
+        time1 = parse(message["header"]["timestamp"])
+        time2 = parse(sorted_messages[i + 1]["header"]["timestamp"])
+        timedelta_in_seconds = (
+            relativedelta(time2, time1).microseconds / 1_000_000
+        )
+        sleep(timedelta_in_seconds)
+
+
+def make_argument_parser():
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
+    parser.add_argument("input", help="The messages file to replay to the bus")
+    parser.add_argument(
+        "-o",
+        "--output",
+        help=(
+            "Output file to collect messages published to the bus during "
+            "the replay."
+        ),
+    )
+    parser.add_argument(
+        "-m",
+        "--host",
+        help="Host that the MQTT message broker is running on.",
+        default="localhost",
+    )
+    parser.add_argument(
+        "-p",
+        "--port",
+        type=int,
+        help="Port that the MQTT message broker is running on.",
+        default=1883,
+    )
+    parser.add_argument(
+        "-s",
+        "--simulate_publish_rate",
+        action="store_true",
+        help="Publish messages at the same rate as they were originally published.",
+    )
+
+    # We create option groups for mutually exclusive options. We do not allow
+    # both include and exclude options for the same filtering method.
+
+    select_sources = parser.add_mutually_exclusive_group()
+    select_sources.add_argument(
+        "--include_sources",
+        nargs="+",
+        default=[],
+        help=(
+            "One or more sources to include. Selects messages whose "
+            "msg.source property matches any of these strings."
+        ),
+    )
+    select_sources.add_argument(
+        "--exclude_sources",
+        nargs="+",
+        default=[],
+        help=(
+            "One or more sources to exclude. Excludes messages whose "
+            "msg.source property matches any of these strings."
+        ),
+    )
+
+    select_topics = parser.add_mutually_exclusive_group()
+    select_topics.add_argument(
+        "--include_topics",
+        nargs="+",
+        default=[],
+        help=(
+            "One or more topics to include. Selects messages whose topic "
+            "matches any of these strings."
+        ),
+    )
+    select_topics.add_argument(
+        "--exclude_topics",
+        nargs="+",
+        default=[],
+        help=(
+            "One or more topics to exclude. Filters out messages whose topic "
+            "matches any of these strings."
+        ),
+    )
+
+    return parser
+
+
+if __name__ == "__main__":
+
+    parser = make_argument_parser()
+    args = parser.parse_args()
+
+    # Open the input file, parse each line in it as a JSON-serialized object.
+    sorted_messages = collect_and_sort_messages(args.input)
+
+    info(f"Publishing {len(sorted_messages)} messages...")
+
+    PUBLISHER.connect(args.host, port=args.port)
+    PUBLISHER.on_publish = incr_publish_count
+
+    PUBLISHER.loop_start()
+
+    # Generate a new replay id
+    replay_id = str(uuid4())
+
+    if args.output:
+        # MQTT client object to collect messages and dump them into a file.
+        collector = mqtt.Client()
+        # The callback for when a PUBLISH message is received from the server.
+
+        collector.on_connect = collector_on_connect
+
+        output_file = open(args.output, "w")
+        collector.on_message = partial(collector_on_message, output_file)
+        collector.connect(args.host, port=args.port)
+        collector.loop_start()
+
+    for i, message in enumerate(tqdm(sorted_messages)):
+        process_message(i, message, sorted_messages, args)
+
+    # Check if we have really published all the messages.
+
+    if PUBLISHED_COUNT != len(sorted_messages):
+        raise RuntimeError(
+            f"Failed to publish {len(sorted_messages) - PUBLISHED_COUNT}",
+            f"out of {len(sorted_messages)} messages.",
+        )
+    else:
+        info(f"Successfully published all messages from {args.input}.")
+
+    if args.output:
+        collector.loop_stop()
+        output_file.close()

@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>Delete</h1>
+<div mat-dialog-content [formGroup]="updateExperimentForm" layout="row" layout-align="center center">
+  <fieldset>
+    <legend>Experiment: {{data.id}}</legend>
+    <mat-form-field appearance="fill">
+      <mat-label>Experiment UUID</mat-label>
+      <input matInput formControlName="experiment_id" placeholder="UUID" [pattern]="uuidPattern" required autocomplete="off" >
+      <mat-error>Please use a valid UUID.</mat-error>
+      <button mat-icon-button matSuffix (click)="onGenerateUUIDClick()">
+        <mat-icon aria-label="UUID">autorenew</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Experiment Name</mat-label>
+      <input matInput formControlName="name" placeholder="Name" required autocomplete="off">
+      <mat-error>Name is required.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Experiment Date</mat-label>
+      <input matInput [matDatepicker]="date" formControlName="date" required autocomplete="off">
+      <mat-error>Date is required.</mat-error>
+      <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+      <mat-datepicker #date></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Experiment Author</mat-label>
+      <input matInput formControlName="author" placeholder="Author" required autocomplete="off">
+      <mat-error>Author is required.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Experiment Mission</mat-label>
+      <input matInput formControlName="mission" placeholder="Mission" required autocomplete="off">
+      <mat-error>Mission is required.</mat-error>
+    </mat-form-field>
+  </fieldset>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-raised-button color="accent" (click)="onCancelClick()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onUpdateClick()" [disabled]="!updateExperimentForm.valid">Update</button>
+</div>

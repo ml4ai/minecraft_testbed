@@ -1,0 +1,40 @@
+<body id ="body" (click)=onClick($event)>
+
+    <div id="MapContainer">
+
+        <img id="Map">
+        <img id="BlackoutImageElement">
+        <img id="QRImageElement">
+    
+        <!-- <img id="Map"> -->
+    
+        <div id="GridLayer" >
+        
+        <div class="GridDivs" *ngFor="let n of gridDivs; let i = index;" id={{n}}  (click)=testDiv($event)>
+            
+        </div>
+    
+        </div>    
+        
+    </div>
+      
+    <img class="Player" id="PlayerRed">
+    <img class="Player" id="PlayerGreen">
+    <img class="Player" id="PlayerBlue">
+
+</body>
+
+  
+  
+  
+  
+  
+  
+    
+  
+
+
+
+
+  
+

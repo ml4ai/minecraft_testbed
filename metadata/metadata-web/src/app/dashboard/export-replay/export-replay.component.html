@@ -1,0 +1,77 @@
+<form [formGroup]="exportReplayForm" class="example-form">
+
+  <fieldset [ngClass]="{'accent-color' : isExportingReplay}" [disabled]="isExportingReplay">
+    <legend>elasticsearch Index</legend>
+    <div fxLayout="column">
+      <mat-form-field class="mat-form-field-cursor">
+        <mat-label>Select Index</mat-label>
+        <input matInput placeholder="Index" aria-label="Index" [matAutocomplete]="autoIndex" formControlName="indexName" required autocomplete="off">
+        <mat-autocomplete #autoIndex="matAutocomplete" (optionSelected)="updateIndexSelection($event)" [displayWith]="displayIndexNameFn">
+          <mat-option *ngFor="let index of filteredIndices | async" [value]="index">
+            <span>{{index.index}}</span>
+            <br>
+            <small class="accent-color">Count: {{index['docs.count']}}</small>
+          </mat-option>
+        </mat-autocomplete>
+        <button type="button" mat-icon-button matSuffix mat-icon-button aria-label="Clear" (click)="indexNameControl.setValue('')" [disabled]="indexNameControl.disabled">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field floatLabel="always" appearance="none">
+        <mat-slide-toggle color="primary" formControlName="overrideIndexNameToggle">
+          Manual Index Entry
+        </mat-slide-toggle>
+        <textarea matInput hidden></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Enter Index</mat-label>
+        <input matInput placeholder="Index" aria-label="Index" formControlName="indexNameEntered" [pattern]="indexPattern" required autocomplete="off">
+        <mat-error>Invalid index name.</mat-error>
+      </mat-form-field>
+    </div>
+  </fieldset>
+
+  <fieldset [ngClass]="{'accent-color' : isExportingReplay}" [disabled]="isExportingReplay">
+    <legend>Replay UUID</legend>
+    <div fxLayout="column">
+      <mat-form-field class="mat-form-field-cursor">
+        <mat-label>Select UUID</mat-label>
+        <input matInput placeholder="Replay" aria-label="Replay" [matAutocomplete]="autoReplay" formControlName="replayId" required autocomplete="off">
+        <mat-autocomplete #autoReplay="matAutocomplete" (optionSelected)="updateReplaySelection($event)" [displayWith]="displayReplayIdFn">
+          <mat-option *ngFor="let replay of filteredReplays | async" [value]="replay">
+            <span>{{replay.replay_id}}</span>
+            <br>
+            <!--<small class="accent-color">{{replay['msg.replay_id']}}</small>-->
+          </mat-option>
+        </mat-autocomplete>
+<!--        <button type="button" mat-icon-button matSuffix (click)="searchReplays($event)" [disabled]="!indexNameControl.valid && !indexNameEnteredControl.valid || overrideReplayIdToggleControl.value">-->
+<!--          <mat-icon aria-label="UUID">save_alt</mat-icon>-->
+<!--        </button>-->
+        <button type="button" mat-icon-button matSuffix mat-icon-button aria-label="Clear" (click)="replayIdControl.setValue('')" [disabled]="replayIdControl.disabled">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field floatLabel="always" appearance="none">
+        <mat-slide-toggle color="primary" formControlName="overrideReplayIdToggle">
+          Manual UUID Entry
+        </mat-slide-toggle>
+        <textarea matInput hidden></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Enter UUID</mat-label>
+        <input matInput placeholder="UUID" aria-label="UUID" formControlName="replayIdEntered" [pattern]="uuidPattern" required autocomplete="off">
+        <mat-error>Invalid UUID.</mat-error>
+      </mat-form-field>
+    </div>
+  </fieldset>
+
+</form>
+<br>
+<div fxLayout="row" fxLayoutAlign="end center">
+  <mat-spinner *ngIf="isExportingReplay" mode="indeterminate" diameter="36"></mat-spinner>
+  <button mat-raised-button color="primary" (click)="onExportClick()" [disabled]="!exportReplayForm.valid">Export</button>
+</div>

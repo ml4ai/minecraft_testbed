@@ -1,0 +1,30 @@
+{
+    "host":"mosquitto",
+    "port": "1883",
+    "heartbeats_per_minute": 6,
+    "version_info": {
+		"version": "0.0.1",
+		"owner": "Aptima",
+        "source": [
+            "https://gitlab.com/artificialsocialintelligence/study3/-/tree/main/Agents/AC_Aptima_TA3_measures"
+        ],
+		"publishes": [
+            {"topic": "ageant/measures/AC_Aptima_TA3_measures", "message_type": "agent", "sub_type": "measures"}
+        ],
+		"subscribes": [
+            {"topic": "trial", "message_type": "trial", "sub_type": "start"},
+            {"topic": "trial", "message_type": "trial", "sub_type": "stop"},
+            {"topic": "observations/events/mission", "message_type": "event", "sub_type": "Stop"},
+            {"topic": "observations/events/scoreboard", "message_type": "event", "sub_type": "Event:Scoreboard"},
+            {"topic": "observations/events/mission/perturbation", "message_type": "event", "sub_type": "Event:Perturbation"},
+            {"topic": "ground_truth/mission/victims_list", "message_type": "groundtruth", "sub_type": "Mission:VictimList"},
+            {"topic": "observations/events/player/triage", "message_type": "event", "sub_type": "Event:Triage"},
+            {"topic": "observations/events/player/signal", "message_type": "event", "sub_type": "Event:VictimSignal"},
+            {"topic": "observations/events/server/victim_evacuated", "message_type": "event", "sub_type": "Event:VictimEvacuated"},
+            {"topic": "observations/events/server/rubble_collapse", "message_type": "event", "sub_type": "Event:RubbleCollapse"},
+            {"topic": "observations/events/player/rubble_collapse", "message_type": "event", "sub_type": "Event:RubbleCollapse"},
+            {"topic": "observations/events/player/location", "message_type": "event", "sub_type": "Event:location"},
+            {"topic": "observations/events/mission", "message_type": "event", "sub_type": "Event:MissionState"}
+        ]
+    }
+}

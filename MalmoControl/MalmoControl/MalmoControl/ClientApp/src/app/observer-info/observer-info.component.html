@@ -1,0 +1,11 @@
+<ag-grid-angular
+  #myGrid
+  class="ag-theme-alpine"
+  [gridOptions]="experimentService.obsGridOptions"
+  [frameworkComponents]="frameworkComponents"
+>
+</ag-grid-angular>
+<button mat-button style="float:left" (click)="experimentService.onAddRow()">
+  <mat-icon>add</mat-icon>
+  Add Row
+</button>

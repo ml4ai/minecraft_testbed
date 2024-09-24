@@ -1,0 +1,19 @@
+{
+    "host": ["mosquitto", "localhost"],
+    "port": "1883",
+    "heartbeats_per_minute": 6,
+    "version_info": {
+        "owner": "CMU - TA2",
+        "version": "0.0.7",
+        "source": [
+            "https://gitlab.com/artificialsocialintelligence/study3/-/tree/main/Agents/AC_CMU_TA2_BEARD"
+        ],
+        "subscribes": [
+            {"topic": "trial", "message_type": "trial"},
+            {"topic": "observations/events/mission"},
+            {"topic": "observations/events/player/role_selected"},
+            {"topic": "observations/events/competency/task"},
+            {"topic": "status/asistdataingester/surveyresponse"}
+        ]
+    }
+}

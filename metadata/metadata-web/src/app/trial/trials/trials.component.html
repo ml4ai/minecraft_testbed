@@ -1,0 +1,123 @@
+<div class="container">
+
+  <h2>Trials</h2>
+
+  <div fxLayout="column">
+
+    <mat-form-field>
+      <mat-label>Filter Table</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Filter" autocomplete="off">
+    </mat-form-field>
+
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let trial"> {{trial.id}} </td>
+        </ng-container>
+
+        <!-- Trial ID Column -->
+        <ng-container matColumnDef="trial_id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Trial ID </th>
+          <td mat-cell *matCellDef="let trial"> {{trial.trial_id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <td mat-cell *matCellDef="let trial"> {{trial.name}} </td>
+        </ng-container>
+
+        <!-- Date Column -->
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+          <td mat-cell *matCellDef="let trial"> {{trial.date}} </td>
+        </ng-container>
+
+        <!-- Experimenter Column -->
+        <ng-container matColumnDef="experimenter">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Experimenter </th>
+          <td mat-cell *matCellDef="let trial"> {{trial.experimenter}} </td>
+        </ng-container>
+
+        <!-- Subjects Column -->
+        <ng-container matColumnDef="subjects">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Subjects </th>
+          <td mat-cell *matCellDef="let trial"> {{trial.subjects}} </td>
+        </ng-container>
+
+        <!-- Trial Number Column -->
+        <ng-container matColumnDef="trial_number">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Trial Number </th>
+          <td mat-cell *matCellDef="let trial"> {{trial.trial_number}} </td>
+        </ng-container>
+
+        <!-- Group Number Column -->
+        <ng-container matColumnDef="group_number">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Group Number </th>
+          <td mat-cell *matCellDef="let trial"> {{trial.group_number}} </td>
+        </ng-container>
+
+        <!-- Study Number Column -->
+        <ng-container matColumnDef="study_number">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Study Number </th>
+          <td mat-cell *matCellDef="let trial"> {{trial.study_number}} </td>
+        </ng-container>
+
+        <!-- Condition Column -->
+        <ng-container matColumnDef="condition">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Condition </th>
+          <td mat-cell *matCellDef="let trial"> {{trial.condition}} </td>
+        </ng-container>
+
+        <!-- Notes Column -->
+        <ng-container matColumnDef="notes">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Notes </th>
+          <td mat-cell *matCellDef="let trial"> {{trial.notes}} </td>
+        </ng-container>
+
+        <!-- Testbed Column -->
+        <ng-container matColumnDef="testbed_version">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Testbed Version </th>
+          <td mat-cell *matCellDef="let trial"> {{trial.testbed_version}} </td>
+        </ng-container>
+
+        <!-- Experiment ID -->
+        <ng-container matColumnDef="experiment_id_experiments">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Experiment ID </th>
+          <td mat-cell *matCellDef="let trial"> {{trial.experiment !== null ? trial.experiment.experiment_id : 'NULL'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell class="create-button" *matHeaderCellDef>
+            <button mat-icon-button (click)="openCreateTrialDialog()">
+              <mat-icon aria-label="Create">add_circle</mat-icon>
+            </button>
+          </th>
+
+          <td mat-cell *matCellDef="let row; let i = index;">
+            <div class="mat-cell-buttons">
+              <button mat-icon-button color="accent" (click)="openUpdateTrialDialog(this.paginator.pageIndex == 0 ?  i : i + this.paginator.pageIndex * this.paginator.pageSize, row.id, row.trial_id, row.name, row.date, row.experimenter, row.subjects, row.trial_number, row.group_number, row.study_number, row.condition, row.notes, row.testbed_version, row.experiment)">
+                <mat-icon aria-label="Edit">edit</mat-icon>
+              </button>
+
+              <button mat-icon-button color="accent" (click)="openDeleteTrialDialog(this.paginator.pageIndex == 0 ?  i : i + this.paginator.pageIndex * this.paginator.pageSize, row.id, row.trial_id, row.name, row.date, row.experimenter, row.subjects, row.trial_number, row.group_number, row.study_number, row.condition, row.notes, row.testbed_version, row.experiment)">
+                <mat-icon aria-label="Delete">delete</mat-icon>
+              </button>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <div class="no-results" [style.display]="dataSource.data.length == 0 ? '' : 'none'">
+        No results
+      </div>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>
+

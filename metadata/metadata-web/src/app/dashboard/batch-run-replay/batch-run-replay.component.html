@@ -1,0 +1,196 @@
+<form [formGroup]="runReplayForm" class="example-form">
+
+  <fieldset [ngClass]="{'accent-color' : isReplayCreated}" [disabled]="isReplayCreated">
+    <legend>Replay UUID</legend>
+    <div fxLayout="column">
+
+      <mat-form-field floatLabel="always" appearance="none">
+        <mat-label>Replay Parent Type</mat-label>
+        <mat-radio-group formControlName="replayParentType" color="primary" (change)="replayParentTypeChanged($event)">
+          <mat-radio-button *ngFor="let replayParentType of replayParentTypes" [value]="replayParentType">
+            {{replayParentType}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <textarea matInput hidden></textarea>
+        <mat-error>Replay Parent Type is required.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="mat-form-field-cursor">
+        <mat-label>Select Parents</mat-label>
+        <mat-select multiple formControlName="replayParentIds" required autocomplete="off">
+          <mat-option *ngFor="let parent of parents" [value]="parent" (onSelectionChange)="onBatchParentChange($event)">
+            {{getDisplayName(parent)}}
+          </mat-option>
+        </mat-select>
+        <button type="button" matSuffix mat-icon-button aria-label="Clear" (click)="replayParentIdsControl.setValue('')" [disabled]="replayParentIdsControl.disabled">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field class="mat-form-field-cursor">
+        <mat-label>Add Ignore Message Item</mat-label>
+        <input matInput placeholder="message_type : sub_type" formControlName="ignoreMessageInput" aria-label="Message" [pattern]="ignoreMessagePattern" autocomplete="off">
+        <mat-error>Please use a valid string.</mat-error>
+        <div matSuffix style="display:flex">
+          <button mat-icon-button (click)="onAddIgnoreMessageItem()" [disabled]="ignoreMessageInputControl.value === '' || ignoreMessageInputControl.invalid">
+            <mat-icon aria-label="Add">add_circle</mat-icon>
+          </button>
+          <button mat-icon-button (click)="openJsonIgnoreMessageDialog()" matTooltip="Use JSON to populate.">
+            <mat-icon aria-label="Create">text_snippet</mat-icon>
+          </button>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="mat-form-field-cursor">
+        <mat-label>Add Source Item</mat-label>
+        <input matInput placeholder="source" formControlName="ignoreSourceInput" aria-label="Source" autocomplete="off">
+        <mat-error>Please use a valid string.</mat-error>
+        <div matSuffix style="display:flex">
+          <button mat-icon-button (click)="onAddIgnoreSourceItem()" [disabled]="ignoreSourceInputControl.value === '' || ignoreSourceInputControl.invalid">
+            <mat-icon aria-label="Add">add_circle</mat-icon>
+          </button>
+          <button mat-icon-button (click)="openJsonIgnoreSourceDialog()" matTooltip="Use JSON to populate.">
+            <mat-icon aria-label="Create">text_snippet</mat-icon>
+          </button>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field class="mat-form-field-cursor">
+        <mat-label>Add Topic Item</mat-label>
+        <input matInput placeholder="source" formControlName="ignoreTopicInput" aria-label="Topic" autocomplete="off">
+        <mat-error>Please use a valid string.</mat-error>
+        <div matSuffix style="display:flex">
+          <button mat-icon-button (click)="onAddIgnoreTopicItem()" [disabled]="ignoreTopicInputControl.value === '' || ignoreTopicInputControl.invalid">
+            <mat-icon aria-label="Add">add_circle</mat-icon>
+          </button>
+          <button mat-icon-button (click)="openJsonIgnoreTopicDialog()" matTooltip="Use JSON to populate.">
+            <mat-icon aria-label="Create">text_snippet</mat-icon>
+          </button>
+        </div>
+      </mat-form-field>
+
+      <mat-form-field floatLabel="always" appearance="fill">
+        <mat-label>Ignore List</mat-label>
+        <mat-action-list dense>
+          <h3 matSubheader>Message Type</h3>
+          <mat-list-item *ngFor="let item of ignore_message_list;">
+            <div mat-line>
+              <small>{{item | json}}</small>
+            </div>
+            <button mat-icon-button (click)="onRemoveIgnoreMessageItem(item)">
+              <mat-icon aria-label="Remove Item">clear</mat-icon>
+            </button>
+          </mat-list-item>
+          <h3 matSubheader>Source</h3>
+          <mat-list-item *ngFor="let item of ignore_source_list;">
+            <div mat-line>
+              <small>{{item | json}}</small>
+            </div>
+            <button mat-icon-button (click)="onRemoveIgnoreSourceItem(item)">
+              <mat-icon aria-label="Remove Item">clear</mat-icon>
+            </button>
+          </mat-list-item>
+          <h3 matSubheader>Topic</h3>
+          <mat-list-item *ngFor="let item of ignore_topic_list;">
+            <div mat-line>
+              <small>{{item | json}}</small>
+            </div>
+            <button mat-icon-button (click)="onRemoveIgnoreTopicItem(item)">
+              <mat-icon aria-label="Remove Item">clear</mat-icon>
+            </button>
+          </mat-list-item>
+        </mat-action-list>
+        <textarea matInput hidden></textarea>
+      </mat-form-field>
+
+    </div>
+  </fieldset>
+
+  <fieldset [ngClass]="{'accent-color' : isReplayCreated}" [disabled]="isReplayCreated">
+    <legend>Agents</legend>
+    <mat-form-field floatLabel="always" appearance="none">
+      <mat-label>Restart AC Agents</mat-label>
+      <mat-checkbox formControlName="restartAcAgents" color="primary" class="example-margin" checked="true">
+        Restart
+      </mat-checkbox>
+      <textarea matInput hidden></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="mat-form-field-cursor">
+      <mat-label>Select ASI Agents</mat-label>
+      <mat-select multiple formControlName="asiAgentNames" autocomplete="off">
+        <mat-option *ngFor="let asiAgent of asiAgents" [value]="asiAgent" (onSelectionChange)="onAsiAgents($event)">
+          {{asiAgent}}
+        </mat-option>
+      </mat-select>
+      <button type="button" matSuffix mat-icon-button aria-label="Clear" (click)="asiAgentNamesControl.setValue('')" [disabled]="asiAgentNamesControl.disabled">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </fieldset>
+
+  <fieldset [ngClass]="{'accent-color' : isReplayCreated}" [disabled]="isReplayCreated">
+    <legend>Batch Order</legend>
+    <div fxLayout="column">
+      <mat-form-field floatLabel="always" appearance="none">
+        <mat-label>Order Items</mat-label>
+        <div cdkDropList class="example-list" (cdkDropListDropped)="parentDrop($event)">
+          <div [ngClass]="{'asi-color' : parent.type === 'ASI'}" class="example-box" *ngFor="let parent of orderedParents" cdkDrag>{{parent.id}}</div>
+        </div>
+        <textarea matInput hidden></textarea>
+      </mat-form-field>
+    </div>
+  </fieldset>
+
+  <fieldset [ngClass]="{'accent-color' : isReplayCreated}" [disabled]="isReplayCreated">
+    <legend>elasticsearch Source Index</legend>
+    <div fxLayout="column">
+      <mat-form-field class="mat-form-field-cursor">
+        <mat-label>Select Index</mat-label>
+        <input matInput placeholder="Index" aria-label="Index" [matAutocomplete]="autoIndex" formControlName="indexName" required autocomplete="off">
+        <mat-autocomplete #autoIndex="matAutocomplete" (optionSelected)="updateIndexSelection($event)" [displayWith]="displayIndexNameFn">
+          <mat-option *ngFor="let index of filteredIndices | async" [value]="index">
+            <span>{{index.index}}</span>
+            <br>
+            <small class="accent-color">Count: {{index['docs.count']}}</small>
+          </mat-option>
+        </mat-autocomplete>
+        <button type="button" matSuffix mat-icon-button aria-label="Clear" (click)="indexNameControl.setValue('')" [disabled]="indexNameControl.disabled">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field floatLabel="always" appearance="none">
+        <mat-slide-toggle color="primary" formControlName="overrideIndexNameToggle">
+          Manual Index Entry
+        </mat-slide-toggle>
+        <textarea matInput hidden></textarea>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Enter Index</mat-label>
+        <input matInput placeholder="Index" aria-label="Index" formControlName="indexNameEntered" [pattern]="indexPattern" required autocomplete="off">
+        <mat-error>Invalid index name.</mat-error>
+      </mat-form-field>
+    </div>
+  </fieldset>
+
+</form>
+<br>
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <button mat-raised-button color="accent" (click)="onAbortClick()" [disabled]="isAbortClicked">Abort</button>
+    <!--    <mat-icon color="{{elasticsearchOnline && metadataAppOnline ? 'primary' : 'warn'}}" matTooltip="{{elasticsearchOnline && metadataAppOnline ? 'All systems online.' : '1 or more systems offline'}}">lens</mat-icon>-->
+    <!--    [ngClass]="{'accent-color' : isImportingTrial}"-->
+    <mat-icon [ngClass]="isAbortClicked ? 'fade-in-out' : 'hide-icon'" color="{{isReplayAborted ? 'primary' : 'warn'}}" matTooltip="{{isReplayAborted ? 'Currently running replay has been aborted.' : 'No running replays to abort.'}}">lens</mat-icon>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <mat-spinner *ngIf="isReplayCreated" mode="indeterminate" diameter="36"></mat-spinner>
+    <button mat-raised-button color="primary" (click)="onRunClick()" [disabled]="!runReplayForm.valid || !isBatchOrderValid()">Run</button>
+  </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div *ngIf="isReplayRunning">{{replayProgress}}</div>
+</div>
+
+

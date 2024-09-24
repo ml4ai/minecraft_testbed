@@ -1,0 +1,13 @@
+<div class="message-container">
+  <div class="message-toolbar">
+    <mat-icon class="message-button-clear"
+              matTooltip="Clear messages"
+              (click)="loggingService.clear()">
+      remove_circle</mat-icon>
+  </div>
+  <div class="message-content">
+    <div class="message-list">
+      <div *ngFor='let message of messages'> {{message}} </div>
+    </div>
+  </div>
+</div>

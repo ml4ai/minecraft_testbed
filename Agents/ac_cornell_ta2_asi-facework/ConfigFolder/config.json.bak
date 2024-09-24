@@ -1,0 +1,34 @@
+{
+    "host":"mosquitto",
+    "port": "1883",
+    "heartbeats_per_minute": 6,
+    "version_info": {
+        "owner": "Cornell - TA2",
+        "version": "0.0.1",
+        "source": [
+            "https://gitlab.com/artificialsocialintelligence/study3/-/tree/cu-spiral-3-merge/Agents/cornell_asi_facework_ac"
+        ],
+        "dependencies": [],
+        "publishes": [
+            {"topic": "agent/ac/asi_facework", "message_type": "agent", "sub_type": "AC:ASI_facework"},
+            {"topic": "status/cornell_asi_facework_ac/heartbeats", "message_type": "status", "sub_type": "heartbeat"}
+        ],
+        "subscribes": [
+            {"topic": "trial", "message_type": "trial", "sub_type": "start"},
+            {"topic": "trial", "message_type": "trial", "sub_type": "stop"},
+            {"topic": "ground_truth/mission/victims_list", "message_type": "groundtruth", "sub_type": "Mission:VictimList"},
+            {"topic": "ground_truth/semantic_map/initialized", "message_type": "groundtruth", "sub_type": "SemanticMap:Initialized"},
+            {"topic": "observations/state", "message_type": "observation", "sub_type": "state"},
+            {"topic": "observations/events/player/marker_placed", "message_type": "event", "sub_type": "Event:MarkerPlaced"},
+            {"topic": "observations/events/player/marker_removed", "message_type": "event", "sub_type": "Event:MarkerRemoved"},
+            {"topic": "observations/events/player/marker_destroyed", "message_type": "event", "sub_type": "Event:MarkerDestroyed"},
+            {"topic": "observations/events/player/rubble_destroyed", "message_type": "event", "sub_type": "Event:RubbleDestroyed"},
+            {"topic": "observations/events/player/victim_picked_up", "message_type": "event", "sub_type": "Event:VictimPickedUp"},
+            {"topic": "observations/events/player/victim_placed", "message_type": "event", "sub_type": "Event:VictimPlaced"},
+            {"topic": "observations/events/player/triage", "message_type": "event", "sub_type": "Event:Triage"},
+            {"topic": "observations/events/server/victim_evacuated", "message_type": "event", "sub_type": "Event:VictimEvacuated"},
+            {"topic": "agent/ac/player_compliance", "message_type": "agent", "sub_type": "AC:Player_compliance"}
+        ],
+        "config": []
+    }
+}

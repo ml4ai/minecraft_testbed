@@ -1,0 +1,81 @@
+micronaut:
+   application:
+      name: metadata-app
+   server:
+      port: ${METADATA_APP_PORT}
+      maxRequestSize: 200MB
+      multipart:
+         maxFileSize: 200MB
+      cors:
+         enabled: true
+   http:
+      client:
+         read-timeout: ${HTTP_CLIENT_READTIMEOUT}
+      
+#  ssl:
+#     enabled: true
+#     buildSelfSigned: true
+#     port: 8080
+#     keyStore:
+#        path: classpath:server.p12
+#        password: metadata
+#        type: PKCS12
+
+docker:
+   dockerHost: ${DOCKER_HOST} #tcp://localhost:2376
+   dockerTlsVerify: ${DOCKER_TLS_VERIFY} #1
+   dockerCertPath: ${DOCKER_CERT_PATH} #/home/user/.docker/certs
+   dockerConffig: ${DOCKER_CONFIG} #/home/user/.docker
+   apiVersion: ${API_VERSION} #1.23
+   registryUrl: ${REGISTRY_URL} #https://index.docker.io/v1/
+   registryUsername: ${REGISTRY_USERNAME} #dockeruser
+   registryPassword: ${REGISTRY_PASSWORD} #ilovedocker
+   registryEmail: ${REGISTRY_EMAIL} #dockeruser@github.com
+   statsCollection: ${DOCKER_STATS_COLLECTION}
+   
+agents:
+   clientUrl: ${AGENTS_CLIENT_URL}
+
+mqtt:
+   client:
+      server-uri: ${MQTT_BROKER_URL}
+      client-id: ${MQTT_CLIENT_ID}
+      clean-session: ${MQTT_CLEAN_SESSION}
+      
+asist:
+  testbedVersion: ${TESTBED_VERSION}
+      
+elasticsearch:
+  httpHosts: ${ELASTICSEARCH_HTTP_HOSTS}    
+
+jackson:
+  serializationInclusion: ALWAYS # Include empty arrays in JSON output
+  
+vertx:
+   pg:
+      client:
+         port: ${POSTGRES_PORT}
+         host: ${POSTGRES_HOST}
+         database: ${POSTGRES_DB}
+         user: ${POSTGRES_USER}
+         password: ${POSTGRES_PASSWORD}
+#      maxSize: 5
+
+endpoints:
+   health:
+      enabled: true
+      sensitive: false # non-secured endpoint
+      details-visible: ANONYMOUS # show details for everyone
+      vertx:
+         pg:
+            client:
+               enabled: true
+      mqtt:
+         client:
+            enabled: true               
+      elasticsearch:
+         rest:
+            high:
+               level:
+                  enabled: true
+                

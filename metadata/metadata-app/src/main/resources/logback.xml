@@ -1,0 +1,28 @@
+<configuration>
+<!-- <configuration debug="true"> -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <withJansi>false</withJansi>
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%cyan(%d{HH:mm:ss.SSS}) %gray([%thread]) %highlight(%-5level) %magenta(%logger{36}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="NO_COLOR_STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <withJansi>false</withJansi>
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <!-- <appender name="MQTT" class="metadata.app.appender.MqttAppender">
+    </appender> -->
+
+    <root level="info">
+        <appender-ref ref="NO_COLOR_STDOUT" />
+        <!-- <appender-ref ref="MQTT" /> -->
+    </root>
+</configuration>

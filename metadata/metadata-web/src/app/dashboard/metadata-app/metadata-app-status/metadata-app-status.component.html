@@ -1,0 +1,40 @@
+<fieldset>
+  <legend>metadata-app</legend>
+  <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="1em">
+    <button mat-mini-fab color="{{online ? 'primary' : 'warn'}}" matTooltip="Press to try immediately" (click)="getStatus()">
+      <mat-icon>{{online ? 'check' : 'close'}}</mat-icon>
+    </button>
+    <mat-label>{{online ? 'ONLINE' : 'OFFLINE'}}</mat-label>
+    <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="1em">
+      <fieldset fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1em">
+        <legend>Elasticsearch</legend>
+        <mat-icon color="{{elasticsearchOnline ? 'primary' : 'warn'}}" matTooltip="{{elasticsearchOnline ? 'Elasticsearch online.' : 'Elasticsearch offline'}}">lens</mat-icon>
+        <mat-label>{{elasticsearchOnline ? 'ONLINE' : 'OFFLINE'}}</mat-label>
+      </fieldset>
+
+      <fieldset fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1em">
+        <legend>MQTT</legend>
+        <mat-icon color="{{mqttOnline ? 'primary' : 'warn'}}" matTooltip="{{mqttOnline ? 'Mqtt online.' : 'Mqtt offline'}}">lens</mat-icon>
+        <mat-label>{{mqttOnline ? 'ONLINE' : 'OFFLINE'}}</mat-label>
+      </fieldset>
+
+      <fieldset fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1em">
+        <legend>Postgres</legend>
+        <mat-icon color="{{postgresOnline ? 'primary' : 'warn'}}" matTooltip="{{postgresOnline ? 'Postgres online.' : 'Postgres offline'}}">lens</mat-icon>
+        <mat-label>{{postgresOnline ? 'ONLINE' : 'OFFLINE'}}</mat-label>
+      </fieldset>
+
+      <fieldset fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1em">
+        <legend>Discovery</legend>
+        <mat-icon color="{{discoveryOnline ? 'primary' : 'warn'}}" matTooltip="{{discoveryOnline ? 'Discovery online.' : 'Discovery offline'}}">lens</mat-icon>
+        <mat-label>{{discoveryOnline ? 'ONLINE' : 'OFFLINE'}}</mat-label>
+      </fieldset>
+
+      <fieldset fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1em">
+        <legend>Disk Space</legend>
+        <mat-icon color="{{diskSpaceOnline ? 'primary' : 'warn'}}" matTooltip="{{this.diskSpaceDetails !== '' ? this.diskSpaceDetails : 'Disk Space offline'}}">lens</mat-icon>
+        <mat-label>{{diskSpaceOnline ? 'ONLINE' : 'OFFLINE'}}</mat-label>
+      </fieldset>
+    </div>
+  </div>
+</fieldset>

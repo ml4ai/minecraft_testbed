@@ -1,0 +1,26 @@
+[
+    {
+        "display": "ELK stack",
+        "arg": "--elk",
+        "abbrev": "-e",
+        "directory-name": "ELK-Container"
+    },
+    {
+        "display": "Metadata",
+        "arg": "--metadata",
+        "abbrev": "-me",
+        "directory-name": "metadata/metadata-docker"
+    },
+    {
+        "display": "Import/export service",
+        "arg": "--import_export",
+        "abbrev": "-ix",
+        "directory-name": "metadata/metadata-web"
+    },
+    {
+        "display": "Minecraft",
+        "arg": "--minecraft",
+        "abbrev": "-mi",
+        "directory-name": "Local"
+    }
+]

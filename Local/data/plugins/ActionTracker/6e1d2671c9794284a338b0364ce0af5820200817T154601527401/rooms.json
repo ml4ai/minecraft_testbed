@@ -1,0 +1,208 @@
+{
+  "11": {
+    "bounds": {
+      "startX": -2116,
+      "startZ": 178,
+      "endX": -2108,
+      "endZ": 186
+    },
+    "entranceExitLocations": [
+      "-2111 52 178",
+      "-2113 52 186"
+    ]
+  },
+  "12": {
+    "bounds": {
+      "startX": -2124,
+      "startZ": 179,
+      "endX": -2116,
+      "endZ": 186
+    },
+    "entranceExitLocations": [
+      "-2118 52 186"
+    ]
+  },
+  "13": {
+    "bounds": {
+      "startX": -2136,
+      "startZ": 186,
+      "endX": -2123,
+      "endZ": 194
+    },
+    "entranceExitLocations": [
+      "-2125 52 194",
+      "-2134 52 194"
+    ]
+  },
+  "14": {
+    "bounds": {
+      "startX": -2123,
+      "startZ": 186,
+      "endX": -2116,
+      "endZ": 194
+    },
+    "entranceExitLocations": [
+      "-2118 52 186",
+      "-2120 52 194"
+    ]
+  },
+  "15": {
+    "bounds": {
+      "startX": -2115,
+      "startZ": 186,
+      "endX": -2108,
+      "endZ": 194
+    },
+    "entranceExitLocations": [
+      "-2113 52 186",
+      "-2113 52 194"
+    ]
+  },
+  "16": {
+    "bounds": {
+      "startX": -2151,
+      "startZ": 158,
+      "endX": -2146,
+      "endZ": 172
+    },
+    "entranceExitLocations": [
+      "-2149 52 172",
+      "-2148 52 162",
+      "-2147 52 161"
+    ]
+  },
+  "17": {
+    "bounds": {
+      "startX": -2146,
+      "startZ": 158,
+      "endX": -2141,
+      "endZ": 172
+    },
+    "entranceExitLocations": [
+      "-2143 52 172",
+      "-2145 52 162"
+    ]
+  },
+  "0": {
+    "bounds": {
+      "startX": -2136,
+      "startZ": 157,
+      "endX": -2130,
+      "endZ": 165
+    },
+    "entranceExitLocations": [
+      "-2136 52 162"
+    ]
+  },
+  "1": {
+    "bounds": {
+      "startX": -2129,
+      "startZ": 157,
+      "endX": -2123,
+      "endZ": 165
+    },
+    "entranceExitLocations": [
+      "-2127 52 157"
+    ]
+  },
+  "2": {
+    "bounds": {
+      "startX": -2123,
+      "startZ": 157,
+      "endX": -2117,
+      "endZ": 165
+    },
+    "entranceExitLocations": [
+      "-2121 52 157"
+    ]
+  },
+  "3": {
+    "bounds": {
+      "startX": -2117,
+      "startZ": 157,
+      "endX": -2108,
+      "endZ": 165
+    },
+    "entranceExitLocations": [
+      "-2112 52 157"
+    ]
+  },
+  "4": {
+    "bounds": {
+      "startX": -2136,
+      "startZ": 165,
+      "endX": -2133,
+      "endZ": 172
+    },
+    "entranceExitLocations": [
+      "-2136 52 170"
+    ]
+  },
+  "5": {
+    "bounds": {
+      "startX": -2133,
+      "startZ": 165,
+      "endX": -2116,
+      "endZ": 173
+    },
+    "entranceExitLocations": [
+      "-2119 52 173",
+      "-2128 52 173"
+    ]
+  },
+  "6": {
+    "bounds": {
+      "startX": -2116,
+      "startZ": 165,
+      "endX": -2109,
+      "endZ": 173
+    },
+    "entranceExitLocations": [
+      "-2113 52 173"
+    ]
+  },
+  "7": {
+    "bounds": {
+      "startX": -2150,
+      "startZ": 178,
+      "endX": -2147,
+      "endZ": 183
+    },
+    "entranceExitLocations": [
+      "-2149 52 178"
+    ]
+  },
+  "8": {
+    "bounds": {
+      "startX": -2147,
+      "startZ": 178,
+      "endX": -2144,
+      "endZ": 183
+    },
+    "entranceExitLocations": [
+      "-2145 52 178"
+    ]
+  },
+  "9": {
+    "bounds": {
+      "startX": -2136,
+      "startZ": 178,
+      "endX": -2130,
+      "endZ": 185
+    },
+    "entranceExitLocations": [
+      "-2132 52 178"
+    ]
+  },
+  "10": {
+    "bounds": {
+      "startX": -2130,
+      "startZ": 178,
+      "endX": -2125,
+      "endZ": 185
+    },
+    "entranceExitLocations": [
+      "-2128 52 178"
+    ]
+  }
+}

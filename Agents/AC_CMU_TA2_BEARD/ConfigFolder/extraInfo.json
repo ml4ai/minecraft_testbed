@@ -1,0 +1,49 @@
+// This file is read by the json5 library so that it may contain comments.
+{
+    "period_ms": 10000,
+
+    // Total square meters of map that may be explored.
+    "total_coverage_area": 9000,
+
+    // Total time available for work in the scenario.
+    // 15 minutes x 60 seconds = 900
+    "total_mission_s": 900,
+
+    // Total time that can [productively] be spent triaging:
+    // 50 [regular] * 7.5 [s] + 5 [critical] * 15 [s]
+    "total_triage_time_s": 450,
+
+    // Surveys used for computing variables
+    "allowed_survey_names": [
+        "Section0_IntakeSurvey_Study3", "SectionD_IntakeSurvey_Study3",
+        "Section1_TrainingKnowledge_Study3", "SectionA_TrainingKnowledge_Study3"
+    ],
+
+    // Mapping between survey variables and surveys
+    // Currently BEARD assumes that variables are computed from only one
+    // survey. Adding multiple surveys to the below lists will allow
+    // variables to choose between multiple surveys to compute values
+
+    // "survey_vars_to_surveys": {
+    //     "gaming_experience": ["IntakeSurvey"],
+    //     "mission_knowledge": ["TrainingKnowledge"],
+    //     "anger": ["TrainingKnowledge"],
+    //     "anxiety": ["TrainingKnowledge"],
+    //     "rmie": ["IntakeSurvey"],
+    //     "sbsod": ["IntakeSurvey"]
+    // },
+
+    // Use for sanity checking mapping between sections to surveys
+    "section_survey_map": {
+        "Study3": {
+            "Section0": "IntakeSurvey",
+            "Section1": "TrainingKnowledge",
+            "Section2": "Mission1Reflection",
+            "Section3": "Mission2Reflection",
+            "SectionA": "TrainingKnowledge",
+            "SectionB": "Mission1Reflection",
+            "SectionC": "Mission2Reflection",
+            "SectionD": "IntakeSurvey"
+        }
+    }
+}

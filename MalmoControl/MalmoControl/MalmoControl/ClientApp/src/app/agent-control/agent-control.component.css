@@ -1,0 +1,15 @@
+button {
+    background-color: blue;
+    color: white;
+    height: 2rem;
+    font-size: 1rem;
+  }
+div {    
+    text-align:center;
+    justify-content: center;
+    margin:3%;
+}
+
+.text{
+  margin:3%;
+}

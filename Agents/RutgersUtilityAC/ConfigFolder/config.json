@@ -1,0 +1,49 @@
+{
+    "host":"mosquitto",
+    "port": "1883",
+    "heartbeats_per_minute": 6,
+    "version_info": {
+        "owner": "RUTGERS - TA2",
+        "version": "0.0.1",
+        "source": ["https://gitlab.com/artificialsocialintelligence/study3/-/tree/main/Agents/RutgersUtilityAgent"],
+        "publishes": [
+            {"topic": "agent/ac/threat_room_coordination", "message_type": "agent", "sub_type": "AC:threat_room_coordination"}
+        ],
+        "subscribes": [
+            {"topic": "trial"},
+            {"topic": "ground_truth/mission/blockages_list"},
+            {"topic": "ground_truth/mission/freezeblock_list"},
+            {"topic": "ground_truth/mission/threatsign_list"},
+            {"topic": "ground_truth/mission/victims_list"},
+            {"topic": "ground_truth/semantic_map/initialized"},
+            {"topic": "groundtruth/mission/role_text"},
+            {"topic": "minecraft/chat"},
+            {"topic": "observations/events/mission"},
+            {"topic": "observations/events/mission/perturbation"},
+            {"topic": "observations/events/player/door"},
+            {"topic": "observations/events/player/dyad"},
+            {"topic": "observations/events/player/itemdrop"},
+            {"topic": "observations/events/player/itemequipped"},
+            {"topic": "observations/events/player/location"},
+            {"topic": "observations/events/player/marker_placed"},
+            {"topic": "observations/events/player/marker_removed"},
+            {"topic": "observations/events/player/proximity"},
+            {"topic": "observations/events/player/proximity_block"},
+            {"topic": "observations/events/player/role_selected"},
+            {"topic": "observations/events/player/rubble_collapse"},
+            {"topic": "observations/events/player/rubble_destroyed"},
+            {"topic": "observations/events/player/signal"},
+            {"topic": "observations/events/player/swinging"},
+            {"topic": "observations/events/player/tool_used"},
+            {"topic": "observations/events/player/triage"},
+            {"topic": "observations/events/player/utility"},
+            {"topic": "observations/events/server/victim_evacuated"},
+            {"topic": "observations/events/player/victim_picked_up"},
+            {"topic": "observations/events/player/victim_placed"},
+            {"topic": "observations/events/scoreboard"},
+            {"topic": "observations/state"},
+            {"topic": "observations/events/player/door"},
+            {"topic": "observations/events/player/signal"}
+        ]
+    }
+}

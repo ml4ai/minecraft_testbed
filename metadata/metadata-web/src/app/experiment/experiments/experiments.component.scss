@@ -1,0 +1,41 @@
+.table-container {
+  //max-height: 300px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.container {
+  margin: 2em;
+}
+
+.no-results {
+  display: flex;
+  justify-content: center;
+  padding: 14px;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.create-button {
+  text-align: center;
+}
+
+.mat-cell-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mat-cell {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 0;
+}

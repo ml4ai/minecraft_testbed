@@ -1,0 +1,20 @@
+
+<div id='mainDiv'>
+
+    <h2>MINECRAFT SESSION LOGIN PAGE</h2>
+
+    <div>
+        <p>In the field below, enter your Minecraft avatar's name exactly as it appears in the game:</p>
+        <input [(ngModel)]=avatarName type='text' id='playernameField'>
+        <p>Enter the provided password below:</p>
+        <input [(ngModel)]=password type='text' id='password'>
+    </div>
+    <br>
+    <br>
+    <button math-button (click)=login()>Login</button>
+
+</div>
+
+
+
+

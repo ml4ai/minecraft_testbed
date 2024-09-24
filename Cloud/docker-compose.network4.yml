@@ -1,0 +1,89 @@
+version: '3.7'
+
+networks:
+  malmonet4:
+   external: true    
+    
+services:
+  malmocontrol4:    
+    image: malmocontrol:latest
+    build: ./MalmoControl/.
+    ports: 
+      - "5006:5002"
+    volumes:
+      - //var/run/docker.sock:/var/run/docker.sock
+    container_name: malmocontrol4
+    networks: 
+     - malmonet4
+    
+
+  malmo-server4:    
+    image: malmoserver:latest
+    build: ./MalmoContainer/.
+    ports:
+      - "5904:5900"              
+    depends_on:
+      - malmocontrol4      
+    container_name: malmo-server4
+    volumes:
+      - ./MalmoContainer/MQTTClient/config.json:/home/malmo/MalmoPlatform/build/install/Python_Examples/MQTTClient/config.json
+    networks: 
+     - malmonet4
+    environment:
+     - MALMO_INSTANCE=4
+
+  # pmengine4:
+  #   image: "pmengine:latest"
+  #   build: ./PMEContainer
+  #   container_name: pmengine4
+  #   networks: 
+  #   - malmonet4
+
+  # accesscontrol4:
+  #   image: "accesscontrol:latest"
+  #   build: ./AccessControlContainer/.
+  #   container_name: accesscontrol4
+  #   environment:
+  #   - ASPNETCORE_URLS=https://+:5000
+  #   - Kestrel__Certificates__Default__Path=cert-aspnetcore.pfx
+  #   - Kestrel__Certificates__Default__Password=password
+  #   - Logging:Console:LogLevel:Default=Information
+  #   networks: 
+  #   - malmonet4
+        
+  # dashboardservice4:
+  #   image: "dashboardservice:latest"
+  #   container_name: dashboardservice4
+  #   environment:
+  #   - ASPNETCORE_URLS=https://+:5005
+  #   - Kestrel__Certificates__Default__Path=cert-aspnetcore.pfx
+  #   - Kestrel__Certificates__Default__Password=password
+  #   - Logging:Console:LogLevel:Default=Information
+  #   - ClientServerURL=https://localhost:9000/DashboardService/
+  #   - authentication:IdentityServerBaseUrl=https://accesscontrol:5000
+  #   - authentication:ClientIdentityServerBaseUrl=https://localhost:9000/AccessControl
+  #   - authentication:IgnoreSSLErrors=true
+  #   - MQTTSettings:Host=10.150.0.3
+  #   - MQTTSettings:Port=1883
+  #   networks: 
+  #   - malmonet4
+        
+  # nginx4:
+  #   image: nginx:alpine
+  #   container_name: nginx4
+  #   volumes:
+  #   -  ./PMEContainer/PerformanceDashboard:/usr/share/nginx/html/PerformanceDashboard
+  #   -  ./PMEContainer/MeasureConfig:/usr/share/nginx/html/measureconfig
+  #   -  ./PMEContainer/Workbench:/usr/share/nginx/html/workbench
+  #   -  ./PMEContainer/Diagnostics:/usr/share/nginx/html/diagnostics
+  #   -  ./PMEContainer/Settings/PerformanceDashboardSettings.json:/usr/share/nginx/html/PerformanceDashboard/assets/settings.json
+  #   -  ./PMEContainer/Settings/nginx.conf:/etc/nginx/nginx.conf
+  #   -  ./PMEContainer/Settings/cert-aspnetcore.crt:/etc/nginx/cert-aspnetcore.crt
+  #   -  ./PMEContainer/Settings/cert-aspnetcore.key:/etc/nginx/cert-aspnetcore.key
+  #   -  ./PMEContainer/Settings/ssl_passwords.txt:/etc/nginx/ssl_passwords.txt
+  #   ports:
+  #   - "9004:443"    
+  #   networks: 
+  #   - malmonet4
+        
+    

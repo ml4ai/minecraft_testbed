@@ -1,0 +1,112 @@
+@startuml
+
+
+package MinecraftBridge <<Frame>>
+{
+	abstract AbstractBridge
+	{
+		{field} ParserMap +parser_map
+		{abstract} +connect()
+		{abstract} +disconnect()
+		{abstract} +register(observer, message_class)
+		{abstract} +deregister(observer, message_class)
+		{abstract} +send(message)
+	}
+
+	class Bridge
+	{
+		{field} -mqtt_client
+		{method} +connect()
+		{method} +disconnect()
+		{method} +register(observer, message_class)
+		{method} +deregister(observer, message_class)		
+		{method} +send(message)
+	}
+
+	class FileBridge
+	{
+		{field} -input_file
+		{field} -output_file
+		{method} +connect()
+		{method} +disconnect()
+		{method} +register(observer, message_class)
+		{method} +deregister(observer, message_class)		
+		{method} +send(message)			
+	}
+
+	class ParserMap
+	{
+		{method} +add(parser)
+	}
+
+	class MessageParser
+	{
+		{field} String +topic
+		{field} +MessageClass
+		{method} Message +parse(json)
+		{method} String +generate(message)
+	}
+	
+
+	AbstractBridge <|.. Bridge
+	AbstractBridge <|.. FileBridge
+
+	abstract BaseMessage
+	{
+		{abstract} {field} property1
+		{abstract} {field} property2
+		{method} +toDict()
+		{method} +toJson() 
+	}
+
+	class BeepEvent
+	{
+		{field} source_entity
+		{field} location
+		{field} message
+	}
+
+	class ChatEvent
+	{
+		{field} sender
+		{field} addressees
+		{field} text
+	}
+
+	AbstractBridge *-left- "1" ParserMap
+	ParserMap *-down- "many" MessageParser
+
+	FileBridge -[hidden]right> Bridge
+	BaseMessage -[hidden]right> FileBridge
+
+	BaseMessage <|.down. BeepEvent
+	BaseMessage <|.down. ChatEvent
+
+}
+
+
+
+class Client
+{
+	{method} +receive(message)
+}
+
+
+file MetadataFile [
+	Metadata
+	<size:70><&justify-left></size>
+]
+
+queue MessageBus [
+	MQTT Bus
+	<size:70><&transfer></size>
+]
+
+
+FileBridge <-down- MetadataFile
+Bridge <-down- MessageBus
+
+AbstractBridge <-----right> Client 
+(AbstractBridge, Client) ..down  BaseMessage : send / receive
+
+@enduml

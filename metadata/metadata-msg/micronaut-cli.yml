@@ -1,0 +1,5 @@
+profile: cli
+defaultPackage: metadata.msg
+---
+testFramework: junit
+sourceLanguage: java

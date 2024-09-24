@@ -1,0 +1,11 @@
+{
+    "mqtt_bus": {
+        "host": "localhost",
+        "port": 1833
+    },
+    "redis_bus": {
+        "host": "localhost",
+        "port": 6739
+    },
+    "agent_name": "template_agent"
+}

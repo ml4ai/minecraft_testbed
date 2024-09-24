@@ -1,0 +1,9 @@
+{
+    "mqtthost": "mosquitto",
+    "mqttport": "1883",
+    "observeX": 26,
+    "observeY": 2,
+    "observeZ": 33,
+    "missionTime": 60000,
+    "observationInterval": ".10"
+}

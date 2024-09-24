@@ -1,0 +1,2 @@
+../../Tools/ihmc-python-agent-helper-package
+numpy~=1.22.1

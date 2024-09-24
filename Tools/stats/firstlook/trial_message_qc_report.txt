@@ -1,0 +1,75 @@
+
+
+Trial Summary
+Trial	1
+Team	Test-2021-04-13
+Member	p101
+CondBtwn	1
+CondWin	Saturn_A
+
+Total 22514 records
+
+Trial Properties
+
+Record counts
+{   'error': {   'event__Event:dialogue_event': 3,
+                 'event__Event:location': 657,
+                 'groundtruth__SemanticMap:Initialized': 1,
+                 'groundtruth__measures': 1,
+                 'observation__Event:Scoreboard': 15},
+    'event': {   'Event:Door': 15,
+                 'Event:ItemEquipped': 28,
+                 'Event:MarkerPlaced': 3,
+                 'Event:MissionState': 2,
+                 'Event:PlayerSwinging': 114,
+                 'Event:ProximityBlockInteraction': 4,
+                 'Event:RoleSelected': 4,
+                 'Event:RubbleDestroyed': 40,
+                 'Event:ToolDepleted': 1,
+                 'Event:ToolUsed': 88,
+                 'Event:Triage': 36,
+                 'Event:VictimPickedUp': 9,
+                 'Event:VictimPlaced': 9,
+                 'Event:dialogue_event': 132,
+                 'Event:location': 657},
+    'export': {'trial': 1},
+    'groundtruth': {   'Mission:BlockageList': 1,
+                       'Mission:FreezeBlockList': 1,
+                       'Mission:ThreatSignList': 1,
+                       'Mission:VictimList': 1,
+                       'SemanticMap:Initialized': 1,
+                       'measures': 1},
+    'observation': {   'Event:Scoreboard': 15,
+                       'FoV': 8941,
+                       'speech_analysis': 1900,
+                       'state': 10506},
+    'status': {'FoV:VersionInfo': 1},
+    'trial': {'start': 1, 'stop': 1}}
+
+
+Validation Check Results
+
+
+|   Msg Type  |               Msg Sub Type              |                              Check                              | Results |
++-------------+-----------------------------------------+-----------------------------------------------------------------+---------+
+|    event    |                Event:Door               |                   At least 1 door event exists                  |   true  |
+|    event    |            Event:ItemEquipped           |               At least 1 item equipped event found              |   true  |
+|    event    |            Event:MissionState           |               Exactly 2 MissionState events found               |   true  |
+|    event    |            Event:PlayerSwing            |              At least 1 PlayerSwinging event found              |   true  |
+|    event    |            Event:RoleSelected           |               At least 1 RoleSelected events found              |   true  |
+|    event    |          Event:RubbleDescroyed          |             At least 1 RubbleDestroyed events found             |   true  |
+|    event    |            Event:ToolDepleted           |               At least 1 ToolDepleted events found              |   true  |
+|    event    |              Event:ToolUsed             |                 At least 1 ToolUsed events found                |   true  |
+|    event    |              Event:location             |                 At least 1 location events found                |   true  |
+| observation |                   Fov                   |                   At least 1 FoV events found                   |   true  |
+|    event    |               Event:Triage              |              An even number of triage events found              |   true  |
+|    event    |           Event:VictimPickedUp          |              At least 1 VictimPickedUp events found             |   true  |
+|    event    |            Event:VictimPlaced           |               At least 1 VictimPlaced events found              |   true  |
+|    event    | Event:VictimPickedUP,Event:VictimPlaced | An equal number of VictimPickedUp and VictimPlaced events found |   true  |
+| groundTruth |           Mission:BlockageList          | There is exactly 1 groundtruth Mission:BlockageList event found |   true  |
+| groundtruth |            Mission:VictimList           |  There is exactly 1 groundtruth Mission:VictimList event found  |   true  |
+| observation |                  state                  |            At least 1 observation state events found            |   true  |
+| observation |             speech_analysis             |       At least 1 Observation speech_analysis message found      |   true  |
+|    trial    |                  start                  |                Exactly 1 trial start events found               |   true  |
+|    trial    |                   stop                  |                Exactly 1 trial stop events found                |   true  |
+|    error    |                   data                  |                  Exactly 0 error.data messages                  |  false  |

@@ -1,0 +1,15 @@
+// This file is read by the json5 library so that it may contain comments.
+{
+  "period_ms": 10000,
+
+  // Total square meters of map that may be explored.
+  "total_coverage_area": 9000,
+
+  // Total time available for work in the scenario.
+  // 15 minutes x 60 seconds = 900
+  "total_mission_s": 900,
+
+  // Total time that can (productively) be spent triaging:
+  // 20 (regular) * 3 (s) + 15 (critical) * 3 (s)
+  "total_triage_time_s": 105
+}

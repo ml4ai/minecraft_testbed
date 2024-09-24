@@ -1,0 +1,14 @@
+{
+  "DEFAULT": {"semantic_map": "Saturn_2.6_3D_sm_v1.0.json", "base_map": "Saturn_2.6_3D_bm_v1.0.json"},
+  "Saturn_1.6_3D": {"semantic_map": "Saturn_1.6_3D_sm_v1.1.json", "base_map": "Saturn_1.6_3D_bm_v1.1.json"},
+  "Saturn_1.6_3D-Dev": {"semantic_map": "Saturn_1.6_3D_sm_v1.1.json", "base_map": "Saturn_1.6_3D_bm_v1.1.json"},
+  "Saturn_2.0_3D": {"semantic_map": "Saturn_2.0_3D_sm_v1.0.json", "base_map": "Saturn_2.0_3D_bm_v1.0.json"},
+  "Saturn_2.1_3D": {"semantic_map": "Saturn_2.1_3D_sm_v1.0.json", "base_map": "Saturn_2.1_3D_bm_v1.0.json"},
+  "Saturn_2.0_3D-Dev": {"semantic_map": "Saturn_2.0_3D_sm_v1.0.json", "base_map": "Saturn_2.0_3D_bm_v1.0.json"},
+  "Saturn_2.1_3D-Dev": {"semantic_map": "Saturn_2.1_3D_sm_v1.0.json", "base_map": "Saturn_2.1_3D_bm_v1.0.json"},
+  "Saturn_2.5_3D": {"semantic_map": "Saturn_2.1_3D_sm_v1.0.json", "base_map": "Saturn_2.1_3D_bm_v1.0.json"},
+  "Saturn_2.5Dev_3D": {"semantic_map": "Saturn_2.1_3D_sm_v1.0.json", "base_map": "Saturn_2.1_3D_bm_v1.0.json"},
+  "Saturn_2.6_3D": {"semantic_map": "Saturn_2.6_3D_sm_v1.0.json", "base_map": "Saturn_2.6_3D_bm_v1.0.json"},
+  "Saturn_2.6DEV_3D": {"semantic_map": "Saturn_2.6_3D_sm_v1.0.json", "base_map": "Saturn_2.6_3D_bm_v1.0.json"},
+  "Saturn_2.6_3D_Training": {"semantic_map": "Saturn_2.6_3D_sm_v1.0.json", "base_map": "Saturn_2.6_3D_bm_v1.0.json"}
+}

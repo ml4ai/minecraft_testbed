@@ -1,0 +1,31 @@
+{
+	"agent_name": "AC_UAZ_TA1_ASR_Agent",
+	"agent_hostname": "asr_agent", 
+	"version": "4.0.4",
+	"owner": "UAZ",
+	"config": [],	
+	"publishes": [
+		{
+		    "topic": "agent/asr/intermediate",
+		    "message_type": "observation",
+		    "sub_type":  "asr:transcription"
+		},
+		{
+		    "topic": "agent/asr/final",
+		    "message_type": "observation",
+		    "sub_type":  "asr:transcription"
+		}
+	],
+	"subscribes": [
+		{
+		    "topic": "trial",
+		    "message_type": "trial",
+		    "sub_type": "start"
+		},
+		{
+		    "topic": "trial",
+		    "message_type": "trial",
+		    "sub_type": "stop"
+		}
+	] 
+}

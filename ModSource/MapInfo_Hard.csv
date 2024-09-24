@@ -1,0 +1,63 @@
+LocationXYZ,FeatureType,FeatureSubType,RoomName
+-2060 60 148, doorway,,Executive Suite 2
+-2058 60 148, doorway,,Executive Suite 1
+-2045 60 145, doorway,,King Chris's Office
+-2043 60 145, doorway,,Executive Suite 2
+-2030 60 158, doorway,,Room 101
+-2029 60 158, doorway,,Room 101
+-2029 60 161, doorway,,King Chris's Office
+-2030 60 161, doorway,,King Chris's Office
+-2031 60 177, doorway,,Right Hallway
+-2031 60 179, doorway,,Room 102
+-2029 60 182, doorway,,Room 103
+-2029 60 184, doorway,,Right Hallway
+-2036 60 190, doorway,,Room 104
+-2038 61 190, doorway,,Room 103
+-2063 60 191, doorway,,Room 107
+-2065 61 191, doorway,,Room 106
+-2090 60 190, doorway,,Room 110
+-2092 61 190, doorway,,Room 109
+-2079 60 167, doorway,,The Computer Farm
+-2077 60 167, doorway,,South Hallway
+-2067 60 164, doorway,,Men's Room
+-2067 60 165, doorway,,Men's Room
+-2067 60 168, doorway,,Women's Room
+-2067 60 170, doorway,,Men's Room
+-2067 60 177, doorway,,Right Hallway
+-2067 60 179, doorway,,Women's Room
+-2064 60 164, doorway,,Amway Conference Room
+-2064 60 165, doorway,,Amway Conference Room
+-2087 60 152, doorway,,Security Office
+-2082 60 152, doorway,,Open Break Area
+-2081 60 152, doorway,,Open Break Area
+-2080 60 152, doorway,,Open Break Area
+-2079 60 152, doorway,,Open Break Area
+-2075 60 152, doorway,,Executive Suite 1
+-2058 60 152, doorway,,Executive Suite 2
+-2043 60 152, doorway,,King Chris's Office
+-2042 60 152, doorway,,King Chris's Office
+-2029 60 151, doorway,,The King's Terrace
+-2041 60 158, doorway,,Herbalife Conference Room
+-2041 60 159, doorway,,Herbalife Conference Room
+-2052 60 175, doorway,,Herbalife Conference Room
+-2052 60 176, doorway,,Herbalife Conference Room
+-2055 60 165, doorway,,Amway Conference Room
+-2055 60 166, doorway,,Amway Conference Room
+-2055 60 168, doorway,,Mary Kay Conference Room
+-2055 60 169, doorway,,Mary Kay Conference Room
+-2071 60 155, doorway,,Janitor
+-2074 60 161, doorway,,Men's Room
+-2074 60 170, doorway,,Women's Room
+-2087 60 155, doorway,,The Computer Farm
+-2087 60 179, doorway,,The Computer Farm
+-2038 60 168, doorway,,Room 101
+-2036 60 179, doorway,,Room 102
+-2036 60 182, doorway,,Room 103
+-2045 60 182, doorway,,Room 104
+-2054 60 182, doorway,,Room 105
+-2063 60 182, doorway,,Room 106
+-2072 60 182, doorway,,Room 107
+-2081 60 182, doorway,,Room 108
+-2090 60 182, doorway,,Room 109
+-2099 60 182, doorway,,Room 110
+-2108 60 182, doorway,,Room 111

@@ -1,0 +1,5 @@
+-e /app/lib/MinecraftElements
+-e /app/lib/MinecraftBridge
+-e /app/lib/RedisBridge
+-e /app/lib/BaseAgent
+-e /app/lib/pygl_fov

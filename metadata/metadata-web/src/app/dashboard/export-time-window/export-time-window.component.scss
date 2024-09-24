@@ -1,0 +1,22 @@
+@import '~@angular/material/theming';
+@import '../../../metadata-theme.scss';
+
+mat-option {
+  min-height: 48px;
+  line-height: 1.15;
+  height: auto;
+  padding: 8px 16px;
+  white-space: normal;
+}
+
+:host ::ng-deep .mat-form-field-cursor div.mat-form-field-wrapper {
+  cursor: pointer;
+}
+
+.accent-color {
+  color: mat-color($mat-accent, main) !important;
+}
+
+mat-form-field {
+  width: 100%;
+}

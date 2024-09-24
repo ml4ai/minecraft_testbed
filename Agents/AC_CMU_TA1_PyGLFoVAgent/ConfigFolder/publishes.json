@@ -1,0 +1,27 @@
+[
+    {
+        "topic": "agent/pygl_fov/versioninfo",
+        "type": "agent",
+        "subtype": "versioninfo"
+    },
+    {
+        "topic": "agent/control/rollcall/response",
+        "type": "agent",
+        "subtype": "rollcall:response"
+    },
+    {
+        "topic": "status/pygl_fov/heartbeats",
+        "type": "status",
+        "subtype": "heartbeat"
+    },
+    {
+        "topic": "agent/pygl_fov/player/3d/summary",
+        "type": "observation",
+        "subtype": "FoV"
+    },
+    {
+        "topic": "agent/pygl_fov/profile",
+        "type": "agent",
+        "subtype": "FoV:Profile"
+    }
+]

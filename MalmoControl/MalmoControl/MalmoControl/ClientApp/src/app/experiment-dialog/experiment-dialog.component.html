@@ -1,0 +1,193 @@
+<div style="max-height:600px; min-width:700px;"> 
+  
+  <mat-tab-group (selectedTabChange)=setLastMission($event)>
+    <mat-tab label="Select Experiment">
+      <!-- FETCH EXISTING EXPERIMENT -->
+      <mat-card >
+        <mat-card-title style="text-align: center;">
+          Select an Experiment 
+        </mat-card-title>
+        <mat-card-content style="text-align: center;">
+          <div>To Create a New Experiment, Navigate to the Create Experiment Tab</div>
+          <div style = "width:100%;height:100%">  
+            <mat-selection-list multiple='false' >
+              <mat-list-option *ngFor="let experiment of fetchedExperiments" checkboxPosition='after' [value]=[experiment.experiment_id,experiment.name,experiment.author,experiment.mission]>                 
+
+                    <p class="smalltext">
+                      
+                      ID : {{experiment.experiment_id}} NAME : {{experiment.name}} AUTHOR : {{experiment.author}} MISSION : {{experiment.mission}}
+
+                    </p>
+                              
+                
+              </mat-list-option>
+            </mat-selection-list>
+          </div>
+
+        </mat-card-content>
+
+        <mat-card-footer>        
+          <button mat-button style="float:right" (click)=cancel()> Cancel </button>
+        </mat-card-footer>
+
+      </mat-card>
+      <!-- END FETCH EXISTING EXPERIMENT -->
+    </mat-tab>
+    <mat-tab label="Create Experiment">    
+      <!-- CREATE EXPERIMENT -->
+      <mat-card >
+      
+        <mat-card-title style="text-align: center;">
+          Enter New Experiment Info
+        </mat-card-title>
+
+        <mat-card-content style="text-align: center;">
+    
+          <div style = "width:100%;height:100%">  
+            <div style="display:flex;">
+              <p>Experiment Name</p>
+              <div style="flex-grow: 1;"></div>
+              <input matInput [(ngModel)] = experiment_name>
+            </div>
+            
+            <div style="display:flex;">
+              <p>Experiment Author</p>
+              <div style="flex-grow: 1;"></div>
+              <input matInput [(ngModel)] =experiment_author>
+            </div>          
+    
+            <div style="display:flex;">
+              <p>Mission </p>
+              <div style="flex-grow: 1;"></div>
+              <input matInput [(ngModel)] = mission_name>
+            </div>  
+          </div>
+
+        </mat-card-content>
+
+        <mat-card-footer>
+          <button mat-button style="float:left" (click)=createExperiment()> Save to Experiment Store </button>
+          <button mat-button style="float:right" (click)=cancel()> Cancel </button>
+        </mat-card-footer>
+
+      </mat-card>
+      <!-- END CREATE EXPERIMENT -->
+
+    
+    </mat-tab>
+      
+    <mat-tab label="Create Trial" >
+
+      <mat-card>
+      
+        <mat-card-title style="text-align: center;">
+          Enter New Trial Info
+        </mat-card-title>
+
+        <mat-card-content style="text-align: center;">    
+          
+            
+            <div style="display:flex;">
+              <p>Experiment ID</p>
+              <div style="flex-grow: 1;"></div>
+              <input matInput [(ngModel)]=experimentService.experiment_id placeholder='Not Set' disabled > 
+            </div>          
+
+            <div style="display:flex;">
+              <p>Trial Name</p>
+              <div style="flex-grow: 1;"></div>
+              <input matInput [(ngModel)] = experimentService.trial_name placeholder='Enter Trial Name'>
+            </div>
+            
+            <div style="display:flex;">
+              <p>Trial Experimenter</p>
+              <div style="flex-grow: 1;"></div>
+              <input matInput [(ngModel)] = experimentService.trial_experimenter placeholder='Enter Trial Experimenter'>
+            </div>     
+    
+            <div style="display:flex;">
+              <p>Trial Subjects</p>
+              <div style="flex-grow: 1;"></div>
+              <input matInput [(ngModel)] = experimentService.trial_subjects placeholder='Enter Subjects separated by a comma'>
+            </div>
+
+            <div style="display:flex;">
+              <p>Trial Notes </p>
+              <div style="flex-grow: 1;"></div>
+              <input matInput [(ngModel)] = experimentService.trial_notes placeholder='Enter Trial Notes'>
+            </div>
+
+            <div style="display:flex;">
+              <p>Trial Number </p>
+              <div style="flex-grow: 1;"></div>
+              <input matInput [(ngModel)] = experimentService.trial_number placeholder='Enter Trial Number'>
+            </div>
+
+            <div style="display:flex;">
+              <p>Group Number </p>
+              <div style="flex-grow: 1;"></div>
+              <input matInput [(ngModel)] = experimentService.trial_group_number placeholder='Enter Group Number'>
+            </div>
+
+            <div style="display:flex;">
+              <p>Study Number </p>
+              <div style="flex-grow: 1;"></div>
+              <input matInput [(ngModel)] = experimentService.trial_study_number placeholder='Enter Study Number'>
+            </div>
+
+            <div style="display:flex;">
+              <p>Condition</p>
+              <div style="flex-grow: 1;"></div>
+              <input matInput [(ngModel)] = experimentService.trial_condition placeholder='Enter Condition'>
+            </div>
+
+            <div style="display:flex;">
+              <p>Experiment Author </p>
+              <div style="flex-grow: 1;"></div>
+              <input matInput [(ngModel)] = experimentService.experiment_author placeholder='Not Set' disabled>
+            </div>
+            
+            <div style="display:flex;">
+              <p>Experiment Name </p>
+              <div style="flex-grow: 1;"></div>
+              <input matInput [(ngModel)] = experimentService.experiment_name placeholder='Not Set' disabled>
+            </div>
+           
+            <div style="display:flex;">
+            
+              <p>Experiment Mission </p>
+              <div style="flex-grow: 1;"></div>
+              
+              <div *ngIf=showAsistMissions>
+                <select id=asistSelect (change)='assignMission($event)' >
+                  <option *ngFor='let mission of asistMissions' [value]=mission.MapName >{{mission.MissionName}}</option>      
+                </select>
+              </div>
+            </div> 
+            
+            <!-- <div style="display:flex;">
+            
+              <p>Player Intervention Agent </p>
+              <div style="flex-grow: 1;"></div>
+              
+              <select id=agentSelect (change)='assignInterventionAgent($event)' >
+                <option *ngFor='let agent of interventionAgents' [value]=agent >{{agent.AgentName}}</option>      
+              </select>
+
+            </div> -->
+
+        </mat-card-content >
+
+        <mat-card-footer>
+          <button mat-button style="margin:10px; float:left; font-size: large; background-color:#3b69b8; color:white" (click)=cancel()> Cancel </button>
+          <button mat-button style="margin:10px; float:right; font-size: large; background-color:#3b69b8; color:white" (click)=createTrialAndStartMission()> Start Trial and Run Mission </button>          
+        </mat-card-footer>
+
+      </mat-card>
+
+    </mat-tab>
+    
+  </mat-tab-group>
+
+</div>  
+

@@ -1,0 +1,86 @@
+<h1 mat-dialog-title>Create</h1>
+<div mat-dialog-content [formGroup]="createTrialForm" layout="row" layout-align="center center">
+  <fieldset>
+    <legend>Trial</legend>
+    <mat-form-field floatLabel="always" appearance="none">
+      <div class="header-row">
+        <mat-slide-toggle color="primary" (change)="toggleUseMessageBusChange($event)" formControlName="useMessageBus">Use Message Bus</mat-slide-toggle>
+        <textarea matInput hidden></textarea>
+        <button mat-fab color="primary" (click)="openJsonTrialDialog()" matTooltip="Use JSON to populate form.">
+          <mat-icon aria-label="Create">text_snippet</mat-icon>
+        </button>
+      </div>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Trial UUID</mat-label>
+      <input matInput formControlName="trial_id" placeholder="UUID" [pattern]="uuidPattern" required autocomplete="off" >
+      <mat-error>Please use a valid UUID.</mat-error>
+      <button mat-icon-button matSuffix (click)="onGenerateUUIDClick()">
+        <mat-icon aria-label="UUID">autorenew</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Trial Name</mat-label>
+      <input matInput formControlName="name" placeholder="Name" required autocomplete="off">
+      <mat-error>Name is required.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Trial Date</mat-label>
+      <input matInput [matDatepicker]="date" formControlName="date" required autocomplete="off">
+      <mat-error>Date is required.</mat-error>
+      <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+      <mat-datepicker #date></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Trial Experimenter</mat-label>
+      <input matInput formControlName="experimenter" placeholder="Experimenter" required autocomplete="off">
+      <mat-error>Experimenter is required.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Trial Subjects</mat-label>
+      <textarea matInput formControlName="subjects" placeholder="Subjects..." autocomplete="off"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Trial Number</mat-label>
+      <input matInput formControlName="trial_number" placeholder="Trial Number" required autocomplete="off">
+      <mat-error>Trial Number is required.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Trial Group Number</mat-label>
+      <input matInput formControlName="group_number" placeholder="Trial Group Number" required autocomplete="off">
+      <mat-error>Trial Group Number is required.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Trial Study Number</mat-label>
+      <input matInput formControlName="study_number" placeholder="Trial Study Number" required autocomplete="off">
+      <mat-error>Trial Study Number is required.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Trial Condition</mat-label>
+      <input matInput formControlName="condition" placeholder="Trial Condition" required autocomplete="off">
+      <mat-error>Trial Condition is required.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Trial Notes</mat-label>
+      <textarea matInput formControlName="notes" placeholder="Notes..." autocomplete="off"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Trial Testbed Version</mat-label>
+      <input matInput formControlName="testbed_version" placeholder="Testbed Version" required autocomplete="off">
+      <mat-error>Testbed version is required.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Trial Experiment</mat-label>
+      <mat-select [compareWith]="compareFnExperiments" formControlName="experiment" placeholder="Experiment" required>
+        <mat-option *ngFor="let experiment of experiments" [value]="experiment">
+          {{experiment.name}}
+        </mat-option>
+      </mat-select>
+      <mat-error>Experiment is required.</mat-error>
+    </mat-form-field>
+  </fieldset>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-raised-button color="accent" (click)="onCancelClick()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onCreateClick()" [disabled]="!createTrialForm.valid">Create</button>
+</div>

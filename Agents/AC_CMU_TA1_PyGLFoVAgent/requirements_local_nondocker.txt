@@ -1,0 +1,5 @@
+-e lib/MinecraftElements
+-e lib/MinecraftBridge
+-e lib/RedisBridge
+-e lib/BaseAgent
+-e lib/pygl_fov

@@ -1,0 +1,22 @@
+{
+    "host": ["mosquitto", "localhost", "192.168.69.158"],
+    "port": "1883",
+    "heartbeats_per_minute": 6,
+    "version_info": {
+        "owner": "IHMC - TA2",
+        "agent_type": "AC",
+        "version": "0.3.2",
+        "source": [
+            "https://gitlab.com/artificialsocialintelligence/study3/-/tree/main/Agents/AC_IHMC_TA2_Location-Monitor"
+        ],
+        "publishes": [
+            {"topic": "ground_truth/semantic_map/initialized", "message_type": "groundtruth", "sub_type": "SemanticMap:Initialized"},
+            {"topic": "observations/events/player/location", "message_type": "event", "sub_type": "Event:location"}
+        ],
+        "subscribes": [
+            {"topic": "trial", "message_type": "trial"},
+            {"topic": "observations/state", "message_type": "observation", "sub_type": "state"}
+        ],
+        "config": [{"name": "maps_file", "value": "maps.json"}, {"name": "output-playername", "value": "False"}, {"name": "remove-player-info-if-no-events-after-X-seconds", "value": "3600"}]
+    }
+}

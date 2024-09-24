@@ -1,0 +1,79 @@
+LocationXYZ,BlockType,Command,CommandOptions,RoomName,FeatureType
+-2077 60 145,block_victim_1,,,Open Break Area,Victim
+-2082 60 147,block_victim_1,,,Open Break Area,Victim
+-2077 60 150,block_victim_2,,,Open Break Area,Victim
+-2064 60 147,block_victim_1,,,Executive Suite 1,Victim
+-2062 60 148,block_victim_1,,,Executive Suite 1,Victim
+-2064 60 149,block_victim_1,,,Executive Suite 1,Victim
+-2038 60 149,block_victim_1,,,King Chris's Office,Victim
+-2025 60 147,block_victim_1,,,The King's Terrace,Victim
+-2023 60 156,block_victim_1,,,The King's Terrace,Victim
+-2030 60 161,block_victim_2,,,Room 101,Victim
+-2034 60 164,block_victim_2,,,Room 101,Victim
+-2029 60 164,block_victim_1,,,Room 101,Victim
+-2029 60 168,block_victim_1,,,Room 101,Victim
+-2029 60 170,block_victim_1,,,Room 102,Victim
+-2030 60 176,block_victim_1,,,Room 102,Victim
+-2029 60 185,block_victim_1,,,Room 103,Victim
+-2031 60 191,block_victim_1,,,Room 103,Victim
+-2049 60 190,block_victim_1,,,Room 105,Victim
+-2067 60 190,block_victim_2,,,Room 107,Victim
+-2073 61 190,air,,,Room 107/Room 108,Opening - Passable
+-2073 62 190,air,,,Room 107/Room 108,Opening - Passable
+-2073 63 190,air,,,Room 107/Room 108,Opening - Passable
+-2073 64 190,air,,,Room 107/Room 108,Opening - Passable
+-2075 60 190,block_victim_1,,,Room 108,Victim
+-2082 61 190,air,,,Room 108/Room 109,Opening - Passable
+-2082 62 190,air,,,Room 108/Room 109,Opening - Passable
+-2082 63 190,air,,,Room 108/Room 109,Opening - Passable
+-2082 64 190,air,,,Room 108/Room 109,Opening - Passable
+-2085 60 186,block_victim_1,,,Room 109,Victim
+-2083 60 191,block_victim_1,,,Room 109,Victim
+-2091 61 190,air,,,Room 109/Room 110,Opening - Passable
+-2091 62 190,air,,,Room 109/Room 110,Opening - Passable
+-2091 63 190,air,,,Room 109/Room 110,Opening - Passable
+-2091 64 190,air,,,Room 109/Room 110,Opening - Passable
+-2092 60 186,block_victim_2,,,Room 110,Victim
+-2093 60 190,block_victim_2,,,Room 110,Victim
+-2096 60 190,block_victim_1,,,Room 110,Victim
+-2090 60 168,block_victim_1,,,The Computer Farm,Victim
+-2081 60 174,block_victim_2,,,The Computer Farm,Victim
+-2072 60 176,block_victim_1,,,Women's Room,Victim
+-2072 60 163,block_victim_1,,,Men's Room,Victim
+-2067 60 168,block_victim_1,,,Men's Room,Victim
+-2066 61 164,air,,,Men's Room/Amway Conference Room,Opening - Passable
+-2066 62 164,air,,,Men's Room/Amway Conference Room,Opening - Passable
+-2066 63 164,air,,,Men's Room/Amway Conference Room,Opening - Passable
+-2066 64 164,air,,,Men's Room/Amway Conference Room,Opening - Passable
+-2065 61 164,air,,,Men's Room/Amway Conference Room,Opening - Passable
+-2065 62 164,air,,,Men's Room/Amway Conference Room,Opening - Passable
+-2065 63 164,air,,,Men's Room/Amway Conference Room,Opening - Passable
+-2065 64 164,air,,,Men's Room/Amway Conference Room,Opening - Passable
+-2064 60 166,block_victim_2,,,Amway Conference Room,Victim
+-2064 60 177,block_victim_1,,,Mary Kay Conference Room,Victim
+-2045 60 161,block_victim_2,,,Herbalife Conference Room,Victim
+-2047 60 173,block_victim_2,,,Herbalife Conference Room,Victim
+-2048 60 152,air,,,Left Hallway,Blockage
+-2048 61 152,air,,,Left Hallway,Blockage
+-2048 62 152,air,,,Left Hallway,Blockage
+-2048 60 153,air,,,Left Hallway,Blockage
+-2048 61 153,air,,,Left Hallway,Blockage
+-2048 62 153,air,,,Left Hallway,Blockage
+-2048 60 154,air,,,Left Hallway,Blockage
+-2048 61 154,air,,,Left Hallway,Blockage
+-2048 62 154,air,,,Left Hallway,Blockage
+-2048 60 155,air,,,Left Hallway,Blockage
+-2048 61 155,air,,,Left Hallway,Blockage
+-2048 62 155,air,,,Left Hallway,Blockage
+-2079 60 179,air,,,Right Hallway,Blockage
+-2079 61 179,air,,,Right Hallway,Blockage
+-2079 62 179,air,,,Right Hallway,Blockage
+-2079 60 180,air,,,Right Hallway,Blockage
+-2079 61 180,air,,,Right Hallway,Blockage
+-2079 62 180,air,,,Right Hallway,Blockage
+-2079 60 181,air,,,Right Hallway,Blockage
+-2079 61 181,air,,,Right Hallway,Blockage
+-2079 62 181,air,,,Right Hallway,Blockage
+-2079 60 182,air,,,Right Hallway,Blockage
+-2079 61 182,air,,,Right Hallway,Blockage
+-2079 62 182,air,,,Right Hallway,Blockage

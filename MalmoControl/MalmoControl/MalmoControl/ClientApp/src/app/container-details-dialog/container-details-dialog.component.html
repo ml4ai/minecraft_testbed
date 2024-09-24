@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>Agent Container status</h2>
+
+<mat-dialog-content>
+    <mat-list role="list" dense>
+        <mat-list-item role="listitem">
+            <div class="wide header"> Container Name </div>
+            <div fxFlex></div>
+            <div class="narrow header"> Version </div>
+            <div fxFlex></div>
+            <!-- <div class="narrow header"> Is Healthy </div>
+            <div fxFlex></div> -->
+            <div class="wide header"> Last Activity </div>
+        </mat-list-item>
+
+        <mat-divider></mat-divider>
+        <mat-list-item class="row" role="listitem" *ngFor="let container of sortBy('lastUpdate')" [ngClass]="getStatusColor(container)">
+            <div class="cell wide">{{container.name}} </div>
+            <div fxFlex></div>
+            <div class="cell narrow">{{container.version}} </div>
+            <div fxFlex></div>
+            <!-- <div class="cell narrow">Status: {{container.isHealthy}} </div>
+            <div fxFlex></div> -->
+            <div class="cell wide">{{container.lastUpdate | date:'medium'}}</div>
+        </mat-list-item>
+      </mat-list>
+
+</mat-dialog-content>
+<mat-dialog-actions fxLayout="row" fxLayoutAlign="space-between none" fxLayoutGap="60px">
+    <div class="mat-typography" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px">
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px"><div class="legend-box good-status"></div><div>Active in last minute</div></div>
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px"><div class="legend-box ok-status"></div><div>Active in last 5 minutes</div></div>
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px"><div class="legend-box not-ok-status"></div><div>Not active in last 5 minutes</div></div>
+    </div>
+    <button mat-button mat-dialog-close>Okay</button>
+</mat-dialog-actions>

@@ -1,0 +1,125 @@
+[
+    {
+        "agent_names": [
+            "RutgersUtilityAC",
+            "AC_CMU_TA2_TED",
+            "AC_CMU_TA2_BEARD",
+            "AC_IHMC_TA2_Location-Monitor",
+            "AC_IHMC_TA2_Player-Proximity",
+            "AC_IHMC_TA2_Dyad-Reporting",
+            "AC_IHMC_TA2_Joint-Activity-Interdependence",
+            "AC_CMUFMS_TA2_Cognitive",
+            "AC_UCF_TA2_PlayerProfiler",
+            "AC_CMU_TA1_PyGLFoVAgent",
+            "ac_cornell_ta2_teamtrust",
+            "AC_UAZ_TA1_ASR_Agent",
+            "AC_UAZ_TA1_SpeechAnalyzer",
+            "gallup_agent_gelp",
+            "gallup_agent_gold"
+        ],
+        "agent_directories": [
+        ],
+        "source_file": "data/replays/HSRData_TrialMessages_Trial-Training_Team-TM000219_Member-na_CondBtwn-NoAdvisor_CondWin-na_Vers-7.metadata"
+    },
+    {
+        "agent_names": [
+            "RutgersUtilityAC",
+            "AC_CMU_TA2_TED",
+            "AC_CMU_TA2_BEARD",
+            "AC_IHMC_TA2_Location-Monitor",
+            "AC_IHMC_TA2_Player-Proximity",
+            "AC_IHMC_TA2_Dyad-Reporting",
+            "AC_IHMC_TA2_Joint-Activity-Interdependence",
+            "AC_CMUFMS_TA2_Cognitive",
+            "AC_UCF_TA2_PlayerProfiler",
+            "AC_CMU_TA1_PyGLFoVAgent",
+            "ac_cornell_ta2_teamtrust",
+            "AC_UAZ_TA1_ASR_Agent",
+            "AC_UAZ_TA1_SpeechAnalyzer",
+            "gallup_agent_gelp",
+            "gallup_agent_gold"
+        ],
+        "agent_directories": [
+        ],
+        "source_file": "data/replays/HSRData_TrialMessages_Trial-T000637_Team-TM000219_Member-na_CondBtwn-NoAdvisor_CondWin-na_Vers-7.metadata"
+    },
+    {
+        "agent_names": [
+            "RutgersUtilityAC",
+            "AC_CMU_TA2_TED",
+            "AC_CMU_TA2_BEARD",
+            "AC_IHMC_TA2_Location-Monitor",
+            "AC_IHMC_TA2_Player-Proximity",
+            "AC_IHMC_TA2_Dyad-Reporting",
+            "AC_IHMC_TA2_Joint-Activity-Interdependence",
+            "AC_CMUFMS_TA2_Cognitive",
+            "AC_UCF_TA2_PlayerProfiler",
+            "AC_CMU_TA1_PyGLFoVAgent",
+            "ac_cornell_ta2_teamtrust",
+            "AC_UAZ_TA1_ASR_Agent",
+            "AC_UAZ_TA1_SpeechAnalyzer",
+            "gallup_agent_gelp",
+            "gallup_agent_gold"
+        ],
+        "agent_directories": [
+        ],
+        "source_file": "data/replays/HSRData_TrialMessages_Trial-T000638_Team-TM000219_Member-na_CondBtwn-NoAdvisor_CondWin-na_Vers-7.metadata"
+    },
+    {
+        "agent_names": [
+            "ASI_CMU_TA1_ATLAS"
+        ],
+        "agent_directories": [
+            "Agents/ASI_CMU_TA1_ATLAS"
+        ],
+        "source_file": "data/replays/HSRData_TrialMessages_Trial-T000637_Team-TM000219_Member-na_CondBtwn-NoAdvisor_CondWin-na_Vers-7.metadata"
+    },
+    {
+        "agent_names": [
+            "ASI_CRA_TA1_psicoach"
+        ],
+        "agent_directories": [
+            "Agents/ASI_CRA_TA1_psicoach"
+        ],
+        "source_file": "data/replays/HSRData_TrialMessages_Trial-T000637_Team-TM000219_Member-na_CondBtwn-NoAdvisor_CondWin-na_Vers-7.metadata"
+    },
+    {
+        "agent_names": [
+            "ASI_UAZ_TA1_ToMCAT"
+        ],
+        "agent_directories": [
+            "Agents/ASI_UAZ_TA1_ToMCAT"
+        ],
+        "source_file": "data/replays/HSRData_TrialMessages_Trial-T000637_Team-TM000219_Member-na_CondBtwn-NoAdvisor_CondWin-na_Vers-7.metadata"
+    },
+    {
+        "agent_names": [
+            "atomic_agent"
+        ],
+        "agent_directories": [
+            "Agents/atomic_agent"
+        ],
+        "source_file": "data/replays/HSRData_TrialMessages_Trial-T000637_Team-TM000219_Member-na_CondBtwn-NoAdvisor_CondWin-na_Vers-7.metadata"
+    },
+    {
+        "agent_names": [
+            "Rita_Agent"
+        ],
+        "agent_directories": [
+            "Agents/Rita_Agent"
+        ],
+        "source_file": "data/replays/HSRData_TrialMessages_Trial-T000637_Team-TM000219_Member-na_CondBtwn-NoAdvisor_CondWin-na_Vers-7.metadata"
+    },
+    {
+        "agent_names": [
+            "SIFT_Asistant_Agent"
+        ],
+        "agent_directories": [
+            "Agents/SIFT_Asistant_Agent"
+        ],
+        "source_file": "data/replays/HSRData_TrialMessages_Trial-T000637_Team-TM000219_Member-na_CondBtwn-NoAdvisor_CondWin-na_Vers-7.metadata"
+    }
+]
+
+
+

@@ -1,0 +1,174 @@
+{
+	"index_patterns": "logstash-*",
+	"version": 60001,
+	"settings": {
+		"index.refresh_interval": "5s",
+		"number_of_shards": 1
+	},
+	"mappings": {
+		"dynamic": false,
+		"properties": {
+			"header": {
+				"properties": {
+					"message_type": {
+						"type": "text",
+						"norms": false,
+						"fields": {
+							"keyword": {
+								"type": "keyword",
+								"ignore_above": 256
+							}
+						}
+					}
+				}
+			},
+			"msg": {
+				"properties": {
+					"trial_id": {
+						"type": "text",
+						"norms": false,
+						"fields": {
+							"keyword": {
+								"type": "keyword",
+								"ignore_above": 256
+							}
+						}
+					},
+					"experiment_id": {
+						"type": "text",
+						"norms": false,
+						"fields": {
+							"keyword": {
+								"type": "keyword",
+								"ignore_above": 256
+							}
+						}
+					},
+					"replay_id": {
+						"type": "text",
+						"norms": false,
+						"fields": {
+							"keyword": {
+								"type": "keyword",
+								"ignore_above": 256
+							}
+						}
+					},
+					"replay_parent_id": {
+						"type": "text",
+						"norms": false,
+						"fields": {
+							"keyword": {
+								"type": "keyword",
+								"ignore_above": 256
+							}
+						}
+					},
+					"replay_parent_type": {
+						"type": "text",
+						"norms": false,
+						"fields": {
+							"keyword": {
+								"type": "keyword",
+								"ignore_above": 256
+							}
+						}
+					},
+					"source": {
+						"type": "text",
+						"norms": false,
+						"fields": {
+							"keyword": {
+								"type": "keyword",
+								"ignore_above": 256
+							}
+						}
+					},
+					"sub_type": {
+						"type": "text",
+						"norms": false,
+						"fields": {
+							"keyword": {
+								"type": "keyword",
+								"ignore_above": 256
+							}
+						}
+					},
+					"timestamp": {
+						"type": "date"
+					},
+					"name": {
+						"type": "text",
+						"norms": false,
+						"fields": {
+							"keyword": {
+								"type": "keyword",
+								"ignore_above": 256
+							}
+						}
+					},
+					"testbed_version": {
+						"type": "text",
+						"norms": false,
+						"fields": {
+							"keyword": {
+								"type": "keyword",
+								"ignore_above": 256
+							}
+						}
+					}
+				}
+			},
+			"topic": {
+				"type": "text",
+				"norms": false,
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"ignore_above": 256
+					}
+				}
+			},
+			"@timestamp": {
+				"type": "date"
+			},
+			"@version": {
+				"type": "keyword"
+			},
+			"error": {
+				"properties": {
+					"reason": {
+						"type": "text",
+						"norms": false,
+						"fields": {
+							"keyword": {
+								"type": "keyword",
+								"ignore_above": 256
+							}
+						}
+					},
+					"plugin_id": {
+						"type": "text",
+						"norms": false,
+						"fields": {
+							"keyword": {
+								"type": "keyword",
+								"ignore_above": 256
+							}
+						}
+					},
+					"plugin_type": {
+						"type": "text",
+						"norms": false,
+						"fields": {
+							"keyword": {
+								"type": "keyword",
+								"ignore_above": 256
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

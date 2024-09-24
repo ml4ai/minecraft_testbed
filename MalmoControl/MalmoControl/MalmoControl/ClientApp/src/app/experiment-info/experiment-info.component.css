@@ -1,0 +1,20 @@
+div {
+
+    text-align:left;
+    
+}
+
+button {
+  background-color: blue;
+  color: white;
+  height: 2rem;
+  font-size: 1rem;  
+}
+
+#jsonSection{  
+  overflow:scroll;
+  background-color:black; 
+  color:white;
+  height: 250px; 
+}
+  

@@ -1,0 +1,135 @@
+Non-conformant filenames
+Note: These files have names that do not conform to the typical filename structure, either by design or by accident. Most concern all Teams, Members and Trials in the study, not one.
+
+
+Survey filenames
+Note: These files contain survey data, typically for all Teams, Members and Trials in the study, not one.
+Surveys1Fulltext
+Surveys1Numeric
+Surveys1Numeric
+Surveys2Fulltext
+Surveys2Numeric
+Surveys2Numeric
+Surveys3Fulltext
+Surveys3Numeric
+Surveys3Numeric
+Surveys4Fulltext
+Surveys4Numeric
+Surveys4Numeric
+Surveys5Fulltext
+Surveys5Numeric
+Surveys5Numeric
+
+Conformant filenames
+Note: These files concern a specific Team, team Member, or Trial in the study. Their file names conform to the typical filename structure.
+Team	Member	Trial	ClientAudio	Log-ASI-SIFT-TA1	Log-ASI-USC-TA1	OBVideo	TrialMessages	
+Team-TM000061	Member-P000379	Trial-T000409	1	0	0	1	0	
+Team-TM000061	Member-P000380	Trial-T000409	1	0	0	1	0	
+Team-TM000061	Member-P000381	Trial-T000409	1	0	0	1	0	
+Team-TM000061	Member-P000379	Trial-T000410	1	0	0	1	0	
+Team-TM000061	Member-P000380	Trial-T000410	1	0	0	1	0	
+Team-TM000061	Member-P000381	Trial-T000410	1	0	0	1	0	
+Team-TM000061	Member-P000379	Trial-T000411	1	0	0	1	0	
+Team-TM000061	Member-P000380	Trial-T000411	1	0	0	1	0	
+Team-TM000061	Member-P000381	Trial-T000411	1	0	0	1	0	
+Team-TM000062	Member-P000382	Trial-T000412	1	0	0	1	0	
+Team-TM000062	Member-P000383	Trial-T000412	1	0	0	1	0	
+Team-TM000062	Member-P000384	Trial-T000412	1	0	0	1	0	
+Team-TM000062	Member-P000382	Trial-T000413	1	0	0	1	0	
+Team-TM000062	Member-P000383	Trial-T000413	1	0	0	1	0	
+Team-TM000062	Member-P000384	Trial-T000413	1	0	0	1	0	
+Team-TM000062	Member-P000382	Trial-T000414	1	0	0	1	0	
+Team-TM000062	Member-P000383	Trial-T000414	1	0	0	1	0	
+Team-TM000062	Member-P000384	Trial-T000414	1	0	0	1	0	
+Team-TM000063	Member-P000385	Trial-T000415	1	0	0	1	0	
+Team-TM000063	Member-P000386	Trial-T000415	1	0	0	1	0	
+Team-TM000063	Member-P000387	Trial-T000415	1	0	0	1	0	
+Team-TM000063	Member-P000385	Trial-T000416	1	0	0	1	0	
+Team-TM000063	Member-P000386	Trial-T000416	1	0	0	1	0	
+Team-TM000063	Member-P000387	Trial-T000416	1	0	0	1	0	
+Team-TM000063	Member-P000385	Trial-T000417	1	0	0	1	0	
+Team-TM000063	Member-P000386	Trial-T000417	1	0	0	1	0	
+Team-TM000063	Member-P000387	Trial-T000417	1	0	0	1	0	
+Team-TM000064	Member-P000388	Trial-T000418	1	0	0	1	0	
+Team-TM000064	Member-P000389	Trial-T000418	1	0	0	1	0	
+Team-TM000064	Member-P000390	Trial-T000418	1	0	0	1	0	
+Team-TM000064	Member-P000388	Trial-T000419	1	0	0	1	0	
+Team-TM000064	Member-P000389	Trial-T000419	1	0	0	1	0	
+Team-TM000064	Member-P000390	Trial-T000419	1	0	0	1	0	
+Team-TM000064	Member-P000388	Trial-T000420	1	0	0	1	0	
+Team-TM000064	Member-P000389	Trial-T000420	1	0	0	1	0	
+Team-TM000064	Member-P000390	Trial-T000420	1	0	0	1	0	
+Team-TM000065	Member-P000391	Trial-T000421	1	0	0	0	0	
+Team-TM000065	Member-P000392	Trial-T000421	1	0	0	0	0	
+Team-TM000065	Member-P000393	Trial-T000421	1	0	0	0	0	
+Team-TM000065	Member-P000391	Trial-T000422	1	0	0	0	0	
+Team-TM000065	Member-P000392	Trial-T000422	1	0	0	0	0	
+Team-TM000065	Member-P000393	Trial-T000422	1	0	0	0	0	
+Team-TM000065	Member-P000391	Trial-T000423	1	0	0	0	0	
+Team-TM000065	Member-P000392	Trial-T000423	1	0	0	0	0	
+Team-TM000065	Member-P000393	Trial-T000423	1	0	0	0	0	
+Team-TM000066	Member-P000394	Trial-T000424	1	0	0	1	0	
+Team-TM000066	Member-P000395	Trial-T000424	1	0	0	1	0	
+Team-TM000066	Member-P000396	Trial-T000424	1	0	0	1	0	
+Team-TM000066	Member-P000394	Trial-T000425	1	0	0	0	0	
+Team-TM000066	Member-P000395	Trial-T000425	1	0	0	0	0	
+Team-TM000066	Member-P000396	Trial-T000425	1	0	0	0	0	
+Team-TM000066	Member-P000394	Trial-T000426	1	0	0	1	0	
+Team-TM000066	Member-P000395	Trial-T000426	1	0	0	1	0	
+Team-TM000066	Member-P000396	Trial-T000426	1	0	0	1	0	
+Team-TM000067	Member-P000397	Trial-T000427	1	0	0	0	0	
+Team-TM000067	Member-P000398	Trial-T000427	1	0	0	0	0	
+Team-TM000067	Member-P000399	Trial-T000427	1	0	0	0	0	
+Team-TM000067	Member-P000397	Trial-T000428	1	0	0	0	0	
+Team-TM000067	Member-P000398	Trial-T000428	1	0	0	0	0	
+Team-TM000067	Member-P000399	Trial-T000428	1	0	0	0	0	
+Team-TM000067	Member-P000397	Trial-T000429	1	0	0	0	0	
+Team-TM000067	Member-P000398	Trial-T000429	1	0	0	0	0	
+Team-TM000067	Member-P000399	Trial-T000429	1	0	0	0	0	
+Team-TM000062	Member-P000382	Trial-Training	1	0	0	1	0	
+Team-TM000062	Member-P000383	Trial-Training	1	0	0	1	0	
+Team-TM000062	Member-P000384	Trial-Training	1	0	0	1	0	
+Team-TM000063	Member-P000385	Trial-Training	1	0	0	0	0	
+Team-TM000063	Member-P000386	Trial-Training	1	0	0	1	0	
+Team-TM000063	Member-P000387	Trial-Training	1	0	0	1	0	
+Team-TM000064	Member-P000388	Trial-Training	1	0	0	1	0	
+Team-TM000064	Member-P000390	Trial-Training	1	0	0	1	0	
+Team-TM000065	Member-P000391	Trial-Training	1	0	0	0	0	
+Team-TM000065	Member-P000392	Trial-Training	1	0	0	0	0	
+Team-TM000065	Member-P000393	Trial-Training	1	0	0	0	0	
+Team-TM000066	Member-P000394	Trial-Training	1	0	0	1	0	
+Team-TM000066	Member-P000395	Trial-Training	1	0	0	1	0	
+Team-TM000066	Member-P000396	Trial-Training	1	0	0	1	0	
+Team-TM000067	Member-P000397	Trial-Training	1	0	0	0	0	
+Team-TM000067	Member-P000398	Trial-Training	1	0	0	0	0	
+Team-TM000067	Member-P000399	Trial-Training	1	0	0	0	0	
+Team-TM000065	Member-na	Trial-na	0	1	0	0	0	
+Team-TM000064	Member-na	Trial-na	0	0	1	0	0	
+Team-TM000061	Member-na	Trial-T000409	0	0	0	1	1	
+Team-TM000061	Member-na	Trial-T000410	0	0	0	1	1	
+Team-TM000061	Member-na	Trial-T000411	0	0	0	1	1	
+Team-TM000062	Member-na	Trial-T000412	0	0	0	1	1	
+Team-TM000062	Member-na	Trial-T000413	0	0	0	1	1	
+Team-TM000062	Member-na	Trial-T000414	0	0	0	1	1	
+Team-TM000063	Member-na	Trial-T000415	0	0	0	1	1	
+Team-TM000063	Member-na	Trial-T000416	0	0	0	1	1	
+Team-TM000063	Member-na	Trial-T000417	0	0	0	1	1	
+Team-TM000064	Member-na	Trial-T000418	0	0	0	1	1	
+Team-TM000064	Member-na	Trial-T000419	0	0	0	1	1	
+Team-TM000064	Member-na	Trial-T000420	0	0	0	1	1	
+Team-TM000066	Member-na	Trial-T000424	0	0	0	1	1	
+Team-TM000066	Member-na	Trial-T000426	0	0	0	1	1	
+Team-TM000062	Member-na	Trial-Training	0	0	0	1	1	
+Team-TM000063	Member-na	Trial-Training	0	0	0	1	1	
+Team-TM000064	Member-P000389	Trial-Training	0	0	0	1	0	
+Team-TM000064	Member-na	Trial-Training	0	0	0	1	1	
+Team-TM000066	Member-na	Trial-Training	0	0	0	1	1	
+Team-TM000065	Member-na	Trial-T000421	0	0	0	0	1	
+Team-TM000065	Member-na	Trial-T000422	0	0	0	0	1	
+Team-TM000065	Member-na	Trial-T000423	0	0	0	0	1	
+Team-TM000066	Member-na	Trial-T000425	0	0	0	0	1	
+Team-TM000067	Member-na	Trial-T000427	0	0	0	0	1	
+Team-TM000067	Member-na	Trial-T000428	0	0	0	0	1	
+Team-TM000067	Member-na	Trial-T000429	0	0	0	0	1	
+Team-TM000065	Member-na	Trial-Training	0	0	0	0	1	
+Team-TM000067	Member-na	Trial-Training	0	0	0	0	1	

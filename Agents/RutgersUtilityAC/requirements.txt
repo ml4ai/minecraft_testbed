@@ -1,0 +1,6 @@
+../../Tools/ihmc-python-agent-helper-package
+pandas
+numpy
+xlrd
+matplotlib
+scipy

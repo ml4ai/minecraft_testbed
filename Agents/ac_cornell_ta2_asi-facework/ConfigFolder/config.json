@@ -1,0 +1,26 @@
+{
+    "host":"mosquitto",
+    "port": "1883",
+    "heartbeats_per_minute": 6,
+    "version_info": {
+        "owner": "Cornell - TA2",
+        "version": "0.0.1",
+        "source": [
+            "https://gitlab.com/artificialsocialintelligence/study3/-/tree/cu-spiral-3-merge/Agents/ac_cornell_ta2_asi-facework"
+        ],
+        "dependencies": [],
+        "publishes": [
+            {"topic": "agent/ac/asi-facework", "message_type": "agent", "sub_type": "AC:ASI-facework"},
+            {"topic": "status/ac_cornell_ta2_asi-facework/heartbeats", "message_type": "status", "sub_type": "heartbeat"}
+        ],
+        "subscribes": [
+            {"topic": "trial", "message_type": "trial", "sub_type": "start"},
+            {"topic": "trial", "message_type": "trial", "sub_type": "stop"},
+            {"topic": "ground_truth/mission/victims_list", "message_type": "groundtruth", "sub_type": "Mission:VictimList"},
+            {"topic": "ground_truth/semantic_map/initialized", "message_type": "groundtruth", "sub_type": "SemanticMap:Initialized"},
+            {"topic": "observations/state", "message_type": "observation", "sub_type": "state"},
+            {"topic": "agent/ac/asi-facework", "message_type": "agent", "sub_type": "AC:ASI-facework"}
+        ],
+        "config": []
+    }
+}

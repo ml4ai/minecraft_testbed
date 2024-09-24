@@ -1,0 +1,96 @@
+-- ADMINISTRATIVE --
+
+block_mission_tutorial=Tutorial
+block_mission_mission=Mission
+
+-- VICTIM BLOCKS --
+
+block_victim_1=Victim Block A
+block_victim_1b=Victim Block B
+block_victim_2=Victim Block C
+
+block_victim_saved_a=Victim Saved Block A
+block_victim_saved_b=Victim Saved Block B
+block_victim_saved_c=Victim Saved Block C
+
+block_victim_proximity=Victim Proximity Block
+
+-- ROLE BLOCKS --
+
+block_role_engineer=Engineering Specialist Role Block
+block_role_medic=Medical Specialist Role Block
+block_role_transporter=Transport Specialist Role Block
+
+-- ROLE ITEMS --
+
+item_medical_kit=Medical Kit
+item_stretcher=Stretcher
+item_stretcher_occupied=Occupied Stretcher
+item_hammer=Hammer
+
+
+-- CUSTOM ACTION BLOCKS --
+
+block_rubble_collapse=Rubble Collapse Block
+block_signal_victim=Victim Signal Block
+
+-- MARKER BLOCKS/ITEMS --
+
+block_marker_blue_abrasion=Marker Block Blue Abrasion
+block_marker_blue_novictim=Marker Block Blue No Victim
+block_marker_blue_sos=Marker Block Blue SOS
+block_marker_blue_bonedamage=Marker Block Blue Bonedamage
+block_marker_blue_criticalvictim=Marker Block Blue Criticalvictim
+block_marker_blue_regularvictim=Marker Block Blue Regularvictim
+block_marker_blue_rubble=Marker Block Blue Rubble
+block_marker_blue_threat=Marker Block Blue Threat
+
+block_marker_green_abrasion=Marker Block Green Abrasion
+block_marker_green_novictim=Marker Block Green No Victim
+block_marker_green_sos=Marker Block Green SOS
+block_marker_green_bonedamage=Marker Block Green Bonedamage
+block_marker_green_criticalvictim=Marker Block Green Criticalvictim
+block_marker_green_regularvictim=Marker Block Green Regularvictim
+block_marker_green_rubble=Marker Block Green Rubble
+block_marker_green_threat=Marker Block Green Threat
+
+block_marker_red_abrasion=Marker Block Red Abrasion
+block_marker_red_novictim=Marker Block Red No Victim
+block_marker_red_sos=Marker Block Red SOS
+block_marker_red_bonedamage=Marker Block Red Bonedamage
+block_marker_red_criticalvictim=Marker Block Red Criticalvictim
+block_marker_red_regularvictim=Marker Block Red Regularvictim
+block_marker_red_rubble=Marker Block Red Rubble
+block_marker_red_threat=Marker Block Red Threat
+
+item_marker_blue_abrasion=Marker Item Blue Abrasion
+item_marker_blue_novictim=Marker Item Blue No Victim
+item_marker_blue_sos=Marker Item Blue SOS
+item_marker_blue_bonedamage=Marker Item Blue Bonedamage
+item_marker_blue_criticalvictim=Marker Item Blue Criticalvictim
+item_marker_blue_regularvictim=Marker Item Blue Regularvictim
+item_marker_blue_rubble=Marker Item Blue Rubble
+item_marker_blue_threat=Marker Item Blue Threat
+
+item_marker_green_abrasion=Marker Item Green Abrasion
+item_marker_green_novictim=Marker Item Green No Victim
+item_marker_green_sos=Marker Item Green SOS
+item_marker_green_bonedamage=Marker Item Green Bonedamage
+item_marker_green_criticalvictim=Marker Item Green Criticalvictim
+item_marker_green_regularvictim=Marker Item Green Regularvictim
+item_marker_green_rubble=Marker Item Green Rubble
+item_marker_green_threat=Marker Item Green Threat
+
+item_marker_red_abrasion=Marker Item Red Abrasion
+item_marker_red_novictim=Marker Item Red No Victim
+item_marker_red_sos=Marker Item Red SOS
+item_marker_red_bonedamage=Marker Item Red Bonedamage
+item_marker_red_criticalvictim=Marker Item Red Criticalvictim
+item_marker_red_regularvictim=Marker Item Red Regularvictim
+item_marker_red_rubble=Marker Item Red Rubble
+item_marker_red_threat=Marker Item Red Threat
+
+
+
+
+

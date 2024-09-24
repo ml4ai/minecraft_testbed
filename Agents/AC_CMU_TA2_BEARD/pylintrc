@@ -1,0 +1,11 @@
+[BASIC]
+
+# We often use 'df' to refer to a current Pandas DataFrame and 'ax' to refer to
+# matplotlib axes.
+#
+# dx, dy, dz, dt refer to deltas.
+#
+# X is conventionally used to denote the input in many scikit-learn examples.
+#
+# good-names=df, ax, x, y, z, dx, dy, dz, dt, X, x1, z1, x2, z2
+good-names=df, ex, i, j, x, y, z, dx, dy, dz, dt

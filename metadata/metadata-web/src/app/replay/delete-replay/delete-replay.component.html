@@ -1,0 +1,106 @@
+<h1 mat-dialog-title>Delete</h1>
+<div mat-dialog-content [formGroup]="deleteReplayForm" layout="row" layout-align="center center">
+  <fieldset>
+    <legend>Replay: {{data.id}}</legend>
+    <mat-form-field appearance="fill">
+      <mat-label>Replay UUID</mat-label>
+      <input matInput formControlName="replay_id" placeholder="UUID" [pattern]="uuidPattern" required autocomplete="off" >
+      <mat-error>Please use a valid UUID.</mat-error>
+      <button mat-icon-button matSuffix (click)="onGenerateUUIDClick()" [disabled]="deleteReplayForm.disabled">
+        <mat-icon aria-label="UUID">autorenew</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field floatLabel="always" appearance="none">
+      <mat-label>Replay Parent Type</mat-label>
+      <mat-radio-group formControlName="replay_parent_type" color="primary" (change)="replayParentTypeChanged($event)">
+        <mat-radio-button *ngFor="let replayParentType of replayParentTypes" [value]="replayParentType">
+          {{replayParentType}}
+        </mat-radio-button>
+      </mat-radio-group>
+      <textarea matInput hidden></textarea>
+      <mat-error>Replay Parent Type is required.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Replay Parent</mat-label>
+      <mat-select [compareWith]="compareFnParents" formControlName="replay_parent_id" placeholder="Replay Parent" required>
+        <mat-option *ngFor="let parent of parents" [value]="parent">
+          {{getDisplayName(parent)}}
+        </mat-option>
+      </mat-select>
+      <mat-error>Replay Parent is required.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Replay Date</mat-label>
+      <input matInput [matDatepicker]="date" formControlName="date" required autocomplete="off">
+      <mat-error>Date is required.</mat-error>
+      <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+      <mat-datepicker #date></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="mat-form-field-cursor">
+      <mat-label>Add Ignore Message Item</mat-label>
+      <input matInput placeholder="message_type : sub_type" formControlName="ignore_message_list_input" aria-label="Message Type" [pattern]="ignoreListPattern" autocomplete="off">
+      <mat-error>Please use a valid string.</mat-error>
+      <button mat-icon-button matSuffix [disabled]="deleteReplayForm.controls.ignore_message_list_input.value === '' || deleteReplayForm.controls.ignore_message_list_input.invalid">
+        <mat-icon aria-label="Add">add_circle</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field class="mat-form-field-cursor">
+      <mat-label>Add Ignore Source Item</mat-label>
+      <input matInput placeholder="source" formControlName="ignore_source_list_input" aria-label="Source Type" autocomplete="off">
+      <mat-error>Please use a valid string.</mat-error>
+      <button mat-icon-button matSuffix [disabled]="deleteReplayForm.controls.ignore_source_list_input.value === '' || deleteReplayForm.controls.ignore_source_list_input.invalid">
+        <mat-icon aria-label="Add">add_circle</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field class="mat-form-field-cursor">
+      <mat-label>Add Ignore Topic Item</mat-label>
+      <input matInput placeholder="topic" formControlName="ignore_topic_list_input" aria-label="Topic Type" autocomplete="off">
+      <mat-error>Please use a valid string.</mat-error>
+      <button mat-icon-button matSuffix [disabled]="deleteReplayForm.controls.ignore_topic_list_input.value === '' || deleteReplayForm.controls.ignore_topic_list_input.invalid">
+        <mat-icon aria-label="Add">add_circle</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field floatLabel="always" appearance="fill">
+      <mat-label>Ignore List</mat-label>
+      <mat-action-list dense>
+        <h3 matSubheader>Message Type</h3>
+        <mat-list-item *ngFor="let item of ignore_message_list;">
+          <div mat-line>
+            <small>{{item | json}}</small>
+          </div>
+          <button mat-icon-button disabled>
+            <mat-icon aria-label="Remove Item">clear</mat-icon>
+          </button>
+        </mat-list-item>
+        <h3 matSubheader>Source</h3>
+        <mat-list-item *ngFor="let item of ignore_source_list;">
+          <div mat-line>
+            <small>{{item | json}}</small>
+          </div>
+          <button mat-icon-button disabled>
+            <mat-icon aria-label="Remove Item">clear</mat-icon>
+          </button>
+        </mat-list-item>
+        <h3 matSubheader>Topic</h3>
+        <mat-list-item *ngFor="let item of ignore_topic_list;">
+          <div mat-line>
+            <small>{{item | json}}</small>
+          </div>
+          <button mat-icon-button disabled>
+            <mat-icon aria-label="Remove Item">clear</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-action-list>
+      <textarea matInput hidden></textarea>
+    </mat-form-field>
+  </fieldset>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-raised-button color="accent" (click)="onCancelClick()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onDeleteClick()">Delete</button>
+</div>
+

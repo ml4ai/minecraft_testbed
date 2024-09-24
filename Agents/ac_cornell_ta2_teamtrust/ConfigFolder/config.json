@@ -1,0 +1,35 @@
+{
+    "host":"mosquitto",
+    "port": "1883",
+    "heartbeats_per_minute": 6,
+    "version_info": {
+        "owner": "Cornell - TA2",
+        "version": "1.0",
+        "source": [
+            "https://gitlab.com/artificialsocialintelligence/study3/-/tree/cornell-study-3-development/Agents/ac_cornell_ta2_teamtrust"
+        ],
+        "dependencies": [],
+        "publishes": [
+            {"topic": "agent/ac/player_compliance", "message_type": "agent", "sub_type": "AC:Player_compliance"},
+            {"topic": "agent/ac/goal_alignment", "message_type": "agent", "sub_type": "AC:Goal_alignment"},
+            {"topic": "status/ac_cornell_ta2_teamtrust/heartbeats", "message_type": "status", "sub_type": "heartbeat"}
+        ],
+        "subscribes": [
+			{"topic": "trial"},
+            {"topic": "ground_truth/mission/victims_list", "message_type": "groundtruth", "sub_type": "Mission:VictimList"},
+            {"topic": "agent/pygl_fov/player/3d/summary", "message_type": "observation", "sub_type": "FoV"},
+            {"topic": "observations/state", "message_type": "observation", "sub_type": "state"},
+            {"topic": "observations/events/player/marker_placed", "message_type": "event", "sub_type": "Event:MarkerPlaced"},
+            {"topic": "observations/events/player/marker_removed", "message_type": "event", "sub_type": "Event:MarkerRemoved"},
+            {"topic": "observations/events/player/marker_destroyed", "message_type": "event", "sub_type": "Event:MarkerDestroyed"},
+            {"topic": "observations/events/player/rubble_destroyed", "message_type": "event", "sub_type": "Event:RubbleDestroyed"},
+            {"topic": "observations/events/player/victim_picked_up", "message_type": "event", "sub_type": "Event:VictimPickedUp"},
+            {"topic": "observations/events/player/victim_placed", "message_type": "event", "sub_type": "Event:VictimPlaced"},
+            {"topic": "observations/events/player/triage", "message_type": "event", "sub_type": "Event:Triage"},
+            {"topic": "observations/events/server/victim_evacuated", "message_type": "event", "sub_type": "Event:VictimEvacuated"},
+            {"topic": "observations/events/player/victim_evacuation", "message_type": "event", "sub_type": "Event:VictimEvacuated"},
+			{"topic": "observations/events/player/victim_evacuated", "message_type": "event", "sub_type": "Event:VictimEvacuated"},
+            {"topic": "minecraft/chat", "message_type": "chat", "sub_type": "Event:chat"}
+        ]
+    }
+}

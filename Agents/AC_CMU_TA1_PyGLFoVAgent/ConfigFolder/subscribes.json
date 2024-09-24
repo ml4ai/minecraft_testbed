@@ -1,0 +1,117 @@
+[
+    {
+        "topic": "ground_truth/mission/blockages_list",
+        "type": "groundtruth",
+        "subtype": "Mission:BlockageList"
+    },
+    {
+        "topic": "observations/events/player/door",
+        "type": "event",
+        "subtype": "Event:Door"
+    },
+    {
+        "topic": "ground_truth/mission/freezeblock_list",
+        "type": "groundtruth",
+        "subtype": "Mission:FreezeBlockList"
+    },
+    {
+        "topic": "observations/events/player/lever",
+        "type": "event",
+        "subtype": "Event:Lever"
+    },
+    {
+        "topic": "observations/events/perturbation/marker_destroyed",
+        "type": "event",
+        "subtype": "Event:MarkerDestroyed"
+    },
+    {
+        "topic": "observations/events/player/marker_placed",
+        "type": "event",
+        "subtype": "Event:MarkerPlaced"
+    },
+    {
+        "topic": "observations/events/player/marker_removed",
+        "type": "event",
+        "subtype": "Event:MarkerRemoved"
+    },
+    {
+        "topic": "observations/events/mission",
+        "type": "event",
+        "subtype": "Event:MissionState"
+    },
+    {
+        "topic": "observations/state",
+        "type": "observation",
+        "subtype": "state"
+    },
+    {
+        "topic": "agent/control/rollcall/request",
+        "type": "agent",
+        "subtype": "rollcall:request"
+    },
+    {
+        "topic": "observations/events/player/rubble_collapse",
+        "type": "event",
+        "subtype": "Event:RubbleCollapse"
+    },
+    {
+        "topic": "observations/events/player/rubble_destroyed",
+        "type": "event",
+        "subtype": "Event:RubbleDestroyed"
+    },
+    {
+        "topic": "observations/events/server/rubble_placed",
+        "type": "event",
+        "subtype": "Event:RubblePlaced"
+    },
+    {
+        "topic": "ground_truth/semantic_map/initialized",
+        "type": "groundtruth",
+        "subtype": "SemanticMap:Initialized"
+    },
+    {
+        "topic": "ground_truth/mission/threatsign_list",
+        "type": "groundtruth",
+        "subtype": "Mission:ThreatSignList"
+    },
+    {
+        "topic": "observations/events/player/triage",
+        "type": "event",
+        "subtype": "Event:Triage"
+    },
+    {
+        "topic": "trial",
+        "type": "trial",
+        "subtype": "start"
+    },
+    {
+        "topic": "trial",
+        "type": "trial",
+        "subtype": "stop"
+    },
+    {
+        "topic": "ground_truth/mission/victims_list",
+        "type": "groundtruth",
+        "subtype": "Mission:VictimList"
+    },
+    {
+        "topic": "observations/events/perturbation/victim_no_longer_safe",
+        "type": "event",
+        "subtype": "Event:VictimNoLongerSafe"
+    },
+    {
+        "topic": "observations/events/player/victim_picked_up",
+        "type": "event",
+        "subtype": "Event:VictimPickedUp"
+    },
+    {
+        "topic": "observations/events/server/victim_placed",
+        "type": "event",
+        "subtype": "Event:VictimPlaced"
+    },
+    {
+        "topic": "ground_truth/mission/victims_expired",
+        "type": "groundtruth",
+        "subtype": "Event:VictimsExpired"
+    }
+]

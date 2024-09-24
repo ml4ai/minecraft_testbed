@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+@import '../../../metadata-theme.scss';
+
+mat-form-field {
+  width: 100%;
+}
+
+textarea {
+  caret-color: $light-text !important;
+}

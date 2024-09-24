@@ -1,0 +1,27 @@
+{
+    "host": ["mosquitto", "localhost", "192.168.69.158"],
+    "port": "1883",
+    "heartbeats_per_minute": 6,
+    "version_info": {
+        "owner": "IHMC - TA2",
+        "agent_type": "AC",
+        "version": "0.0.2",
+        "source": [
+            "https://gitlab.com/artificialsocialintelligence/study3/-/tree/main/Agents/AC_IHMC_TA2_Player-Proximity"
+        ],
+        "publishes": [
+            {"topic": "observations/events/player/proximity", "message_type": "event", "sub_type": "Event:proximity"}
+        ],
+        "subscribes": [
+            {"topic": "trial", "message_type": "trial"},
+            {"topic": "observations/events/mission"},
+            {"topic": "observations/events/player/role_selected"},
+            {"topic": "observations/state", "message_type": "observation", "sub_type": "state"}
+        ],
+        "config": [
+            {"name": "maps_file", "value": "maps.json"},
+            {"name": "output-rate-per-second", "value": "2"},
+            {"name": "close_rooms_distance_in_blocks", "value": "100.0"}
+        ]
+    }
+}

@@ -1,0 +1,17 @@
+[
+    {
+        "name": "ihmc_location_monitor_agent",
+        "arg": "--location_monitor",
+        "abbrev": "-lm",
+        "directory-name": "IHMCLocationMonitor",
+        "display": "Location monitor"
+    },
+    {
+        "name": "pygl_fov_agent",
+        "arg": "--fov",
+        "abbrev": "-f",
+        "directory-name": "PyGLFoVAgent",
+        "display": "FOV Agent"
+    }
+]
+    

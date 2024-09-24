@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>Create</h1>
+<div mat-dialog-content [formGroup]="createExperimentForm" layout="row" layout-align="center center">
+  <fieldset>
+    <legend>Experiment</legend>
+    <mat-form-field floatLabel="always" appearance="none">
+      <div class="header-row">
+        <mat-slide-toggle color="primary" (change)="toggleUseMessageBusChange($event)" formControlName="useMessageBus">Use Message Bus</mat-slide-toggle>
+        <textarea matInput hidden></textarea>
+        <button mat-fab color="primary" (click)="openJsonExperimentDialog()" matTooltip="Use JSON to populate form.">
+          <mat-icon aria-label="Create">text_snippet</mat-icon>
+        </button>
+      </div>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Experiment UUID</mat-label>
+      <input matInput formControlName="experiment_id" placeholder="UUID" [pattern]="uuidPattern" required autocomplete="off" >
+      <mat-error>Please use a valid UUID.</mat-error>
+      <button mat-icon-button matSuffix (click)="onGenerateUUIDClick()">
+        <mat-icon aria-label="UUID">autorenew</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Experiment Name</mat-label>
+      <input matInput formControlName="name" placeholder="Name" required autocomplete="off">
+      <mat-error>Name is required.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Experiment Date</mat-label>
+      <input matInput [matDatepicker]="date" formControlName="date" required autocomplete="off">
+      <mat-error>Date is required.</mat-error>
+      <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+      <mat-datepicker #date></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Experiment Author</mat-label>
+      <input matInput formControlName="author" placeholder="Author" required autocomplete="off">
+      <mat-error>Author is required.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Experiment Mission</mat-label>
+      <input matInput formControlName="mission" placeholder="Mission" required autocomplete="off">
+      <mat-error>Mission is required.</mat-error>
+    </mat-form-field>
+  </fieldset>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-raised-button color="accent" (click)="onCancelClick()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onCreateClick()" [disabled]="!createExperimentForm.valid">Create</button>
+</div>
+

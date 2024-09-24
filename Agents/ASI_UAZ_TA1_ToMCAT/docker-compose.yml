@@ -1,0 +1,33 @@
+version: '3'
+
+networks:
+  asist_net:
+   external: true    
+    
+services:
+  uaz_tmm_agent:
+    image: registry.gitlab.com/artificialsocialintelligence/study3/uaz_tmm_agent:3.5.8
+    container_name: ASI_UAZ_TA1_ToMCAT
+    volumes:
+      - ${HOST_DIRECTORY}logs:/tomcat-tmm/data/asist/study3/logs
+    networks:
+      asist_net:
+        aliases:
+          - uaz_tmm_agent
+    entrypoint: ["bash", "entrypoint.sh"]
+    deploy:
+      resources:
+        limits:
+          cpus: '8.0'
+          memory: '15G'
+  heartbeat:
+    image: registry.gitlab.com/artificialsocialintelligence/study3/heartbeat:2.0.2
+    container_name: heartbeat-ASI_UAZ_TA1_ToMCAT
+    volumes:
+      - ${HOST_DIRECTORY}config.json:/heartbeat/config.json
+    networks:
+      asist_net:
+        aliases:
+          - heartbeat-uaz_tmm_agent
+    entrypoint: ["python3", "heartbeat.py"]
+

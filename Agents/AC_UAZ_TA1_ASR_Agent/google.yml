@@ -1,0 +1,48 @@
+version: '3'
+
+networks:
+  asist_net:
+   external: true    
+    
+services:
+  asr_agent:
+    image: registry.gitlab.com/artificialsocialintelligence/study3/asr_agent:${ASR_AGENT_VERSION}
+    container_name: AC_UAZ_TA1_ASR_Agent
+    ports:
+      - 8888:8888
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/google_application_credentials.json
+    volumes:
+      - ./google_application_credentials.json:/google_application_credentials.json
+      - ./logs:/logs
+    networks:
+      asist_net:
+        aliases:
+          - asr_agent
+    entrypoint: ./asr_agent --mode websocket --disable_asr_google false --disable_asr_vosk true --disable_opensmile false 
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+  
+  mosquitto-internal:
+    image: eclipse-mosquitto
+    container_name: AC_UAZ_TA1_ASR_Agent-Mosquitto
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+    networks:
+      asist_net:
+        aliases:
+          - asr_agent-mosquitto
+
+  heartbeat:
+    image: registry.gitlab.com/artificialsocialintelligence/study3/heartbeat:${HEARTBEATS_VERSION}
+    container_name: AC_UAZ_TA1_ASR_Agent-heartbeat
+    volumes:
+      - ./config.json:/heartbeat/config.json
+    networks:
+      asist_net:
+        aliases:
+          - asr_agent-hearbeat
+    entrypoint: ["python3", "heartbeat.py"]
+

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LogFileValidator": {
+      "commandName": "Project",
+      "commandLineArgs": "--filename \"C:\\Projects\\ASIST\\docs\\HSRData_Predictions_SIFT_SIFTAsistant_Trial-T000429_Vers-3.metadata\""
+    }
+  }
+}

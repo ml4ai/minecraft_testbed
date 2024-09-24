@@ -1,0 +1,2 @@
+../../Tools/ihmc-python-agent-helper-package
+pyactup >=1.1.4, <2

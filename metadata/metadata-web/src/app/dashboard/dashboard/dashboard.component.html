@@ -1,0 +1,124 @@
+<div class="container">
+  <h2>Dashboard</h2>
+  <div fxLayout="row wrap" [fxLayout.lt-md]="'column wrap'" fxLayoutAlign="center top"> <!--fxLayoutGap="2em"-->
+    <div [fxFlex.gt-sm]="100 + '%'">
+      <mat-card ngClass="dashboard-card" [ngClass.lt-md]="'dashboard-card-narrow'">
+        <mat-card-header>
+          <div mat-card-avatar>
+            <mat-icon aria-label="Health Status">favorite</mat-icon>
+          </div>
+          <mat-card-title>Health Status</mat-card-title>
+          <mat-card-subtitle>Polling</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <app-health-status></app-health-status>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div [fxFlex.gt-sm]="100 / 2 + '%'" fxLayoutAlign="stretch">
+      <mat-card ngClass="dashboard-card" [ngClass.lt-md]="'dashboard-card-narrow'">
+        <mat-card-header>
+          <div mat-card-avatar>
+            <mat-icon aria-label="Export Trial">get_app</mat-icon>
+          </div>
+          <mat-card-title>Export Trial</mat-card-title>
+          <mat-card-subtitle>Database</mat-card-subtitle>
+          <mat-icon color="{{metadataAppOnline ? 'primary' : 'warn'}}" matTooltip="{{metadataAppOnline ? 'All systems online' : '1 or more systems offline'}}">lens</mat-icon>
+        </mat-card-header>
+        <mat-card-content>
+          <app-export-trial></app-export-trial>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div [fxFlex.gt-sm]="100 / 2 + '%'" fxLayoutAlign="stretch">
+      <mat-card ngClass="dashboard-card" [ngClass.lt-md]="'dashboard-card-narrow'">
+        <mat-card-header>
+          <div mat-card-avatar>
+            <mat-icon aria-label="Import Trial">publish</mat-icon>
+          </div>
+          <mat-card-title>Import Trial</mat-card-title>
+          <mat-card-subtitle>File</mat-card-subtitle>
+          <mat-icon color="{{metadataAppOnline ? 'primary' : 'warn'}}" matTooltip="{{metadataAppOnline ? 'All systems online' : '1 or more systems offline'}}">lens</mat-icon>
+        </mat-card-header>
+        <mat-card-content>
+          <app-import-trial></app-import-trial>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div [fxFlex.gt-sm]="100 / 2 + '%'" fxLayoutAlign="stretch">
+      <mat-card ngClass="dashboard-card" [ngClass.lt-md]="'dashboard-card-narrow'">
+        <mat-card-header>
+          <div mat-card-avatar>
+            <mat-icon aria-label="Export Replay">get_app</mat-icon>
+          </div>
+          <mat-card-title>Export Replay</mat-card-title>
+          <mat-card-subtitle>Database</mat-card-subtitle>
+          <mat-icon color="{{metadataAppOnline ? 'primary' : 'warn'}}" matTooltip="{{metadataAppOnline ? 'All systems online' : '1 or more systems offline'}}">lens</mat-icon>
+        </mat-card-header>
+        <mat-card-content>
+          <app-export-replay></app-export-replay>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div [fxFlex.gt-sm]="100 / 2 + '%'" fxLayoutAlign="stretch">
+      <mat-card ngClass="dashboard-card" [ngClass.lt-md]="'dashboard-card-narrow'">
+        <mat-card-header>
+          <div mat-card-avatar>
+            <mat-icon aria-label="Import Replay">publish</mat-icon>
+          </div>
+          <mat-card-title>Import Replay</mat-card-title>
+          <mat-card-subtitle>File</mat-card-subtitle>
+          <mat-icon color="{{metadataAppOnline ? 'primary' : 'warn'}}" matTooltip="{{metadataAppOnline ? 'All systems online' : '1 or more systems offline'}}">lens</mat-icon>
+        </mat-card-header>
+        <mat-card-content>
+          <app-import-replay></app-import-replay>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div [fxFlex.gt-sm]="100 / 2 + '%'" fxLayoutAlign="stretch">
+      <mat-card ngClass="dashboard-card" [ngClass.lt-md]="'dashboard-card-narrow'">
+        <mat-card-header>
+          <div mat-card-avatar>
+            <mat-icon aria-label="Run Replay">publish</mat-icon>
+          </div>
+          <mat-card-title>Run Replay</mat-card-title>
+          <mat-card-subtitle>Run</mat-card-subtitle>
+          <mat-icon color="{{metadataAppOnline ? 'primary' : 'warn'}}" matTooltip="{{metadataAppOnline ? 'All systems online' : '1 or more systems offline'}}">lens</mat-icon>
+        </mat-card-header>
+        <mat-card-content>
+          <app-run-replay></app-run-replay>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div [fxFlex.gt-sm]="100 / 2 + '%'" fxLayoutAlign="stretch">
+      <mat-card ngClass="dashboard-card" [ngClass.lt-md]="'dashboard-card-narrow'">
+        <mat-card-header>
+          <div mat-card-avatar>
+            <mat-icon aria-label="Run Replay">publish</mat-icon>
+          </div>
+          <mat-card-title>Batch Run Replay</mat-card-title>
+          <mat-card-subtitle>Batch Run</mat-card-subtitle>
+          <mat-icon color="{{metadataAppOnline ? 'primary' : 'warn'}}" matTooltip="{{metadataAppOnline ? 'All systems online' : '1 or more systems offline'}}">lens</mat-icon>
+        </mat-card-header>
+        <mat-card-content>
+          <app-batch-run-replay></app-batch-run-replay>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div [fxFlex.gt-sm]="100 / 2 + '%'" fxLayoutAlign="stretch">
+      <mat-card ngClass="dashboard-card" [ngClass.lt-md]="'dashboard-card-narrow'">
+        <mat-card-header>
+          <div mat-card-avatar>
+            <mat-icon aria-label="Export Time Window">get_app</mat-icon>
+          </div>
+          <mat-card-title>Export Time Window</mat-card-title>
+          <mat-card-subtitle>Database</mat-card-subtitle>
+          <mat-icon color="{{metadataAppOnline ? 'primary' : 'warn'}}" matTooltip="{{metadataAppOnline ? 'All systems online' : '1 or more systems offline'}}">lens</mat-icon>
+        </mat-card-header>
+        <mat-card-content>
+          <app-export-time-window></app-export-time-window>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

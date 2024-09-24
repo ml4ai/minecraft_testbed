@@ -1,0 +1,59 @@
+11/24/2021 -Edward W.
+
+    2PM
+    - Implemented Roger Carff's solution for universal Transporter capability, regardless of role
+    - Carrying a victim as a non-Transporter role gives a slowness penalty
+    - A player cannot use their native role tool while carrying a victim - their tool becomes the occupied stretcher
+    - Mod version 1.0.81
+
+11/23/2021 -Edward W.
+
+MOD:
+
+    4PM
+    - Room names mapped to victim locations using new easier room names
+    - added Victim Signal Block - registry name --> "asistmod:block_signal_victim"
+    - Transporter signaling system works until the FIRST interaction with a victim - either transport or triage, afterwhich the signal system
+    no longer tracks the victim
+    - missionTimeTraining key added to ModSettings.json giving a separate Mission Time setting for Training and Competency missions
+    - "Beep" Messages updated to "Signal" messages to keep the message more generic - mqtt topic also updated along with schema, see MessageSpecs
+    - Scoreboard Messages only fire when a victim is successfully triaged and in the appropriate Scoring area.
+    - Updated Map - still 2.1 3D
+    - Updated MapBlocks.csv file which places signal blocks and maps them to victims via the roomname column
+
+    10PM
+    - Mod now filters chat interventions to be only those selected in the trial setup screen of MalmoControl
+    - Update to 1.0.80
+
+CLIENTMAP:
+
+    4PM
+    - New Image with clearly visible room names A1 A2 A3 ... I4 I5 I6
+    - These new names do not supercede the existing room names, they are only used in the signaling system.
+
+    10PM
+    - Reverted ClientMapSettings file to show only position of the user instead of global positions
+    - Fixed a small parsing bug preventing the above from working correctly
+
+MESSAGE SPECS:
+
+    - Beep Message Model updated to VictimSignal model, with slightly more useful fields including pid and roomname
+    
+
+11/19/2021 - Edward W.
+
+MOD:
+    - Version 1.0.78
+    - Added ability to remove marker blocks with left click if holding marker item - works for any role and any marker variation
+    - Replaced "wildcard" and "critical" marker types with "novictim" and "sos"
+
+CLIENTMAP:
+
+    - Added new marker icons for the two new marker block types mentioned above
+    - Updated map image with new evacuation locations
+    - Integrated Marker removal logic
+
+MESSAGE SPECS:
+
+    - Enums updated for MarkerPlaced AND MarkerRemoved messages
+    - Marker Removal should reference the MARKEREMOVED messages NOT the MarkerDestroyed message

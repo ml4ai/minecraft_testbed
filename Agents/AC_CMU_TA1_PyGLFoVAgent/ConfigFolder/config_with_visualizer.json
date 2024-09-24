@@ -1,0 +1,241 @@
+{
+    "host": "localhost",
+    "port": "1883",
+    "agent_name": "pygl_fov",
+    "version": "0.2.2",
+    "url": "https://gitlab.com/cmu_asist/PyGLFoVAgent",
+    "author": "CMU TA1",
+    "dependencies": [
+        "https://gitlab.com/cmu_asist/MinecraftElements/-/tree/v0.4.1",
+        "https://gitlab.com/cmu_asist/MinecraftBridge/-/tree/v1.0.6",
+        "https://gitlab.com/cmu_asist/study3/intervention_manager/-/tree/v0.2.2"
+    ],
+    "publishes": [
+        {
+            "topic": "agent/pygl_fov/versioninfo",
+            "type": "agent",
+            "subtype": "versioninfo"
+        },
+        {
+            "topic": "agent/control/rollcall/response",
+            "type": "agent",
+            "subtype": "rollcall:response"
+        }
+    ],
+    "subscribes": [
+        {
+            "topic": "trial",
+            "type": "trial",
+            "subtype": "start"
+        },
+        {
+            "topic": "trial",
+            "type": "trial",
+            "subtype": "stop"
+        },
+        {
+            "topic": "agent/pygl_fov/player/3d/summary",
+            "type": "observation",
+            "subtype": "FoV"
+        },
+        {
+            "topic": "observations/events/player/marker_placed",
+            "type": "event",
+            "subtype": "Event:MarkerPlaced"
+        },
+        {
+            "topic": "observations/state",
+            "type": "observation",
+            "subtype": "state"
+        },
+        {
+            "topic": "observations/events/player/triage",
+            "type": "event",
+            "subtype": "Event:Triage"
+        },
+        {
+            "topic": "observations/events/player/victim_picked_up",
+            "type": "event",
+            "subtype": "Event:VictimPickedUp"
+        },
+        {
+            "topic": "observations/events/player/itemequipped",
+            "type": "event",
+            "subtype": "Event:ItemEquipped"
+        },
+        {
+            "topic": "observations/events/player/itemdrop",
+            "type": "event",
+            "subtype": "Event:ItemDrop"
+        },
+        {
+            "topic": "observations/events/player/rubble_destroyed",
+            "type": "event",
+            "subtype": "Event:RubbleDestroyed"
+        },
+        {
+            "topic": "observations/events/server/victim_placed",
+            "type": "event",
+            "subtype": "Event:VictimPlaced"
+        },
+        {
+            "topic": "observations/events/player/swinging",
+            "type": "event",
+            "subtype": "Event:PlayerSwinging"
+        },
+        {
+            "topic": "observations/events/player/tool_used",
+            "type": "event",
+            "subtype": "Event:ToolUsed"
+        },
+        {
+            "topic": "observations/events/mission",
+            "type": "event",
+            "subtype": "Event:MissionState"
+        },
+        {
+            "topic": "observations/events/player/location",
+            "type": "event",
+            "subtype": "Event:location"
+        },
+        {
+            "topic": "agent/control/rollcall/request",
+            "type": "agent",
+            "subtype": "rollcall:request"
+        }
+    ],
+    "loggers": {
+        "PyGLFoVAgent": {
+            "level": "INFO"
+        },
+        "FileBridge": {
+            "level": "WARNING"
+        },
+        "BaseAgent": {
+            "level": "WARNING"
+        },
+        "FoVWorker": {
+            "level": "INFO"
+        },
+        "Participant": {
+            "level": "INFO"
+        },
+        "BlockSummaryMessageEndpoint": {
+            "level": "WARNING"
+        },
+        "MatplotVisualizer": 
+        {
+            "level": "WARNING"
+        },
+        "WorldModel":
+        {
+            "level": "INFO"
+        },
+        "StaticVboStore":
+        {
+            "level": "WARNING"
+        },
+        "PlayerVboStore":
+        {
+            "level": "WARNING"
+        },
+        "CompositeVertexStore":
+        {
+            "level": "WARNING"
+        },
+        "ParserMap":
+        {
+            "level": "WARNING"
+        }
+    },  
+    "maps": {
+        "Adapt_Jan12": "ConfigFolder/maps/Adapt_Jan12-fov_map.json",
+        "Competency_Test": "ConfigFolder/maps/Competency_Test-fov_map.json",
+        "Competency Test 1": "ConfigFolder/maps/Saturn_Competency_Test_1.5_3D-fov_map.json",
+        "Competency Test 2": "ConfigFolder/maps/Saturn_Competency_Test_1.5_3D-fov_map.json",
+        "Competency Test": "ConfigFolder/maps/Saturn_Competency_Test_1.5_3D-fov_map.json",
+        "Custom": "ConfigFolder/maps/Custom-fov_map.json",
+        "Hands-on Training": "ConfigFolder/maps/Saturn_Training_1.5_3D-fov_map.json",
+        "Falcon": "ConfigFolder/maps/Falcon-fov_map.json",
+        "Falcon_Easy": "ConfigFolder/maps/Falcon-fov_map.json",
+        "Falcon_Medium": "ConfigFolder/maps/Falcon-fov_map.json",
+        "Falcon_Hard": "ConfigFolder/maps/Falcon-fov_map.json",
+        "Saturn_1": "ConfigFolder/maps/Saturn_1.json",
+        "Saturn_2": "ConfigFolder/maps/Saturn_1.json",
+        "Saturn_A": "ConfigFolder/maps/Saturn_1.5_3D-fov_map.json",
+        "Saturn_B": "ConfigFolder/maps/Saturn_1.5_3D-fov_map.json",
+        "Saturn_A_Blackout": "ConfigFolder/maps/Saturn_1.5_3D-fov_map.json",
+        "Saturn_1.1_3D": "ConfigFolder/maps/Saturn_1.1_3D-fov_map.json",
+        "Saturn_1.4_3D": "ConfigFolder/maps/Saturn_1.4_3D-fov_map.json",
+        "Saturn_1.5_3D": "ConfigFolder/maps/Saturn_1.5_3D-fov_map.json",
+        "Saturn_2.0_3D": "ConfigFolder/maps/Saturn_2.0_3D-fov_map.json",
+        "Saturn_2.1_3D": "ConfigFolder/maps/Saturn_2.1_3D-fov_map.json",
+        "Saturn_2.1Dev_3D": "ConfigFolder/maps/Saturn_2.1Dev_3D-fov_map.json",
+        "Saturn_2.3_3D": "ConfigFolder/maps/Saturn_2.3_3D-fov_map.json",
+        "Saturn_2.3Dev_3D": "ConfigFolder/maps/Saturn_2.3Dev_3D-fov_map.json",
+        "Saturn_2.4_3D": "ConfigFolder/maps/Saturn_2.4_3D-fov_map.json",
+        "Saturn_2.5_3D": "ConfigFolder/maps/Saturn_2.5_3D-fov_map.json",
+        "Saturn_2.5Dev_3D": "ConfigFolder/maps/Saturn_2.5Dev_3D-fov_map.json",
+        "Saturn_2.5Trainind_3D": "ConfigFolder/maps/Saturn_2.5Training_3D-fov_map.json",
+        "Saturn_Competency_Test_1.4_3D": "ConfigFolder/maps/Saturn_Competency_Test_1.4_3D-fov_map.json",
+        "Saturn_Competency_Test_1.5_3D": "ConfigFolder/maps/Saturn_Competency_Test_1.5_3D-fov_map.json",
+        "Saturn_Competency_Test_1.7_3D": "ConfigFolder/maps/Saturn_Competency_Test_1.7_3D-fov_map.json",
+        "Saturn_Feb4": "ConfigFolder/maps/Saturn_Feb4-fov_map.json",
+        "Saturn_Session1_CompetencyPrescreen": "ConfigFolder/maps/Saturn_Session1_CompetencyPrescreen-fov_map.json",
+        "Saturn_Training_1.0_3D": "ConfigFolder/maps/Saturn_Training_1.0_3D-fov_map.json",
+        "Saturn_Training_1.4_3D": "ConfigFolder/maps/Saturn_Training_1.4_3D-fov_map.json",
+        "Saturn_Training_1.5_3D": "ConfigFolder/maps/Saturn_Training_1.5_3D-fov_map.json",
+        "Saturn_Training_1.7_3D": "ConfigFolder/maps/Saturn_Training_1.7_3D-fov_map.json",
+        "Saturn_Training_Feb4": "ConfigFolder/maps/Saturn_Training_Feb4-fov_map.json",
+        "Sparky": "ConfigFolder/maps/Sparky-fov_map.json",
+        "Test": "ConfigFolder/maps/Blank_1.0-fov_map.json",
+        "Team_Planning": "ConfigFolder/maps/Blank_1.0-fov_map.json",
+        "Training": "ConfigFolder/maps/Training-fov_map.json"
+    },
+    "window_size": { 
+    	"width": 852, 
+    	"height": 480
+    },
+    "include_openings": true,
+    "players_to_ignore": [
+    ],    
+    "add_players_as_discovered": false,
+    "endpoints": {
+        "MatplotVisualizer": {
+            "colormap_path": "ConfigFolder/visualization/semantic_colors.csv"
+        },
+        "BlockSummaryMessageEndpoint": {
+            "timestamp_delay": 0.005,
+            "blocks_to_summarize": [
+                "torch",
+                "standing_sign",
+                "wooden_door",
+                "wall_sign",
+                "lever",
+                "iron_door",
+                "unlit_redstone_torch",
+                "redstone_torch",
+                "stone_button",
+                "wooden_button",
+                "spruce_door",
+                "birch_door",
+                "jungle_door",
+                "acacia_door",
+                "dark_oak_door",
+                "block_victim_1",
+                "block_victim_2",
+                "block_victim_saved",
+                "block_victim_proximity",
+                "block_victim_expired",
+                "bedrock",
+                "gravel",
+                "fire",
+                "perturbation_opening",
+                "player",
+                "marker_block",
+                "block_freeze_player",
+                "block_threat_sign"                
+            ]
+        }
+    }
+}

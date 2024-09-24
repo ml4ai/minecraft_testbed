@@ -1,0 +1,167 @@
+version: '3.7'
+
+networks:
+  asist_net:
+   external: true    
+    
+services:
+  malmocontrol:    
+    image: malmocontrol:latest
+    build: ../MalmoControl/.   
+    ports: 
+      - "5002:5002"
+    volumes:
+      - //var/run/docker.sock:/var/run/docker.sock
+      - ./MalmoControl/appsettings.Production.json:/home/MalmoControl/appsettings.Production.json
+      - ./MinecraftServer/data:/home/MalmoControl/minecraft_data
+      - ./CLEAN_MAPS:/home/MalmoControl/CLEAN_MAPS 
+      - ../Agents:/home/MalmoControl/Agents
+      - ./MalmoControl/logs:/home/MalmoControl/logs
+
+    container_name: malmocontrol_Local   
+    networks: 
+      asist_net:
+        aliases: 
+          - malmocontrol  
+
+  # mosquitto:
+  #   image: eclipse-mosquitto:1.6.9
+  #   container_name: mosquitto
+  #   ports:
+  #     - "1883:1883"
+  #   container_name: mosquitto
+  #   networks:
+  #     asist_net:
+  #       aliases:
+  #         - mosquitto 
+
+  minecraft:
+    image: itzg/minecraft-server:java8
+    ports:
+        - "25565:25565"
+        - "25575:25575"
+    volumes:
+        - "./MinecraftServer/data:/data"
+    environment:
+        - EULA=TRUE
+        - VERSION=1.11.2
+        - TYPE=FORGE
+        - FORGE_INSTALLER=forge-1.11.2-13.20.1.2588-installer.jar
+        - FORGEVERSION=13.20.1.2588
+        - ENABLE_RCON=TRUE 
+        - RCON_PORT=25575 
+        - RCON_PASSWORD=minecraft
+        - JVM_DD_OPTS=fml.queryResult:confirm
+        - MEMORY=6G
+        - USE_AIKAR_FLAGS=TRUE           
+    container_name: minecraft-server0    
+    networks: 
+      asist_net:
+        aliases: 
+          - minecraft-server0
+    tty: true
+    stdin_open: true  
+  
+#   # reference_agent:
+#   #   image: reference_agent:latest
+#   #   container_name: reference_agent    
+#   #   volumes:    
+#   #     - ./ReferenceAgent/ConfigFolder:/app/ConfigFolder
+#   #   depends_on: 
+#   #     - malmocontrol 
+#   #   networks: 
+#   #     asist_net:
+#   #       aliases: 
+#   #         - reference_agent
+
+#   # test_agent:
+#   #   image: test_agent
+#   #   container_name: test_agent
+#   #   volumes:
+#   #     - ./TestAgent:/src/settings
+#   #   environment:
+#   #     - mqtthost=mosquitto
+#   #     - mqttport=1883        
+#   #     - triggered_by_mqtt=true
+#   #     - PYTHONUNBUFFERED=1  
+#   #   networks: 
+#   #     asist_net:
+#   #       aliases: 
+#   #         - test_agent
+  
+
+  clientmap:
+    image: client_map
+    container_name: clientmap
+    # ports:
+    #   - 3080:3080
+    environment:
+      - mqtt_host=mosquitto
+      - map=ASIST      
+
+    networks: 
+      asist_net:
+        aliases: 
+          - clientmap
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    depends_on:    
+    - malmocontrol    
+    volumes:   
+    -  ./Nginx/nginx.conf:/etc/nginx/nginx.conf
+    -  ./Nginx/cert-aspnetcore.crt:/etc/nginx/cert-aspnetcore.crt
+    -  ./Nginx/cert-aspnetcore.key:/etc/nginx/cert-aspnetcore.key
+    -  ./Nginx/ssl_passwords.txt:/etc/nginx/ssl_passwords.txt
+    ports:
+    - "9000:443"    
+    networks: 
+      asist_net:
+        aliases: 
+          - nginx
+
+  mqttvalidationservice:    
+    image: mqttvalidationservice:latest
+    build: ../MQTTValidationServiceContainer/.   
+    volumes:
+      - //var/run/docker.sock:/var/run/docker.sock
+      - ./MessageValidator/appsettings.json:/app/appsettings.json
+      - ../MessageSpecs:/app/MessageSpecs
+    container_name: mqttvalidationservice
+    environment:
+        - Kestrel__Certificates__Default__Path=cert-aspnetcore.pfx
+        - Kestrel__Certificates__Default__Password=password    
+    networks: 
+      asist_net:
+        aliases: 
+          - mqttvalidationservice
+
+  asistdataingester:    
+    image: asistdataingester:latest
+    build: ../AsistDataIngesterContainer/.   
+    volumes:
+      - //var/run/docker.sock:/var/run/docker.sock
+      - ./AsistDataIngester/appsettings.json:/app/appsettings.json
+      - ./AsistDataIngester/RecordedAudio:/app/RecordedAudio
+#      - ./AsistDataIngester/google_application_credentials.json:/app/Google/google_application_credentials.json
+    container_name: asistdataingester
+    environment:
+        - Kestrel__Certificates__Default__Path=cert-aspnetcore.pfx
+        - Kestrel__Certificates__Default__Password=password    
+    networks: 
+      asist_net:
+        aliases: 
+          - asistdataingester
+
+  dozzle:
+      container_name: dozzle
+      image: amir20/dozzle:latest
+      environment:
+          DOZZLE_BASE: /Logger
+      volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      networks:
+          asist_net:
+              aliases:
+                  - dozzle

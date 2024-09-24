@@ -1,0 +1,122 @@
+{
+	"agent_name": "ASI_UAZ_TA1_ToMCAT",
+	"agent_hostname": "uaz_tmm_agent",
+	"version": "3.5.8",
+	"owner": "UAZ",
+	"config": [],	
+	"publishes": [
+		{
+		    "topic": "agent/ASI_UAZ_TA1_ToMCAT/versioninfo",
+		    "message_type": "agent",
+		    "sub_type":  "versioninfo"
+		},
+		{
+		    "topic": "status/ASI_UAZ_TA1_ToMCAT/heartbeats",
+		    "message_type": "status",
+		    "sub_type":  "heartbeat"
+		},
+		{
+		    "topic": "agent/control/rollcall/response",
+		    "message_type": "agent",
+		    "sub_type":  "rollcall:response"
+		},
+		{
+		    "topic": "agent/intervention/ASI_UAZ_TA1_ToMCAT/chat",
+		    "message_type": "agent",
+		    "sub_type":  "intervention"
+		}
+	],
+	"subscribes": [
+		{
+		    "topic": "trial",
+		    "message_type": "trial",
+		    "sub_type": "start"
+		},
+		{
+		    "topic": "trial",
+		    "message_type": "trial",
+		    "sub_type": "stop"
+		},
+		{
+		    "topic": "observations/events/mission",
+		    "message_type": "event",
+		    "sub_type": "Event:MissionState"
+		},
+		{
+		    "topic": "observations/state",
+		    "message_type": "observation",
+		    "sub_type": "state"
+		},
+		{
+		    "topic": "agent/dialog",
+		    "message_type": "event",
+		    "sub_type": "Event:dialogue_event"
+		},
+		{
+		    "topic": "observations/events/player/role_selected",
+		    "message_type": "event",
+		    "sub_type": "Event:RoleSelected"
+		},
+		{
+		    "topic": "observations/events/player/marker_placed",
+		    "message_type": "Event:MarkerPlaced",
+		    "sub_type": "event"
+		},
+		{
+		    "topic": "observations/events/player/marker_removed",
+		    "message_type": "Event:MarkerRemoved",
+		    "sub_type": "event"
+		},
+		{
+		    "topic": "observations/events/player/location",
+		    "message_type": "Event:location",
+		    "sub_type": "event"
+		},
+		{
+		    "topic": "observations/events/player/victim_placed",
+		    "message_type": "Event:VarkerPlaced",
+		    "sub_type": "event"
+		},
+		{
+		    "topic": "observations/events/player/victim_picked_up",
+		    "message_type": "Event:VictimPickedUp",
+		    "sub_type": "event"
+		},
+		{
+		    "topic": "observations/events/player/triage",
+		    "message_type": "Event:Triage",
+		    "sub_type": "event"
+		},
+		{
+		    "topic": "observations/events/player/proximity_block",
+		    "message_type": "Event:ProximityBlockInteraction",
+		    "sub_type": "event"
+		},
+		{
+		    "topic": "agent/pygl_fov/player/3d/summary",
+		    "message_type": "FoV",
+		    "sub_type": "FoV"
+		},
+		{
+		    "topic": "observations/events/player/rubble_collapse",
+		    "message_type": "Event:RubbleCollapse",
+		    "sub_type": "event"
+		},
+		{
+		    "topic": "observations/events/player/tool_used",
+		    "message_type": "Event:ToolUsed",
+		    "sub_type": "event"
+		},
+		{
+		    "topic": "observations/events/player/proximity",
+		    "message_type": "Event:proximity",
+		    "sub_type": "event"
+		},
+		{
+		    "topic": "observations/events/player/rubble_destroyed",
+		    "message_type": "Event:RubbleDestroyed",
+		    "sub_type": "event"
+		}
+	] 
+}
+

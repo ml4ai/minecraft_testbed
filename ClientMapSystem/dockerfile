@@ -1,0 +1,27 @@
+# BUILD WITH -->  "docker build --tag clientMap --build-arg CACHE_BREAKER=whatever ."
+
+FROM node:12.18.4
+
+ARG CACHE_BREAKER
+
+RUN echo "Breaking CACHE"
+
+WORKDIR /Server2
+
+COPY Server2/frontend frontend
+
+COPY Server2/ClientMapConfig.json ClientMapConfig.json
+
+COPY Server2/mqtt_manager.js mqtt_manager.js
+
+COPY Server2/package.json package.json
+
+COPY Server2/package-lock.json package-lock.json
+
+COPY Server2/server.js server.js
+
+RUN  npm install
+
+EXPOSE 3080
+
+CMD ["npm","start"]
