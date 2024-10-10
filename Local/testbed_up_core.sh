@@ -5,7 +5,7 @@ set -u
 set -o nounset
 
 # Script to automatically launch the testbed on Linux and macOS systems.
-# Usage: ./testbed_these_up.sh
+# Usage: ./testbed_up_core.sh
 
 # Get the top-level ASIST testbed repo directory. The pushd/popd commands use
 # this directory, so that this script can be safely executed from any
@@ -147,14 +147,14 @@ echo "Testbed version:$REV_TAG"
 
 if [[ $do_run_core = "true" ]]; then
 	echo "Create the asist network"
-    if docker network ls | grep -q "asist_net" 
+    if docker network ls | grep -q "asist_net"
     then
         echo "asist_net found ... no need to create it."
     else
         echo "asist_net not found ... let's create it."
         docker network create asist_net
     fi
-	
+
 fi
 
 if [[ $do_run_core = "true" ]]; then
