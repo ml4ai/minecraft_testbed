@@ -13,7 +13,8 @@ This material is based upon work supported by the Defense Advanced Research Proj
 
 ### Release notes
 
-For a history of contribution to the testbed and it's components, please read the release notes found in `releaseNotes.md`
+For a history of contribution to the testbed and it's components, please read
+the release notes found in `release_notes.md`
 
 ### To build the testbed
 
