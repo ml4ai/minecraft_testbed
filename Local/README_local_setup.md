@@ -5,15 +5,14 @@ Prerequisites
 -------------
 [ASIST gitlab](https://gitlab.com/artificialsocialintelligence/study3/)
 * Docker:
-  * for Windows Docker desktop for Windows V 4.0.0 or newer
   * for Linux V19.03.11 or newer
   * docker-compose: 1.29.2 or newer
 * Access to an elevated shell such as Windows Powershell (Administrator). This is not always necessary, depending on your host configuration.
 * At least one Minecraft Java Edition Client V1.11.2 , with Forge 13.20.1.2588 and
   the Asist Mod installed.  The latest ASIST mod can be found in the software repository in Local/data/mods/asistmod-x.x.x.jar
-  
+
 * While you may run the testbed and all Minecraft Clients on one machine, we have found that in an expirmental environment it is best to have one dedicated testbed machine,, and 3 dedicated client machines on which to run the clientside synthetic environment. In the case of ASIST, this is the Minecraft Client.
-* In order for experimenters and clients to be able to access the machine on which the testbed is running, the following ports need to be accessible: 
+* In order for experimenters and clients to be able to access the machine on which the testbed is running, the following ports need to be accessible:
   - Kibana - 5601 --> accessed @ http://your_machines_ip:5601
   - Minecraft control website - 9000-9001 --> accessed @ https://your_machines_ip:9000/MalmoControl
   - Minecraft asist mod - 25565 accessed @ https://your_machines_ip:25565
@@ -22,7 +21,6 @@ Prerequisites
   - elasticsearch - 9200 @ http://your_machines_ip:9200
 
 * Make sure your containers have at least 4GB of memory allocated to them in Docker.
-   In Windows this can be done by navigating to DockerDesktop-->Settings-->Advanced, then sliding the Memory slider to somewhere above 4000 MB. Some containers, such as the Minecraft Server, may require more - so play with this figure.
 
 * **(macOS only)** Go to your Docker Preferences, then click 'Experimental
   Features' in the sidebar on the left, then disable the 'Use gRPC FUSE for
@@ -41,7 +39,6 @@ Prerequisites
  - From the directory where the testbed repository was cloned
  - set the directory to Local and run the command script for the operating system you are running on
    - Linux or Mac: `./testbed_build.sh`
-   - Windows: `./testbed_build.cmd` [powershell command]
 
  - Get the containers from the GitLab container registry
 Detailed instructions on how to do this can be found in [`README_docker_build.md`](README_docker_build.md).
@@ -54,8 +51,7 @@ instructions below to start up the testbed.
 * If you have previously started up the testbed on this computer make sure that
   there are no old containers.  Run the script `testbed_down.sh` (Linux/macOS)
   or `testbed_down.cmd` (Windows) to shut down any existing running containers.
-* Run the `testbed_up-core.sh -i` (Linux/macOS) or `testbed_up.cmd` (Windows) script to
-  start up the containers.
+* Run the `testbed_up-core.sh -i` (Linux/macOS) script to start up the containers.
 * **Note**: If you are running Google Speech-to-Text transcription, you will
   need to ensure that your Google application credentials JSON file is in the
   `Agents/speechAnalyzer` directory with the filename

@@ -5,13 +5,6 @@ set -u
 # Script to automatically build the testbed on Linux and macOS systems.
 # Usage: ./testbed_build.sh
 
-# If you want to disable building the Malmo container (which can take a long
-# time to build and is not necessary if you are using the ASIST mod), you can
-# set the environment variable BUILD_MALMO to 0, e.g.:
-#
-# BUILD_MALMO=0 ./testbed_build.sh
-
-
 # Get the top-level ASIST testbed repo directory. The pushd/popd commands use
 # this directory, so that this script can be safely executed from any
 # directory.
@@ -52,28 +45,6 @@ fi
 
 echo "$BUILD"
 
-# echo "Building/updating MalmoContainer container"
-# export BUILD_MALMO=${BUILD_MALMO:-1}
-# if (( $BUILD_MALMO )); then
-#     pushd "$root_dir"/MalmoContainer
-#         docker build -t malmoserver:${PATCH} --build-arg CACHE_BREAKER=$(date +%s) .
-#         if [[ $? -ne 0 ]]; then
-#             echo "Failed to build MalmoContainer container, exiting now."
-#             exit 1
-#         fi
-#         if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-#             docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-#             docker tag malmoserver:${PATCH} registry.gitlab.com/artificialsocialintelligence/study3/malmoserver:${PATCH}
-#             docker tag malmoserver:${PATCH} registry.gitlab.com/artificialsocialintelligence/study3/malmoserver:${MINOR}
-#             docker tag malmoserver:${PATCH} registry.gitlab.com/artificialsocialintelligence/study3/malmoserver:${MAJOR}
-#             docker push registry.gitlab.com/artificialsocialintelligence/study3/malmoserver:${PATCH}
-#             docker push registry.gitlab.com/artificialsocialintelligence/study3/malmoserver:${MINOR}
-#             docker push registry.gitlab.com/artificialsocialintelligence/study3/malmoserver:${MAJOR}
-#             docker push registry.gitlab.com/artificialsocialintelligence/study3/malmoserver:latest
-#         fi
-#     popd
-# fi
-
 echo "Updating MalmoControl container"
 pushd "$root_dir"/MalmoControl
     if [ ! $BUILD == "latest" ]
@@ -84,17 +55,6 @@ pushd "$root_dir"/MalmoControl
     if [[ $? -ne 0 ]]; then
         echo "Failed to build MalmoControl container, exiting now."
         exit 1
-    fi
-    if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-        docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-        docker tag malmocontrol:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/malmocontrol:${BUILD}
-        docker tag malmocontrol:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/malmocontrol:${MINOR}
-        docker tag malmocontrol:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/malmocontrol:${MAJOR}
-        docker tag malmocontrol:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/malmocontrol:latest
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/malmocontrol:${BUILD}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/malmocontrol:${MINOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/malmocontrol:${MAJOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/malmocontrol:latest
     fi
 popd
 
@@ -124,17 +84,6 @@ pushd "$root_dir"/ClientMapSystem
     if [[ $? -ne 0 ]]; then
         echo "Failed to build client_map container, exiting now."
         exit 1
-    fi
-    if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-        docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-        docker tag client_map:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/client_map:${BUILD}
-        docker tag client_map:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/client_map:${MINOR}
-        docker tag client_map:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/client_map:${MAJOR}
-        docker tag client_map:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/client_map:latest
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/client_map:${BUILD}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/client_map:${MINOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/client_map:${MAJOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/client_map:latest
     fi
 popd
 
@@ -184,17 +133,6 @@ pushd "$root_dir"/Agents/AC_IHMC_TA2_Location-Monitor
         exit 1
     fi
     rm -rf ./ihmc-python-agent-helper-package
-    if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-        docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MINOR}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MAJOR}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:latest
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MINOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MAJOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:latest
-    fi
 popd
 
 echo "Building/updating AC_IHMC_TA2_Player-Proximity Agent"
@@ -207,17 +145,6 @@ pushd "$root_dir"/Agents/AC_IHMC_TA2_Player-Proximity
         exit 1
     fi
     rm -rf ./ihmc-python-agent-helper-package
-    if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-        docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MINOR}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MAJOR}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:latest
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MINOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MAJOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:latest
-    fi
 popd
 
 echo "Building/updating AC_IHMC_TA2_Dyad-Reporting Agent"
@@ -230,17 +157,6 @@ pushd "$root_dir"/Agents/AC_IHMC_TA2_Dyad-Reporting
         exit 1
     fi
     rm -rf ./ihmc-python-agent-helper-package
-    if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-        docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MINOR}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MAJOR}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:latest
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MINOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MAJOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:latest
-    fi
 popd
 
 echo "Building/updating AC_IHMC_TA2_Joint-Activity-Interdependence"
@@ -255,17 +171,6 @@ pushd "$root_dir"/Agents/AC_IHMC_TA2_Joint-Activity-Interdependence
     fi
     rm -rf ./ihmc-python-agent-helper-package
     rm -rf ./maps
-    if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-        docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MINOR}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MAJOR}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:latest
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MINOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MAJOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:latest
-    fi
 popd
 
 echo "Building/updating AC_CMUFMS_TA2_Cognitive Agent"
@@ -278,17 +183,6 @@ pushd "$root_dir"/Agents/AC_CMUFMS_TA2_Cognitive
         exit 1
     fi
     rm -rf ./ihmc-python-agent-helper-package
-    if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-        docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MINOR}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MAJOR}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:latest
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MINOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MAJOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:latest
-    fi
 popd
 
 echo "Building/updating CMU TA2 Team Effectiveness Diagnostic"
@@ -301,17 +195,6 @@ pushd "$root_dir"/Agents/AC_CMU_TA2_TED
         exit 1
     fi
     rm -rf ./ihmc-python-agent-helper-package
-    if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-        docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MINOR}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MAJOR}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:latest
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MINOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MAJOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:latest
-    fi
 popd
 
 echo "Building/updating CMU TA2 BEARD AC"
@@ -324,17 +207,6 @@ pushd "$root_dir"/Agents/AC_CMU_TA2_BEARD
         exit 1
     fi
     rm -rf ./ihmc-python-agent-helper-package
-    if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-        docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MINOR}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MAJOR}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:latest
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MINOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MAJOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:latest
-    fi
 popd
 
 echo "Building/updating AC_CMU_TA1_PyGLFoVAgent"
@@ -344,17 +216,6 @@ pushd "$root_dir"/Agents/AC_CMU_TA1_PyGLFoVAgent
     if [[ $? -ne 0 ]]; then
         echo "Failed to build pygl_fov_agent container, exiting now."
         exit 1
-    fi
-    if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-        docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MINOR}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MAJOR}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:latest
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MINOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MAJOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:latest
     fi
 popd
 
@@ -379,17 +240,6 @@ pushd "$root_dir"/MQTTValidationServiceContainer
         echo "Failed to build mqttvalidationservice container, exiting now."
         exit 1
     fi
-    if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-        docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-        docker tag mqttvalidationservice:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/mqttvalidationservice:${BUILD}
-        docker tag mqttvalidationservice:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/mqttvalidationservice:${MINOR}
-        docker tag mqttvalidationservice:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/mqttvalidationservice:${MAJOR}
-        docker tag mqttvalidationservice:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/mqttvalidationservice:latest
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/mqttvalidationservice:${BUILD}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/mqttvalidationservice:${MINOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/mqttvalidationservice:${MAJOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/mqttvalidationservice:latest
-    fi
 popd
 
 echo "Building/updating the ASIST Data Ingester container"
@@ -398,17 +248,6 @@ pushd "$root_dir"/AsistDataIngesterContainer
     if [[ $? -ne 0 ]]; then
         echo "Failed to build asistdataingester container, exiting now."
         exit 1
-    fi
-    if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-        docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-        docker tag asistdataingester:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/asistdataingester:${BUILD}
-        docker tag asistdataingester:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/asistdataingester:${MINOR}
-        docker tag asistdataingester:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/asistdataingester:${MAJOR}
-        docker tag asistdataingester:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/asistdataingester:latest
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/asistdataingester:${BUILD}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/asistdataingester:${MINOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/asistdataingester:${MAJOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/asistdataingester:latest
     fi
 popd
 
@@ -419,17 +258,6 @@ pushd "$root_dir"/ELK-Container/context/logstash
         echo "Failed to build logstash container, exiting now."
         exit 1
     fi
-    if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-        docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-        docker tag logstash:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/logstash:${BUILD}
-        docker tag logstash:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/logstash:${MINOR}
-        docker tag logstash:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/logstash:${MAJOR}
-        docker tag logstash:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/logstash:latest
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/logstash:${BUILD}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/logstash:${MINOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/logstash:${MAJOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/logstash:latest
-    fi
 popd
 
 echo "Building/updating the Postgres container"
@@ -439,17 +267,6 @@ pushd "$root_dir"/metadata/metadata-docker
         echo "Failed to build postgres container, exiting now."
         exit 1
     fi
-    if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-        docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-        docker tag postgres:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/postgres:${BUILD}
-        docker tag postgres:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/postgres:${MINOR}
-        docker tag postgres:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/postgres:${MAJOR}
-        docker tag postgres:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/postgres:latest
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/postgres:${BUILD}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/postgres:${MINOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/postgres:${MAJOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/postgres:latest
-    fi
 popd
 
 echo "Building/updating the metadata-app container"
@@ -458,17 +275,6 @@ pushd "$root_dir"/metadata/metadata-docker
     if [[ $? -ne 0 ]]; then
         echo "Failed to build metadata-app container, exiting now."
         exit 1
-    fi
-    if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-        docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-        docker tag metadata-app:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/metadata-app:${BUILD}
-        docker tag metadata-app:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/metadata-app:${MINOR}
-        docker tag metadata-app:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/metadata-app:${MAJOR}
-        docker tag metadata-app:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/metadata-app:latest
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/metadata-app:${BUILD}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/metadata-app:${MINOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/metadata-app:${MAJOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/metadata-app:latest
     fi
 popd
 
@@ -483,17 +289,6 @@ pushd "$root_dir"/metadata/metadata-docker
         echo "Failed to build metadata-msg container, exiting now."
         exit 1
     fi
-    if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-        docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-        docker tag metadata-msg:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/metadata-msg:${BUILD}
-        docker tag metadata-msg:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/metadata-msg:${MINOR}
-        docker tag metadata-msg:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/metadata-msg:${MAJOR}
-        docker tag metadata-msg:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/metadata-msg:latest
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/metadata-msg:${BUILD}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/metadata-msg:${MINOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/metadata-msg:${MAJOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/metadata-msg:latest
-    fi
 popd
 
 echo "Building/updating the metadata-web container"
@@ -506,69 +301,6 @@ pushd "$root_dir"/metadata/metadata-web
     docker build  -t metadata-web:${BUILD} .
     if [[ $? -ne 0 ]]; then
         echo "Failed to build metadata-web container, exiting now."
-        exit 1
-    fi
-    if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-        docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-        docker tag metadata-web:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/metadata-web:${BUILD}
-        docker tag metadata-web:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/metadata-web:${MINOR}
-        docker tag metadata-web:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/metadata-web:${MAJOR}
-        docker tag metadata-web:${BUILD} registry.gitlab.com/artificialsocialintelligence/study3/metadata-web:latest
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/metadata-web:${BUILD}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/metadata-web:${MINOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/metadata-web:${MAJOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/metadata-web:latest
-    fi
-popd
-
-#echo "Building/updating Doll/MIT Rita Agent"
-#pushd "$root_dir"/Agents/Rita_Agent
-#    source ./.env
-#    docker-compose pull
-#    if [[ $? -ne 0 ]]; then
-#        echo "Failed to pull Rita_Agent, exiting now."
-#        exit 1
-#    fi
-#popd
-
-
-echo "Building/updating CMU-TA1 ATLAS Agent"
-pushd "$root_dir"/Agents/ASI_CMU_TA1_ATLAS
-    source ./settings.env
-    docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
-    if [[ $? -ne 0 ]]; then
-        echo "Failed to build asi_cmu_ta1_atlas container, exiting now."
-        exit 1
-    fi
-    if [ ! -z "${APTIMADOCKERREGPW:-}" ] ; then
-        docker login gitlab.asist.aptima.com:5050 --username=dhoward --password=${APTIMADOCKERREGPW}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MINOR}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MAJOR}
-        docker tag ${DOCKER_IMAGE_NAME_LOWERCASE} registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:latest
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${BUILD}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MINOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:${MAJOR}
-        docker push registry.gitlab.com/artificialsocialintelligence/study3/${DOCKER_IMAGE_NAME_LOWERCASE}:latest
-    fi
-popd
-
-echo "Building/updating SIFT Asistant Agent"
-pushd "$root_dir"/Agents/SIFT_Asistant_Agent
-    docker-compose pull
-    if [[ $? -ne 0 ]]; then
-        echo "Failed to pull sift_asistant, exiting now."
-        exit 1
-    fi
-popd
-
-echo "Building/updating Atomic Agent"
-pushd "$root_dir"/Agents/atomic_agent
-    #source ./settings.env
-    docker-compose --env-file settings.env pull
-    #./agent.sh build
-    if [[ $? -ne 0 ]]; then
-        echo "Failed to pull atomic_agent, exiting now."
         exit 1
     fi
 popd
@@ -609,7 +341,5 @@ if [[ $OSTYPE == "linux-gnu" ]]; then
 fi
 
 echo "ELK container is now composed at up time"
-
-
 
 exit 0
