@@ -135,11 +135,11 @@ if [[ $do_update_config_paths = "true" ]]; then
     ./update_config_paths.sh
 fi
 
-echo "Determining version number"
-pushd ..
-    echo "Getting full testbed version"
-    git describe --tags > version.txt
-popd
+# echo "Determining version number"
+# pushd ..
+#     echo "Getting full testbed version"
+#     git describe --tags > version.txt
+# popd
 
 REV_TAG=$(cat ../version.txt)
 

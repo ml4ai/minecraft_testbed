@@ -1,15 +1,15 @@
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.1 
 
-COPY ./docker-20.10.9.tgz /docker-20.10.9.tgz
+#COPY ./docker-20.10.9.tgz /docker-20.10.9.tgz
 
 WORKDIR /
 
-RUN tar -xvzf docker-20.10.9.tgz
-RUN cp ./docker/docker ./usr/bin
+#RUN tar -xvzf docker-20.10.9.tgz
+#RUN cp ./docker/docker ./usr/bin
 
-RUN mkdir -p /usr/local/lib/docker/cli-plugins
-RUN curl -SL https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-linux-x86_64 -o /usr/local/lib/docker/cli-plugins/docker-compose
-RUN chmod -R 777 /usr/local/lib/docker/cli-plugins
+#RUN mkdir -p /usr/local/lib/docker/cli-plugins
+#RUN curl -SL https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-linux-x86_64 -o /usr/local/lib/docker/cli-plugins/docker-compose
+#RUN chmod -R 777 /usr/local/lib/docker/cli-plugins
 
 ARG CACHE_BREAKER
 

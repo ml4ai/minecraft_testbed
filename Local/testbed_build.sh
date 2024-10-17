@@ -58,7 +58,7 @@ pushd "$root_dir"/MalmoControl
     fi
 popd
 
-echo "The Reference agent is no longer built or used"
+#echo "The Reference agent is no longer built or used"
 #echo "Building/updating the Reference agent container"
 #pushd "$root_dir"/ReferenceAgents/MQTTPythonReferenceAgent
 #    docker build -t reference_agent --build-arg CACHE_BREAKER=$(date +%s) .
@@ -68,14 +68,6 @@ echo "The Reference agent is no longer built or used"
 #    fi
 #popd
 
-echo "Building/updating the Test Agent container"
-pushd "$root_dir"/ReferenceAgents/TestAgent
-   docker build -t test_agent --build-arg CACHE_BREAKER=$(date +%s) .
-   if [[ $? -ne 0 ]]; then
-       echo "Failed to build test_agent container, exiting now."
-       exit 1
-   fi
-popd
 
 echo "Building/updating the ClientMap container"
 pushd "$root_dir"/ClientMapSystem
@@ -87,151 +79,128 @@ pushd "$root_dir"/ClientMapSystem
     fi
 popd
 
-echo "Building/updating AC_Aptima_TA3_measures"
-pushd "$root_dir"/Agents/AC_Aptima_TA3_measures
-    source ./settings.env
-    cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
-    docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} .
-    if [[ $? -ne 0 ]]; then
-        echo "Failed to build measures_agent container, exiting now."
-        exit 1
-    fi
-    rm -rf ./ihmc-python-agent-helper-package
-popd
+# echo "Building/updating AC_Aptima_TA3_measures"
+# pushd "$root_dir"/Agents/AC_Aptima_TA3_measures
+#     source ./settings.env
+#     cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
+#     docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} .
+#     if [[ $? -ne 0 ]]; then
+#         echo "Failed to build measures_agent container, exiting now."
+#         exit 1
+#     fi
+#     rm -rf ./ihmc-python-agent-helper-package
+# popd
 
-echo "Building/updating Gallup Agent GELP"
-pushd "$root_dir"/Agents/gallup_agent_gelp
-    source ./settings.env
-    cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
-    docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
-    if [[ $? -ne 0 ]]; then
-        echo "Failed to build gallup_agent_gelp container, exiting now."
-        exit 1
-    fi
-    rm -rf ./ihmc-python-agent-helper-package
-popd
 
-echo "Building/updating Gallup Agent GOLD"
-pushd "$root_dir"/Agents/gallup_agent_gold
-    source ./settings.env
-    cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
-    docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
-    if [[ $? -ne 0 ]]; then
-        echo "Failed to build gallup_agent_gold container, exiting now."
-        exit 1
-    fi
-    rm -rf ./ihmc-python-agent-helper-package
-popd
+# echo "Building/updating AC_IHMC_TA2_Location-Monitor"
+# pushd "$root_dir"/Agents/AC_IHMC_TA2_Location-Monitor
+#     source ./settings.env
+#     cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
+#     docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
+#     if [[ $? -ne 0 ]]; then
+#         echo "Failed to build ${DOCKER_IMAGE_NAME_LOWERCASE} container, exiting now."
+#         exit 1
+#     fi
+#     rm -rf ./ihmc-python-agent-helper-package
+# popd
 
-echo "Building/updating AC_IHMC_TA2_Location-Monitor"
-pushd "$root_dir"/Agents/AC_IHMC_TA2_Location-Monitor
-    source ./settings.env
-    cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
-    docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
-    if [[ $? -ne 0 ]]; then
-        echo "Failed to build ${DOCKER_IMAGE_NAME_LOWERCASE} container, exiting now."
-        exit 1
-    fi
-    rm -rf ./ihmc-python-agent-helper-package
-popd
+# echo "Building/updating AC_IHMC_TA2_Player-Proximity Agent"
+# pushd "$root_dir"/Agents/AC_IHMC_TA2_Player-Proximity
+#     source ./settings.env
+#     cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
+#     docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
+#     if [[ $? -ne 0 ]]; then
+#         echo "Failed to build ${DOCKER_IMAGE_NAME_LOWERCASE} container, exiting now."
+#         exit 1
+#     fi
+#     rm -rf ./ihmc-python-agent-helper-package
+# popd
 
-echo "Building/updating AC_IHMC_TA2_Player-Proximity Agent"
-pushd "$root_dir"/Agents/AC_IHMC_TA2_Player-Proximity
-    source ./settings.env
-    cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
-    docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
-    if [[ $? -ne 0 ]]; then
-        echo "Failed to build ${DOCKER_IMAGE_NAME_LOWERCASE} container, exiting now."
-        exit 1
-    fi
-    rm -rf ./ihmc-python-agent-helper-package
-popd
+# echo "Building/updating AC_IHMC_TA2_Dyad-Reporting Agent"
+# pushd "$root_dir"/Agents/AC_IHMC_TA2_Dyad-Reporting
+#     source ./settings.env
+#     cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
+#     docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
+#     if [[ $? -ne 0 ]]; then
+#         echo "Failed to build ${DOCKER_IMAGE_NAME_LOWERCASE} container, exiting now."
+#         exit 1
+#     fi
+#     rm -rf ./ihmc-python-agent-helper-package
+# popd
 
-echo "Building/updating AC_IHMC_TA2_Dyad-Reporting Agent"
-pushd "$root_dir"/Agents/AC_IHMC_TA2_Dyad-Reporting
-    source ./settings.env
-    cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
-    docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
-    if [[ $? -ne 0 ]]; then
-        echo "Failed to build ${DOCKER_IMAGE_NAME_LOWERCASE} container, exiting now."
-        exit 1
-    fi
-    rm -rf ./ihmc-python-agent-helper-package
-popd
+# echo "Building/updating AC_IHMC_TA2_Joint-Activity-Interdependence"
+# pushd "$root_dir"/Agents/AC_IHMC_TA2_Joint-Activity-Interdependence
+#     source ./settings.env
+#     cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
+#     cp -R ../AC_CMU_TA1_PyGLFoVAgent/ConfigFolder/maps .
+#     docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
+#     if [[ $? -ne 0 ]]; then
+#         echo "Failed to build ${DOCKER_IMAGE_NAME_LOWERCASE} container, exiting now."
+#         exit 1
+#     fi
+#     rm -rf ./ihmc-python-agent-helper-package
+#     rm -rf ./maps
+# popd
 
-echo "Building/updating AC_IHMC_TA2_Joint-Activity-Interdependence"
-pushd "$root_dir"/Agents/AC_IHMC_TA2_Joint-Activity-Interdependence
-    source ./settings.env
-    cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
-    cp -R ../AC_CMU_TA1_PyGLFoVAgent/ConfigFolder/maps .
-    docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
-    if [[ $? -ne 0 ]]; then
-        echo "Failed to build ${DOCKER_IMAGE_NAME_LOWERCASE} container, exiting now."
-        exit 1
-    fi
-    rm -rf ./ihmc-python-agent-helper-package
-    rm -rf ./maps
-popd
+# echo "Building/updating AC_CMUFMS_TA2_Cognitive Agent"
+# pushd "$root_dir"/Agents/AC_CMUFMS_TA2_Cognitive
+#     source ./settings.env
+#     cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
+#     docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
+#     if [[ $? -ne 0 ]]; then
+#         echo "Failed to build ${DOCKER_IMAGE_NAME_LOWERCASE} container, exiting now."
+#         exit 1
+#     fi
+#     rm -rf ./ihmc-python-agent-helper-package
+# popd
 
-echo "Building/updating AC_CMUFMS_TA2_Cognitive Agent"
-pushd "$root_dir"/Agents/AC_CMUFMS_TA2_Cognitive
-    source ./settings.env
-    cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
-    docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
-    if [[ $? -ne 0 ]]; then
-        echo "Failed to build ${DOCKER_IMAGE_NAME_LOWERCASE} container, exiting now."
-        exit 1
-    fi
-    rm -rf ./ihmc-python-agent-helper-package
-popd
+# echo "Building/updating CMU TA2 Team Effectiveness Diagnostic"
+# pushd "$root_dir"/Agents/AC_CMU_TA2_TED
+#     source ./settings.env
+#     cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
+#     docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
+#     if [[ $? -ne 0 ]]; then
+#         echo "Failed to build ${DOCKER_IMAGE_NAME_LOWERCASE} container, exiting now."
+#         exit 1
+#     fi
+#     rm -rf ./ihmc-python-agent-helper-package
+# popd
 
-echo "Building/updating CMU TA2 Team Effectiveness Diagnostic"
-pushd "$root_dir"/Agents/AC_CMU_TA2_TED
-    source ./settings.env
-    cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
-    docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
-    if [[ $? -ne 0 ]]; then
-        echo "Failed to build ${DOCKER_IMAGE_NAME_LOWERCASE} container, exiting now."
-        exit 1
-    fi
-    rm -rf ./ihmc-python-agent-helper-package
-popd
+# echo "Building/updating CMU TA2 BEARD AC"
+# pushd "$root_dir"/Agents/AC_CMU_TA2_BEARD
+#     source ./settings.env
+#     cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
+#     docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
+#     if [[ $? -ne 0 ]]; then
+#         echo "Failed to build ${DOCKER_IMAGE_NAME_LOWERCASE} container, exiting now."
+#         exit 1
+#     fi
+#     rm -rf ./ihmc-python-agent-helper-package
+# popd
 
-echo "Building/updating CMU TA2 BEARD AC"
-pushd "$root_dir"/Agents/AC_CMU_TA2_BEARD
-    source ./settings.env
-    cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
-    docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
-    if [[ $? -ne 0 ]]; then
-        echo "Failed to build ${DOCKER_IMAGE_NAME_LOWERCASE} container, exiting now."
-        exit 1
-    fi
-    rm -rf ./ihmc-python-agent-helper-package
-popd
+# echo "Building/updating AC_CMU_TA1_PyGLFoVAgent"
+# pushd "$root_dir"/Agents/AC_CMU_TA1_PyGLFoVAgent
+#     source ./settings.env
+#     docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
+#     if [[ $? -ne 0 ]]; then
+#         echo "Failed to build pygl_fov_agent container, exiting now."
+#         exit 1
+#     fi
+# popd
 
-echo "Building/updating AC_CMU_TA1_PyGLFoVAgent"
-pushd "$root_dir"/Agents/AC_CMU_TA1_PyGLFoVAgent
-    source ./settings.env
-    docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
-    if [[ $? -ne 0 ]]; then
-        echo "Failed to build pygl_fov_agent container, exiting now."
-        exit 1
-    fi
-popd
+# echo "Building/updating ASR Agent done at up time"
 
-echo "Building/updating ASR Agent done at up time"
-
-echo "Building/updating Rutgers Utility AC"
-pushd "$root_dir"/Agents/RutgersUtilityAC
-    source ./settings.env
-    cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
-    docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
-    if [[ $? -ne 0 ]]; then
-        echo "Failed to build ${DOCKER_IMAGE_NAME_LOWERCASE} container, exiting now."
-        exit 1
-    fi
-    rm -rf ./ihmc-python-agent-helper-package
-popd
+# echo "Building/updating Rutgers Utility AC"
+# pushd "$root_dir"/Agents/RutgersUtilityAC
+#     source ./settings.env
+#     cp -R ../../Tools/ihmc-python-agent-helper-package ./ihmc-python-agent-helper-package
+#     docker build -t ${DOCKER_IMAGE_NAME_LOWERCASE} --build-arg CACHE_BREAKER=$(date +%s) .
+#     if [[ $? -ne 0 ]]; then
+#         echo "Failed to build ${DOCKER_IMAGE_NAME_LOWERCASE} container, exiting now."
+#         exit 1
+#     fi
+#     rm -rf ./ihmc-python-agent-helper-package
+# popd
 
 echo "Building/updating the MQTT Message Validator container"
 pushd "$root_dir"/MQTTValidationServiceContainer
@@ -305,16 +274,16 @@ pushd "$root_dir"/metadata/metadata-web
     fi
 popd
 
-echo "Building/updating Cornell Team trust AC"
-pushd "$root_dir"/Agents/ac_cornell_ta2_teamtrust
-    source ./settings.env
-    docker-compose --env-file settings.env pull
-    if [[ $? -ne 0 ]]; then
-        echo "Failed to build ${DOCKER_IMAGE_NAME_LOWERCASE} container, exiting now."
-        exit 1
-    fi
-    rm -rf ./ihmc-python-agent-helper-package
-popd
+# echo "Building/updating Cornell Team trust AC"
+# pushd "$root_dir"/Agents/ac_cornell_ta2_teamtrust
+#     source ./settings.env
+#     docker-compose --env-file settings.env pull
+#     if [[ $? -ne 0 ]]; then
+#         echo "Failed to build ${DOCKER_IMAGE_NAME_LOWERCASE} container, exiting now."
+#         exit 1
+#     fi
+#     rm -rf ./ihmc-python-agent-helper-package
+# popd
 
 
 # Check amount of virtual memory and increase it if needed.
